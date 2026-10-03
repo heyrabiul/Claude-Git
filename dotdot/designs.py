@@ -5,6 +5,8 @@ Every design is a function `fn(rng) -> Design`.  `rng` is a seeded
 (a 100-page book needs variety) while staying reproducible.
 """
 import math
+
+import numpy as np
 from dataclasses import dataclass, field
 
 from .geometry import (TAU, arc, chain, circle, cubic, ellipse, mirror_x,
@@ -746,6 +748,334 @@ def pineapple(rng):
         leaf = chain(quad((0, 0), (-0.28, 0.9), (0, 1.8)), quad((0, 1.8), (0.28, 0.9), (0, 0)))
         leaves.append(transform(leaf, dx=0, dy=1.25, s=s, rot=a))
     return Design("Pineapple", [body] + hatch + leaves, [], "nature")
+
+
+# ------------------------------------------------------------ Christmas
+# Holiday themes are left out of normal books; select them with --theme.
+
+HOLIDAY_THEMES = {"christmas", "thanksgiving"}
+
+
+def _star_pts(cx, cy, r, n=5, inner=0.45):
+    return [(cx + r * (1 if k % 2 == 0 else inner) * math.cos(math.pi / 2 + k * math.pi / n),
+             cy + r * (1 if k % 2 == 0 else inner) * math.sin(math.pi / 2 + k * math.pi / n)) for k in range(2 * n + 1)]
+
+
+def _holly(cx, cy, s=1.0, rot=0.0):
+    leaf = chain(quad((0, 0), (0.5, 0.45), (1.2, 0.35)), quad((1.2, 0.35), (0.6, -0.1), (0, 0)))
+    out = [transform(leaf, dx=cx, dy=cy, s=s, rot=rot + 0.3), transform(leaf, dx=cx, dy=cy, s=s, rot=rot + math.pi - 0.3)]
+    return out, [circle(cx - 0.12 * s, cy + 0.15 * s, 0.14 * s, 14), circle(cx + 0.14 * s, cy + 0.12 * s, 0.14 * s, 14)]
+
+
+def _bell_shape(s=1.0):
+    right = chain(cubic((0, 1.6), (0.9, 1.6), (0.9, 0.3), (1.15, -0.5), 30), quad((1.15, -0.5), (1.3, -0.8), (1.5, -0.9), 10))
+    pts = chain(mirror_x(right)[::-1], right, [(-1.5, -0.9)])
+    return transform(pts, s=s)
+
+
+@design("xmas_tree", "christmas")
+def xmas_tree(rng):
+    half = [(0, 3.2), (1.0, 1.9), (0.6, 1.9), (1.6, 0.6), (1.0, 0.6), (2.2, -0.8), (1.4, -0.8), (2.8, -2.2)]
+    outline = chain(mirror_x(half)[::-1], half[1:], [(-2.8, -2.2)])
+    trunk = [(-0.4, -2.2), (-0.4, -3.0), (0.4, -3.0), (0.4, -2.2)]
+    top = _star_pts(0, 3.45, 0.55)
+    garland = [quad((-1.2, 1.3), (0.1, 0.9), (1.25, 1.4)), quad((-1.8, -0.1), (0, -0.6), (1.9, -0.05)),
+               quad((-2.4, -1.5), (0, -2.0), (2.45, -1.45))]
+    gifts = [[(-2.8, -3.0), (-1.4, -3.0), (-1.4, -2.3), (-2.8, -2.3), (-2.8, -3.0)], [(-2.1, -3.0), (-2.1, -2.3)],
+             [(1.3, -3.0), (2.7, -3.0), (2.7, -2.1), (1.3, -2.1), (1.3, -3.0)], [(2.0, -3.0), (2.0, -2.1)]]
+    balls = [circle(x + rng.uniform(-0.1, 0.1), y, 0.17, 16) for x, y in
+             [(-0.5, 1.6), (0.55, 0.85), (-0.9, 0.25), (0.9, -0.5), (-1.3, -1.1), (0.3, -1.5), (1.6, -1.9), (-1.9, -1.95)]]
+    return Design("Christmas Tree", [outline, trunk, top] + garland + gifts, balls, "christmas")
+
+
+@design("snowman", "christmas")
+def snowman(rng):
+    base, mid, head = circle(0, -1.8, 1.4, 160), circle(0, 0.6, 1.0, 120), circle(0, 2.25, 0.65, 90)
+    brim = [(-0.85, 2.75), (0.85, 2.75), (0.85, 2.95), (-0.85, 2.95), (-0.85, 2.75)]
+    hat = [(-0.5, 2.95), (-0.5, 3.75), (0.5, 3.75), (0.5, 2.95)]
+    nose = [(0.05, 2.25), (0.85, 2.12), (0.05, 2.0)]
+    scarf = chain(quad((-0.7, 1.55), (0, 1.35), (0.7, 1.55)), [(0.75, 1.2), (0.95, 0.4), (0.55, 0.45), (0.45, 1.2)],
+                  quad((0.45, 1.2), (0, 1.1), (-0.7, 1.25)), [(-0.7, 1.55)])
+    arm_l = [(-0.95, 0.85), (-2.3, 1.7)]
+    twig_l = [(-1.9, 1.45), (-2.2, 1.95)]
+    arm_r = [(0.95, 0.85), (2.3, 1.7)]
+    twig_r = [(1.9, 1.45), (2.3, 1.3)]
+    flakes = []
+    for x, y in [(-2.6, 3.2), (2.4, 3.4), (-2.9, -0.6), (2.8, -0.2), (2.6, -2.6), (-2.7, -2.9)]:
+        for a in range(3):
+            ang = a * math.pi / 3
+            flakes.append([(x - 0.3 * math.cos(ang), y - 0.3 * math.sin(ang)), (x + 0.3 * math.cos(ang), y + 0.3 * math.sin(ang))])
+    hints = [circle(-0.25, 2.45, 0.07, 10), circle(0.25, 2.45, 0.07, 10)] + \
+            [circle(0, y, 0.11, 12) for y in (0.9, 0.45, 0.0, -1.3, -1.9)]
+    return Design("Snowman", [base, mid, head, brim, hat, nose, scarf, arm_l, twig_l, arm_r, twig_r] + flakes, hints, "christmas")
+
+
+@design("ornament", "christmas")
+def ornament(rng):
+    ball = circle(0, 0, 2.0, 200)
+    cap = [(-0.45, 1.95), (-0.45, 2.45), (0.45, 2.45), (0.45, 1.95)]
+    hook = arc(0, 2.8, 0.32, -math.pi / 2, 1.5 * math.pi, 30)
+    bands = []
+    for y, amp, k in [(0.75, 0.15, 9), (-0.75, 0.15, 9)]:
+        w = math.sqrt(4 - y * y) - 0.08
+        bands.append(parametric(lambda t, y=y, amp=amp, k=k: t, lambda t, y=y, amp=amp, k=k: y + amp * math.sin(k * t), -w, w, 120))
+    zig = []
+    w = 1.9
+    for i in range(13):
+        x = -w + 2 * w * i / 12
+        zig.append((x, 0.25 if i % 2 else -0.25))
+    stars = [_star_pts(x, y, 0.28) for x, y in [(-0.9, 1.35), (0.9, 1.35), (0, -1.4)]]
+    return Design("Christmas Ornament", [ball, cap, hook, zig] + bands + stars, [], "christmas")
+
+
+@design("candy_cane", "christmas")
+def candy_cane(rng):
+    outer = chain([(0.85, -3.0), (0.85, 1.5)], arc(-0.4, 1.5, 1.25, 0, math.pi, 40), [(-1.65, 0.9)])
+    cap = arc(-1.3, 0.9, 0.35, math.pi, TAU, 12)
+    inner = chain(arc(-0.4, 1.5, 0.55, math.pi, 0, 30), [(0.15, -3.0)], arc(0.5, -3.0, 0.35, math.pi, TAU, 12)[::-1])
+    cane = chain(outer, cap, inner)
+    stripes = [[(0.15, y), (0.85, y + 0.45)] for y in [-2.7 + 0.65 * k for k in range(7)]]
+    bow = [ellipse(0.0, -1.4, 0.7, 0.35, 50, rot=0.4), ellipse(1.0, -1.4, 0.7, 0.35, 50, rot=-0.4)]
+    tails = [[(0.45, -1.5), (0.0, -2.3)], [(0.6, -1.5), (1.1, -2.4)]]
+    holly, berries = _holly(2.0, 2.4, 1.1)
+    return Design("Candy Cane", [cane] + stripes + bow + tails + holly, berries, "christmas")
+
+
+@design("gift", "christmas")
+def gift(rng):
+    box = [(-2.0, -2.2), (2.0, -2.2), (2.0, 0.8), (-2.0, 0.8), (-2.0, -2.2)]
+    lid = [(-2.25, 0.8), (2.25, 0.8), (2.25, 1.6), (-2.25, 1.6), (-2.25, 0.8)]
+    ribbon = [[(-0.3, -2.2), (-0.3, 1.6)], [(0.3, -2.2), (0.3, 1.6)]]
+    loops = [ellipse(-0.85, 2.15, 0.85, 0.42, 60, rot=0.35), ellipse(0.85, 2.15, 0.85, 0.42, 60, rot=-0.35)]
+    knot = circle(0, 1.85, 0.25, 24)
+    tag = [(1.2, 0.3), (1.9, -0.2), (1.6, -0.75), (0.95, -0.25), (1.2, 0.3)]
+    dots = [_star_pts(x, y, 0.3) for x, y in [(-1.2, -0.6), (-1.15, -1.6), (1.15, -1.5)]]
+    return Design("Christmas Gift", [box, lid, knot, tag] + ribbon + loops + dots, [], "christmas")
+
+
+@design("stocking", "christmas")
+def stocking(rng):
+    cuff = [(-1.25, 2.0), (0.85, 2.0), (0.85, 3.0), (-1.25, 3.0), (-1.25, 2.0)]
+    body = chain([(-1.0, 2.0), (-1.0, -0.8)], cubic((-1.0, -0.8), (-1.0, -2.4), (1.0, -2.6), (2.2, -1.9), 40),
+                 cubic((2.2, -1.9), (2.9, -1.4), (2.4, -0.6), (1.6, -0.6), 30), quad((1.6, -0.6), (0.6, -0.4), (0.6, 0.4), 20),
+                 [(0.6, 2.0)])
+    heel = arc(-0.9, -1.25, 0.75, math.radians(-100), math.radians(10), 20)
+    toe = quad((1.5, -2.25), (1.6, -1.5), (2.4, -0.95))
+    loop = ellipse(-1.3, 3.3, 0.25, 0.45, 30, rot=0.3)
+    stripes = [quad((-1.0, y), (-0.2, y - 0.2), (0.6, y)) for y in (1.2, 0.3)]
+    flake = []
+    for a in range(3):
+        ang = a * math.pi / 3
+        flake.append([(-0.2 - 0.35 * math.cos(ang), -0.6 - 0.35 * math.sin(ang)), (-0.2 + 0.35 * math.cos(ang), -0.6 + 0.35 * math.sin(ang))])
+    return Design("Christmas Stocking", [cuff, body, heel, toe, loop] + stripes + flake, [], "christmas")
+
+
+@design("bells", "christmas")
+def bells(rng):
+    b1 = transform(_bell_shape(), dx=-1.75, dy=-0.5, rot=-0.3)
+    b2 = transform(_bell_shape(), dx=1.75, dy=-0.5, rot=0.3)
+    c1 = transform(circle(0, -1.2, 0.3, 30), dx=-1.75, dy=-0.5, rot=-0.3)
+    c2 = transform(circle(0, -1.2, 0.3, 30), dx=1.75, dy=-0.5, rot=0.3)
+    bands = [transform(quad((-1.05, -0.2), (0, -0.4), (1.05, -0.2)), dx=-1.75, dy=-0.5, rot=-0.3),
+             transform(quad((-1.05, -0.2), (0, -0.4), (1.05, -0.2)), dx=1.75, dy=-0.5, rot=0.3)]
+    loops = [ellipse(-0.75, 1.75, 0.75, 0.4, 50, rot=0.4), ellipse(0.75, 1.75, 0.75, 0.4, 50, rot=-0.4)]
+    knot = circle(0, 1.5, 0.22, 20)
+    tails = [quad((-0.1, 1.3), (-0.6, 1.2), (-1.3, 1.05)), quad((0.1, 1.3), (0.6, 1.2), (1.3, 1.05))]
+    holly, berries = _holly(0, 2.6, 1.0)
+    return Design("Jingle Bells", [b1, b2, c1, c2, knot] + bands + loops + tails + holly, berries, "christmas")
+
+
+@design("gingerbread", "christmas")
+def gingerbread(rng):
+    head = arc(0, 2.0, 0.9, math.radians(-60), math.radians(240), 70)
+    left = [(-0.45, 1.22), (-0.7, 1.0), (-2.0, 0.95)] + arc(-2.0, 0.5, 0.45, math.pi / 2, 1.5 * math.pi, 16)[1:] + \
+           [(-0.85, 0.1), (-0.95, -1.0), (-1.55, -2.45)] + arc(-1.15, -2.65, 0.45, math.radians(150), math.radians(330), 16)[1:] + \
+           [(0, -1.55)]
+    body = chain(head[::-1], left, mirror_x(left)[::-1][1:])
+    smile = arc(0, 2.0, 0.45, math.radians(210), math.radians(330), 16)
+    icing = []
+    for sx in (-1, 1):
+        icing.append([(sx * 1.6, 1.05), (sx * 1.7, 0.6), (sx * 1.8, 0.95), (sx * 1.9, 0.5), (sx * 2.0, 0.9)])
+        icing.append([(sx * 0.95, -2.05), (sx * 1.15, -2.3), (sx * 1.25, -1.95), (sx * 1.45, -2.25), (sx * 1.55, -1.9)])
+    bow = [[(-0.5, 1.3), (0.5, 0.9), (0.5, 1.3), (-0.5, 0.9), (-0.5, 1.3)]]
+    hints = [circle(-0.3, 2.25, 0.1, 12), circle(0.3, 2.25, 0.1, 12)] + [circle(0, y, 0.14, 14) for y in (0.4, -0.2, -0.8)]
+    return Design("Gingerbread Man", [body, smile] + icing + bow, hints, "christmas")
+
+
+@design("santa_hat", "christmas")
+def santa_hat(rng):
+    hat = chain(cubic((-2.0, 0.3), (-1.6, 2.6), (0.8, 3.4), (2.4, 2.0), 60), [(2.6, 1.05)])
+    hat2 = cubic((2.25, 1.15), (1.4, 1.8), (1.6, 0.8), (2.0, 0.3), 40)
+    pom = polar(lambda t: 0.5 + 0.06 * math.sin(9 * t), n=120, cx=2.75, cy=0.75)
+    brim = chain(parametric(lambda t: t, lambda t: 0.3 + 0.08 * math.sin(10 * t), -2.4, 2.4, 120),
+                 parametric(lambda t: -t, lambda t: -0.6 + 0.08 * math.sin(10 * t), -2.4, 2.4, 120),
+                 [(-2.4, 0.3)])
+    holly, berries = _holly(-1.3, 0.9, 0.9, rot=0.2)
+    return Design("Santa Hat", [hat, hat2, pom, brim] + holly, berries, "christmas")
+
+
+@design("wreath", "christmas")
+def wreath(rng):
+    outer = polar(lambda t: 2.6 + 0.14 * math.sin(18 * t), n=600)
+    inner = polar(lambda t: 1.45 + 0.1 * math.sin(14 * t), n=400)
+    leaves = []
+    for k in range(12):
+        a = TAU * k / 12 + 0.2
+        leaf = chain(quad((-0.4, 0), (0, 0.25), (0.4, 0)), quad((0.4, 0), (0, -0.25), (-0.4, 0)))
+        leaves.append(transform(leaf, dx=2.02 * math.cos(a), dy=2.02 * math.sin(a), rot=a + math.pi / 2 + 0.5))
+    bow = [ellipse(-0.7, -2.6, 0.7, 0.35, 50, rot=0.3), ellipse(0.7, -2.6, 0.7, 0.35, 50, rot=-0.3)]
+    knot = circle(0, -2.6, 0.22, 20)
+    tails = [[(-0.1, -2.8), (-0.6, -3.6), (-0.3, -3.5)], [(0.1, -2.8), (0.6, -3.6), (0.3, -3.5)]]
+    berries = [circle(2.02 * math.cos(TAU * k / 12 + 0.65), 2.02 * math.sin(TAU * k / 12 + 0.65), 0.13, 12) for k in range(12)]
+    return Design("Christmas Wreath", [outer, inner, knot] + leaves + bow + tails, berries, "christmas")
+
+
+@design("candle", "christmas")
+def candle(rng):
+    body = chain([(-0.6, -2.4), (-0.6, 1.0)], parametric(lambda t: t, lambda t: 1.0 + 0.12 * math.sin(9 * t), -0.6, 0.6, 40),
+                 [(0.6, -2.4)])
+    drip = quad((-0.3, 1.0), (-0.35, 0.3), (-0.2, 0.2))
+    wick = [(0, 1.1), (0, 1.45)]
+    flame = chain(quad((0, 1.45), (-0.45, 1.9), (0, 2.75)), quad((0, 2.75), (0.45, 1.9), (0, 1.45)))
+    glow = [[(0.8 * math.cos(a), 2.05 + 0.8 * math.sin(a)), (1.3 * math.cos(a), 2.05 + 1.3 * math.sin(a))]
+            for a in [math.radians(d) for d in (0, 35, 145, 180, 90)]]
+    dish = ellipse(0, -2.5, 1.9, 0.4, 100)
+    handle = arc(2.1, -2.3, 0.35, math.radians(120), math.radians(-120), 20)
+    stripes = [quad((-0.6, y), (0, y - 0.35), (0.6, y)) for y in (-0.2, -1.2)]
+    holly, berries = _holly(-1.6, -2.15, 0.9, rot=0.2)
+    return Design("Christmas Candle", [body, drip, wick, flame, dish, handle] + glow + stripes + holly, berries, "christmas")
+
+
+@design("mitten", "christmas")
+def mitten(rng):
+    body = chain([(-1.2, -1.6)], cubic((-1.2, -1.6), (-1.6, 1.0), (-1.2, 2.6), (0, 2.6), 40),
+                 cubic((0, 2.6), (1.2, 2.6), (1.5, 1.4), (1.35, 0.6), 30), cubic((1.35, 0.6), (1.9, 1.4), (2.6, 0.6), (2.0, -0.1), 30),
+                 cubic((2.0, -0.1), (1.6, -0.6), (1.2, -0.8), (1.1, -1.6), 20))
+    cuff = [(-1.35, -1.6), (1.25, -1.6), (1.25, -2.6), (-1.35, -2.6), (-1.35, -1.6)]
+    zig = [(-1.35 + 0.26 * i, -2.0 if i % 2 else -2.2) for i in range(11)]
+    flake = []
+    for a in range(3):
+        ang = a * math.pi / 3 + math.pi / 6
+        flake.append([(-0.05 - 0.7 * math.cos(ang), 0.8 - 0.7 * math.sin(ang)), (-0.05 + 0.7 * math.cos(ang), 0.8 + 0.7 * math.sin(ang))])
+    return Design("Cozy Mitten", [body, cuff, zig] + flake, [], "christmas")
+
+
+# ------------------------------------------------------------ Thanksgiving
+
+@design("turkey", "thanksgiving")
+def turkey(rng):
+    feathers = []
+    for deg in (5, 32, 59, 121, 148, 175):
+        a = math.radians(deg)
+        f = chain(quad((0, 1.55), (0.95, 3.0), (0, 4.4)), quad((0, 4.4), (-0.95, 3.0), (0, 1.55)))
+        feathers.append(transform(f, dx=0, dy=-0.8, rot=a - math.pi / 2))
+        feathers.append(transform([(0, 1.9), (0, 4.0)], dx=0, dy=-0.8, rot=a - math.pi / 2))
+    top = chain(quad((0, 2.45), (0.8, 3.4), (0, 4.4)), quad((0, 4.4), (-0.8, 3.4), (0, 2.45)))
+    feathers.append(transform(top, dx=0, dy=-0.8))
+    body = ellipse(0, -0.8, 1.45, 1.35, 150)
+    head = circle(0, 1.05, 0.65, 80)
+    beak = [(-0.15, 0.95), (0, 0.6), (0.15, 0.95)]
+    wattle = chain(quad((0.1, 0.75), (0.45, 0.4), (0.2, 0.1)), quad((0.2, 0.1), (0.0, 0.3), (0.1, 0.75)))
+    wing_l = arc(-0.4, -0.9, 0.85, math.radians(110), math.radians(250), 20)
+    wing_r = arc(0.4, -0.9, 0.85, math.radians(-70), math.radians(70), 20)
+    feet = [[(-0.5, -2.1), (-0.5, -2.7), (-0.8, -2.95)], [(-0.5, -2.7), (-0.3, -2.95)],
+            [(0.5, -2.1), (0.5, -2.7), (0.3, -2.95)], [(0.5, -2.7), (0.8, -2.95)]]
+    hints = [circle(-0.25, 1.25, 0.09, 12), circle(0.25, 1.25, 0.09, 12)]
+    return Design("Thanksgiving Turkey", feathers + [body, head, beak, wattle, wing_l, wing_r] + feet, hints, "thanksgiving")
+
+
+@design("pumpkin", "thanksgiving")
+def pumpkin(rng):
+    lobes = [ellipse(0, 0, 0.95, 1.9, 120)]
+    for dx, rx, ry in [(0.75, 1.15, 1.8), (1.45, 1.05, 1.65)]:
+        half = [(dx + rx * math.cos(t), -0.05 + ry * math.sin(t)) for t in np.linspace(-math.pi / 2, math.pi / 2, 60)]
+        lobes.append(half)
+        lobes.append(mirror_x(half))
+    stem = [(-0.25, 1.85), (-0.3, 2.6), (0.15, 2.9), (0.35, 2.65), (0.25, 1.85)]
+    vine = polar(lambda t: 0.12 + 0.12 * t, 0, 2.5 * math.pi, 150, cx=1.0, cy=2.6)
+    leaf = chain(quad((-0.3, 2.4), (-1.0, 3.2), (-1.9, 2.9)), quad((-1.9, 2.9), (-1.1, 2.3), (-0.3, 2.4)))
+    return Design("Harvest Pumpkin", lobes + [stem, vine, leaf], [], "thanksgiving")
+
+
+@design("pie", "thanksgiving")
+def pie(rng):
+    rim = parametric(lambda t: (2.8 + 0.07 * math.sin(22 * t)) * math.cos(t), lambda t: (0.95 + 0.05 * math.sin(22 * t)) * math.sin(t),
+                     0, TAU, 400)
+    dish = chain([(-2.8, 0)], [(-2.3, -1.3)], parametric(lambda t: 2.3 * math.cos(t), lambda t: -1.3 + 0.6 * math.sin(t),
+                                                         math.pi, TAU, 80), [(2.8, 0)])
+    lattice = []
+    for x in (-1.5, -0.5, 0.5, 1.5):
+        h = 0.72 * math.sqrt(max(0.0, 1 - (x / 2.4) ** 2))
+        lattice.append([(x - 0.15, -h), (x + 0.15, h)])
+    for y in (-0.35, 0.0, 0.35):
+        w = 2.35 * math.sqrt(max(0.0, 1 - (y / 0.8) ** 2))
+        lattice.append([(-w, y), (w, y)])
+    steam = [parametric(lambda t, x=x: x + 0.2 * math.sin(3.5 * t), lambda t: 1.2 + t, 0, 1.5, 60) for x in (-0.8, 0, 0.8)]
+    return Design("Pumpkin Pie", [rim, dish] + lattice + steam, [], "thanksgiving")
+
+
+@design("maple_leaf", "thanksgiving")
+def maple_leaf(rng):
+    half = [(0, 3.0), (0.35, 2.0), (0.9, 2.3), (0.8, 1.2), (1.9, 1.8), (1.7, 1.2), (2.6, 1.1), (2.2, 0.6),
+            (2.5, 0.3), (1.2, -0.2), (1.4, -0.7), (0.25, -0.5), (0.1, -1.0)]
+    leaf = chain(half, [(0.1, -2.6), (-0.1, -2.6)], mirror_x(half)[::-1])
+    veins = [[(0, -0.8), (0, 2.6)], [(0, -0.6), (1.9, 1.5)], [(0, -0.6), (-1.9, 1.5)],
+             [(0, -0.7), (2.0, 0.45)], [(0, -0.7), (-2.0, 0.45)]]
+    return Design("Maple Leaf", [leaf] + veins, [], "thanksgiving")
+
+
+@design("acorn", "thanksgiving")
+def acorn(rng):
+    cap = chain(arc(0, 0.3, 1.6, 0, math.pi, 70), parametric(lambda t: t, lambda t: 0.3 - 0.12 * abs(math.sin(4 * t)), -1.6, 1.6, 60))
+    hatch = []
+    for k in range(-2, 3):
+        hatch.append(quad((k * 0.6 - 0.5, 0.35), (k * 0.6, 1.0), (k * 0.6 + 0.3, 1.75)))
+    stem = quad((0, 1.9), (0.1, 2.4), (0.45, 2.7))
+    right = cubic((1.3, 0.2), (1.4, -1.8), (0.3, -2.6), (0, -2.9), 50)
+    nut = chain(mirror_x(right)[::-1], right[1:])
+    shine = arc(-0.5, -0.8, 0.6, math.radians(150), math.radians(210), 12)
+    oak = chain(quad((1.6, 1.6), (2.3, 2.3), (3.2, 2.2)), quad((3.2, 2.2), (2.6, 1.4), (1.6, 1.6)))
+    return Design("Acorn", [cap, stem, nut, shine, oak] + hatch, [], "thanksgiving")
+
+
+@design("pilgrim_hat", "thanksgiving")
+def pilgrim_hat(rng):
+    crown = [(-1.25, 0.1), (-1.0, 2.7), (1.0, 2.7), (1.25, 0.1)]
+    top = ellipse(0, 2.7, 1.0, 0.22, 60)
+    brim = ellipse(0, 0, 2.9, 0.65, 200)
+    band = [[(-1.2, 0.5), (1.2, 0.5)], [(-1.15, 1.05), (1.15, 1.05)]]
+    buckle = [(-0.45, 0.4), (0.45, 0.4), (0.45, 1.15), (-0.45, 1.15), (-0.45, 0.4)]
+    inner = [(-0.22, 0.6), (0.22, 0.6), (0.22, 0.95), (-0.22, 0.95), (-0.22, 0.6)]
+    return Design("Pilgrim Hat", [crown, top, brim, buckle, inner] + band, [], "thanksgiving")
+
+
+@design("corn", "thanksgiving")
+def corn(rng):
+    cob = ellipse(0, 0.4, 0.9, 2.4, 140)
+    rows = []
+    for k in range(-1, 2):
+        rows.append(cubic((k * 0.4, -1.9), (k * 0.5, -0.5), (k * 0.5, 1.4), (k * 0.35, 2.7), 30))
+    for y in [-1.4 + 0.5 * i for i in range(8)]:
+        w = 0.85 * math.sqrt(max(0.0, 1 - ((y - 0.4) / 2.35) ** 2))
+        rows.append(quad((-w, y), (0, y - 0.15), (w, y)))
+    husk_l = chain(cubic((0, -2.6), (-2.0, -1.5), (-1.8, 1.0), (-1.0, 2.2), 40), cubic((-1.0, 2.2), (-1.1, 0.5), (-0.8, -1.2), (0, -2.6), 40))
+    husk_r = chain(cubic((0, -2.6), (2.0, -1.6), (1.9, 0.4), (1.3, 1.5), 40), cubic((1.3, 1.5), (1.1, 0.2), (0.8, -1.3), (0, -2.6), 40))
+    return Design("Corn on the Cob", [cob, husk_l, husk_r] + rows, [], "thanksgiving")
+
+
+@design("cornucopia", "thanksgiving")
+def cornucopia(rng):
+    top = cubic((1.6, 1.6), (-0.3, 1.7), (-1.9, 1.3), (-2.6, 2.1), 60)
+    curl = arc(-2.85, 2.1, 0.25, 0, 1.6 * math.pi, 20)
+    bottom = cubic((-2.6, 2.1), (-2.3, 0.4), (-0.6, -1.5), (1.6, -1.4), 60)
+    horn = chain(top, curl, [(-2.6, 2.1)], bottom)
+    mouth = ellipse(1.6, 0.1, 0.55, 1.5, 80)
+    ribs = [quad((0.6, 1.62), (0.25, 0.1), (0.6, -1.45)), quad((-0.5, 1.5), (-0.8, 0.3), (-0.5, -0.95)),
+            quad((-1.5, 1.35), (-1.7, 0.7), (-1.6, -0.1))]
+    apple = circle(2.6, 0.9, 0.55, 60)
+    grapes = [circle(2.5 + dx, -0.6 + dy, 0.24, 24) for dx, dy in [(0, 0), (0.45, 0), (0.22, -0.4), (0.67, -0.4), (0.45, -0.8)]]
+    leaf = chain(quad((2.4, 1.4), (2.8, 2.1), (3.5, 2.0)), quad((3.5, 2.0), (3.0, 1.4), (2.4, 1.4)))
+    return Design("Cornucopia", [horn, mouth, apple, leaf] + ribs + grapes, [], "thanksgiving")
 
 
 def decorate(d, aspect, rng):

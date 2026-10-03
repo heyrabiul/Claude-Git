@@ -51,7 +51,14 @@ def font_for(target, large_print):
 
 def schedule(args, rng, svg_designs):
     """Return a list of (design_name_or_obj, seed, target_dots) for the book."""
-    names = [n for n in designs.REGISTRY if not args.only or n in args.only]
+    def wanted(name, theme):
+        if args.only:
+            return name in args.only
+        if args.theme:
+            return theme in args.theme
+        return theme not in designs.HOLIDAY_THEMES  # holiday art only in holiday books
+
+    names = [n for n, (_, theme) in designs.REGISTRY.items() if wanted(n, theme)]
     pool = []
     while len(pool) < args.puzzles:
         batch = names[:] + svg_designs
@@ -231,6 +238,8 @@ def main(argv=None):
     ap.add_argument("--single-sided", action="store_true", help="blank back on every puzzle (no bleed-through)")
     ap.add_argument("--large-print", action="store_true", help="9pt numbers, fewer dots per page")
     ap.add_argument("--svg-dir", help="folder of line-art SVGs to add to the rotation")
+    themes = sorted({t for _, t in designs.REGISTRY.values()})
+    ap.add_argument("--theme", nargs="*", help=f"limit to these design themes: {', '.join(themes)}")
     ap.add_argument("--only", nargs="*", help=f"limit to these built-in designs: {', '.join(designs.REGISTRY)}")
     ap.add_argument("--solutions-per-page", type=int, choices=(1, 2, 4, 6), default=4,
                     help="finished pictures per solutions page (1 = full size)")

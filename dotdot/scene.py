@@ -30,6 +30,8 @@ BG_PATTERNS = {
     "patterns": ["ripples", "spiral", "diagonal"],
     "custom": ["waves", "ripples", "diagonal"],
     "misc": ["waves", "ripples", "diagonal"],
+    "christmas": ["diagonal", "ripples", "spiral", "waves"],
+    "thanksgiving": ["waves", "diagonal", "ripples"],
 }
 IN_PATTERNS = {
     "sea": ["scales"],
@@ -39,6 +41,8 @@ IN_PATTERNS = {
     "travel": ["zigzag", "scales", "waves"],
     "custom": ["zigzag", "scales", "waves"],
     "misc": ["zigzag", "scales", "waves"],
+    "christmas": ["zigzag", "scales", "waves"],
+    "thanksgiving": ["scales", "zigzag", "waves"],
     "patterns": [],  # geometric designs are already busy inside
 }
 
