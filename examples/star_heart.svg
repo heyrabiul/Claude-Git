@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Example line art. Each path becomes a dotted line in the puzzle.
+       Elements whose id/class contains "hint" are printed as solid lines. -->
+  <path d="M100 170 C 20 110, 20 40, 70 40 C 90 40, 100 60, 100 70 C 100 60, 110 40, 130 40 C 180 40, 180 110, 100 170 Z"/>
+  <polygon points="100,80 108,98 128,98 112,110 118,130 100,118 82,130 88,110 72,98 92,98"/>
+  <circle class="hint" cx="100" cy="104" r="3"/>
+</svg>
