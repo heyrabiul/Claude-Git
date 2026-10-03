@@ -139,9 +139,9 @@ def build_puzzle(item, seed, target, frame, args):
         base = designs.decorate(d, aspect, rng)
         scale = _scale(base, frame, fs)
 
-        def scene(budget):
+        def scene(budget, salt=0):
             need = goal * fs * 1.2 * 1.25 * budget / scale
-            return fill_scene(base, random.Random(seed), need, 1 / scale)
+            return fill_scene(base, random.Random(seed + 7919 * salt), need, 1 / scale)
 
         d = scene(budget)
     can_decorate = not extreme and not args.no_borders
@@ -179,6 +179,27 @@ def build_puzzle(item, seed, target, frame, args):
             break
         target -= pz.dot_count - args.max_dots + 3
         pz = make_puzzle(d, frame, target, font_size=fs)
+
+    # Final gate: a page is only accepted with no misreadable number and a dot
+    # count inside the range.  Nudge the target (and, for scenes, re-roll the
+    # background pattern) until both hold; never print a faulty page.
+    def ok(p):
+        return p.collisions == 0 and args.min_dots <= p.dot_count <= args.max_dots
+
+    for k in range(1, 41):
+        if ok(pz):
+            break
+        if pz.dot_count < args.min_dots:
+            target += args.min_dots - pz.dot_count + 20
+        elif pz.dot_count > args.max_dots:
+            target -= pz.dot_count - args.max_dots + 5
+        else:
+            target += 7 if k % 2 else -11
+        if extreme and k % 4 == 0:
+            d = scene(budget, salt=k // 4)
+        pz = make_puzzle(d, frame, target, font_size=fs)
+    if not ok(pz):
+        raise RuntimeError(f"no valid page for {item!r}: {pz.dot_count} dots, {pz.collisions} collisions")
     return pz
 
 

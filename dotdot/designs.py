@@ -1139,6 +1139,9 @@ def build(name, seed):
     fn, theme = REGISTRY[name]
     d = fn(random.Random(seed))
     d.theme = theme
+    # a stroke needs two points to be a line; empty leftovers would break sampling
+    d.strokes = [s for s in d.strokes if len(s) >= 2]
+    d.hints = [h for h in d.hints if len(h) >= 2]
     return d
 
 
