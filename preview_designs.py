@@ -23,8 +23,13 @@ def main():
     cols, cell = 5, 200
     rows = (len(names) + cols - 1) // cols
     c = canvas.Canvas(a.out, pagesize=(cols * cell, max(1, rows) * cell))
+    broken = []
     for k, n in enumerate(names):
-        d = designs.build(n, a.seed)
+        try:
+            d = designs.build(n, a.seed)
+        except Exception as e:  # report every broken design, not just the first
+            broken.append(f"{n}: {type(e).__name__}: {e}")
+            continue
         x = (k % cols) * cell
         y = (rows - 1 - k // cols) * cell
         fr = (x + 8, y + 14, x + cell - 8, y + cell - 8)
@@ -34,6 +39,8 @@ def main():
         c.drawString(x + 10, y + 4, f"{n}: {d.title}")
     c.save()
     print(a.out, len(names), "designs")
+    for b in broken:
+        print("BROKEN", b)
 
 
 if __name__ == "__main__":

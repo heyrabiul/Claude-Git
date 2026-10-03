@@ -86,3 +86,9 @@ def heart(cx, cy, s, n=120):
 
 def mirror_all(strokes, axis=0.0):
     return [mirror_x(s, axis) for s in strokes]
+
+
+def leg(x0, x1, top, bottom):
+    """Open leg shape (no line across the top, so it joins the body)."""
+    r = (x1 - x0) / 2
+    return chain([(x0, top), (x0, bottom + r)], arc(x0 + r, bottom + r, r, math.pi, 2 * math.pi, 10), [(x1, top)])
