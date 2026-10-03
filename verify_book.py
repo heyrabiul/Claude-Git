@@ -37,7 +37,10 @@ SOLUTIONS_PER_PAGE = 4
 
 TITLE_THEME = {}
 for name, (fn, theme) in designs.REGISTRY.items():
-    TITLE_THEME[designs.build(name, 0).title] = theme
+    try:
+        TITLE_THEME[designs.build(name, 0).title] = theme
+    except Exception as e:  # a broken design must not stop verification
+        print(f"WARNING: design {name} cannot be built: {e}")
 
 
 def required_gutter(pages):
@@ -278,6 +281,12 @@ def verify(path, kind):
         if hol:
             rep["errors"].append(f"holiday/niche subjects in a regular book: {sorted(set(hol))}")
     rep["themes"] = dict(themes)
+    if kind.startswith("niche:"):
+        mains = [parts(t)[0] for t in rep["subjects"]]
+        rep["mains"] = mains
+        again = [m for m, c in Counter(mains).items() if c > 1]
+        if again:
+            rep["errors"].append(f"main pictures used more than once: {again[:5]}")
     dups = [t for t, c in Counter(rep["subjects"]).items() if c > 1]
     if dups:
         rep["errors"].append(f"scenes repeated inside the book: {dups[:5]}")
@@ -312,6 +321,14 @@ def main(paths):
         for t in set(r["subjects"]):
             seen[t].append(r["file"])
     cross = {t: len(f) for t, f in seen.items() if len(f) > 1}
+    main_books = defaultdict(list)
+    for r in reports:
+        for m in set(r.get("mains", [])):
+            main_books[m].append(r["file"])
+    shared_mains = [m for m, f in main_books.items() if len(f) > 1]
+    print(f"Niche main pictures used in more than one book: {len(shared_mains)}")
+    if shared_mains:
+        reports[0]["errors"].append(f"niche main pictures repeated across books: {shared_mains[:5]}")
     print(f"\nScenes appearing in more than one book: {len(cross)}")
     if cross:
         reports[0]["errors"].append(f"scenes repeated across books: {list(cross)[:5]}")
