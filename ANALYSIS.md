@@ -91,7 +91,7 @@ claims about pages outside the sample are inferences and are marked as such.
 ## Recommended listing (draft)
 
 - **Title:** *Extreme Dot-to-Dot for Adults: 100 Challenging Connect-the-Dots Puzzles, 1,000 to 2,000 Dots Each*
-- **Subtitle:** *Over 150,000 Dots · Clear, Non-Overlapping Numbers · Difficulty Ratings · Full Solutions · Single-Sided Pages*
+- **Subtitle:** *Over 145,000 Dots · Clear, Non-Overlapping Numbers · Difficulty Ratings · Full Solutions · Single-Sided Pages*
 - **Trim:** 8.5 × 11 in, black-and-white interior, white paper, matte cover
 - **Price:** $9.99 (same as competitors, with more features), or $8.99 to win early reviews
 - **Keywords:** extreme dot to dot for adults, dot to dot puzzle book adults, connect the dots adults hard, 1000 dot to dot, large print dot to dot seniors, mindful activity book adults, brain games adults
