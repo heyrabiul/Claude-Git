@@ -592,7 +592,7 @@ def message_bottle(rng):
     surf = [sea(2.4, waves=5, amp=0.12), sea(1.9, -3.2, -0.2, waves=2, amp=0.08)]
     shell = [arc(-2.4, -2.4, 0.4, 0, math.pi, 12), [(-2.8, -2.4), (-2.0, -2.4)]]
     star_ = [star(2.3, -2.3, 0.4, 5, 0.45)]
-    return make("Message in a Bottle", parts + sand + surf + shell + star_)
+    return make("Bottle Washed Ashore", parts + sand + surf + shell + star_)
 
 
 @design("beach_tiki_hut", T)
@@ -773,7 +773,7 @@ def jet_ski(rng):
     spray = [quad((-2.6, -0.9), (-3.3, -0.2), (-3.2, 0.7), 10), quad((-2.6, -0.6), (-2.95, -0.1), (-2.85, 0.45), 10)]
     drops = [circle(-3.0, 1.1, 0.12, 10), circle(-2.6, 0.95, 0.1, 10), circle(-3.4, 1.15, 0.1, 10)]
     water = [sea(-1.25, waves=6, amp=0.12), sea(-2.0, waves=5, amp=0.1), sea(-2.7, waves=4, amp=0.08)]
-    return make("Jet Ski", [hull, cowl, seat, column] + stripe + bars + vent + spray + drops + water)
+    return make("Jet Ski by the Beach", [hull, cowl, seat, column] + stripe + bars + vent + spray + drops + water)
 
 
 @design("beach_tropical_island", T)
