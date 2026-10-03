@@ -235,7 +235,7 @@ def order_strokes(strokes):
         best_i, best_d, best_mode = 0, float("inf"), None
         for i, s in enumerate(remaining):
             if is_closed(s):
-                j = min(range(len(s)), key=lambda k: math.dist(end, s[k]))
+                j = min(range(len(s) - 1), key=lambda k: math.dist(end, s[k]))
                 d, mode = math.dist(end, s[j]), ("rot", j)
             else:
                 d0, d1 = math.dist(end, s[0]), math.dist(end, s[-1])

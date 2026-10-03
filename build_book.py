@@ -24,7 +24,8 @@ from reportlab.pdfgen import canvas
 
 from dotdot import designs
 from dotdot.designs import Design
-from dotdot.geometry import load_svg
+from dotdot.geometry import load_svg, path_length
+from dotdot.scene import fill_scene
 from dotdot.puzzle import make_puzzle
 from dotdot.render import (SOFT, centered, draw_frame, draw_puzzle, draw_solution,
                            register_fonts, draw_stars, wrap)
@@ -32,23 +33,20 @@ from dotdot.render import (SOFT, centered, draw_frame, draw_puzzle, draw_solutio
 PAGE_SIZES = {"letter": (612, 792), "8x10": (576, 720), "a4": (595.3, 841.9)}
 
 
-def difficulty(n_dots):
-    for lvl, cap in enumerate((250, 450, 700, 950), start=1):
-        if n_dots <= cap:
-            return lvl
-    return 5
+def difficulty(n_dots, lo, hi):
+    """1-5 stars, relative to the easiest and hardest puzzle in this book."""
+    if hi <= lo:
+        return 3
+    return 1 + int(min(4, max(0.0, (n_dots - lo) / (hi - lo) * 5)))
 
 
 def font_for(target, large_print):
     if large_print:
         return 9.0
-    if target <= 350:
-        return 7.0
-    if target <= 600:
-        return 6.4
-    if target <= 900:
-        return 5.9
-    return 5.5
+    for cap, size in ((350, 7.0), (600, 6.4), (900, 5.9), (1200, 5.2), (1600, 4.9)):
+        if target <= cap:
+            return size
+    return 4.6
 
 
 def schedule(args, rng, svg_designs):
@@ -70,7 +68,7 @@ def schedule(args, rng, svg_designs):
     for i, item in enumerate(pool):
         t = i / max(1, args.puzzles - 1)
         target = args.min_dots + (args.max_dots - args.min_dots) * (t ** 1.15)
-        target *= rng.uniform(0.93, 1.07)
+        target = min(args.max_dots, max(args.min_dots, target * rng.uniform(0.95, 1.05)))
         out.append((item, rng.randrange(10**9), int(target)))
     return out
 
@@ -85,31 +83,57 @@ def load_svg_designs(folder):
     return out
 
 
+def _scale(d, frame, fs):
+    """Printed points per design unit once `d` is fitted into `frame`."""
+    from dotdot.geometry import bounds
+    x0, y0, x1, y1 = bounds(d.strokes + d.hints)
+    pad = fs * 2.2
+    return min((frame[2] - frame[0] - 2 * pad) / (x1 - x0), (frame[3] - frame[1] - 2 * pad) / (y1 - y0))
+
+
 def build_puzzle(item, seed, target, frame, args):
     d = item if isinstance(item, Design) else designs.build(item, seed)
+    rng = random.Random(seed)
     fs = font_for(target, args.large_print)
+    floor = 9.0 if args.large_print else 4.4
     aspect = (frame[2] - frame[0]) / (frame[3] - frame[1])
     goal = target
-    can_decorate = not args.no_borders
+    # Extreme pages (~1,000+ dots): the subject alone cannot hold that many
+    # readable dots, so build a full-page scene: dotted border, background
+    # pattern around the subject and a contrasting pattern inside it.
+    extreme = target >= 900 and not args.no_borders
+    budget = 1.0
+    if extreme:
+        base = designs.decorate(d, aspect, rng)
+        scale = _scale(base, frame, fs)
+
+        def scene(budget):
+            need = goal * fs * 1.2 * 1.25 * budget / scale
+            return fill_scene(base, random.Random(seed), need, 1 / scale)
+
+        d = scene(budget)
+    can_decorate = not extreme and not args.no_borders
     pz = make_puzzle(d, frame, target, font_size=fs)
-    for _ in range(6):
-        crowded = pz.collisions / max(1, pz.dot_count) > 0.02
-        short = pz.dot_count < goal * 0.8
+    for _ in range(8):
+        crowded = pz.collisions / max(1, pz.dot_count) > 0.015
+        short = pz.dot_count < max(goal * (0.95 if extreme else 0.8), args.min_dots)
         if not crowded and not short:
             break
-        if can_decorate:
-            # Picture too simple (or its dots too bunched) for this difficulty:
-            # a dotted border spreads the dots over the page.
-            d = designs.decorate(d, aspect, random.Random(seed))
+        if extreme and budget < 2.2:
+            # More pattern line = the same dots spread out further.
+            budget *= 1.2
+            d = scene(budget)
+        elif can_decorate:
+            d = designs.decorate(d, aspect, rng)
             can_decorate = False
-        elif crowded:
-            # Too crowded to read: drop dots first (keeps numbers legible),
-            # and only shrink the type down to a floor of 5 pt.
-            target = int(target * 0.9)
-            if not args.large_print:
-                fs = max(5.0, fs - 0.2)
+        elif crowded and fs > floor:
+            fs = max(floor, fs - 0.2)
+        elif crowded and target > args.min_dots:
+            target = max(args.min_dots, int(target * 0.93))
         else:
             break
+        if short and not crowded and pz.dot_count < args.min_dots:
+            target = int(target * args.min_dots / max(1, pz.dot_count)) + 5
         pz = make_puzzle(d, frame, target, font_size=fs)
     return pz
 
@@ -199,15 +223,17 @@ def solutions(c, W, H, M, puzzles, cols=2, rows=3):
 
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--puzzles", type=int, default=30)
-    ap.add_argument("--min-dots", type=int, default=300)
-    ap.add_argument("--max-dots", type=int, default=1000)
+    ap.add_argument("--puzzles", type=int, default=100)
+    ap.add_argument("--min-dots", type=int, default=1000)
+    ap.add_argument("--max-dots", type=int, default=2000)
     ap.add_argument("--page", choices=PAGE_SIZES, default="letter")
     ap.add_argument("--margin", type=float, default=0.625, help="inches; 0.625 is safe for any KDP page count")
     ap.add_argument("--single-sided", action="store_true", help="blank back on every puzzle (no bleed-through)")
     ap.add_argument("--large-print", action="store_true", help="9pt numbers, fewer dots per page")
     ap.add_argument("--svg-dir", help="folder of line-art SVGs to add to the rotation")
     ap.add_argument("--only", nargs="*", help=f"limit to these built-in designs: {', '.join(designs.REGISTRY)}")
+    ap.add_argument("--solutions-per-page", type=int, choices=(1, 2, 4, 6), default=4,
+                    help="finished pictures per solutions page (1 = full size)")
     ap.add_argument("--no-borders", action="store_true", help="never add decorative dotted borders")
     ap.add_argument("--no-builtins", action="store_true", help="use only --svg-dir designs")
     ap.add_argument("--seed", type=int, default=7)
@@ -254,7 +280,7 @@ def main(argv=None):
         c.showPage()
     for i, pz in built:
         draw_puzzle(c, pz)
-        lvl = difficulty(pz.dot_count)
+        lvl = difficulty(pz.dot_count, args.min_dots, args.max_dots)
         c.setFillColor(SOFT)
         c.setFont("NumBold", 10)
         c.drawString(M, M + 4, f"#{i}")
@@ -271,7 +297,8 @@ def main(argv=None):
         c.showPage()
         if args.single_sided:
             blank_back(c, W, M)
-    solutions(c, W, H, M, built)
+    cols, rows = {1: (1, 1), 2: (1, 2), 4: (2, 2), 6: (2, 3)}[args.solutions_per_page]
+    solutions(c, W, H, M, built, cols, rows)
     c.save()
 
     stats = {

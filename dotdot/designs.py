@@ -17,6 +17,7 @@ class Design:
     strokes: list
     hints: list = field(default_factory=list)  # lines pre-printed on the puzzle
     theme: str = "misc"
+    border: list = field(default_factory=list)  # decorative page border strokes
 
 
 REGISTRY = {}
@@ -554,7 +555,7 @@ def decorate(d, aspect, rng):
         border = [offset(base, lambda s, per: 0.0), offset(rect_path(w * 0.965, h * 0.965), lambda s, per: 0.0)]
     for b in border:
         b[-1] = b[0]
-    return Design(d.title, d.strokes + border, d.hints, d.theme)
+    return Design(d.title, d.strokes + border, d.hints, d.theme, border)
 
 
 def build(name, seed):

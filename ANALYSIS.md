@@ -66,12 +66,12 @@ claims about pages outside the sample are inferences and are marked as such.
 | Feature | Book A | Book B | **Our book (this generator)** |
 |---|---|---|---|
 | Price | $9.99 | $9.99 | $8.99 to $10.99 |
-| Dots per puzzle | ~500–700 | ~280–700 | **300 → 1,100, set per book, ramped smoothly** |
-| Number legibility | Overlapping, ~4 pt | OK on easy pages, small on hard ones | **Collision-aware placement, 5–7 pt (9 pt in large print), fewer than 1% labels touching** |
+| Dots per puzzle | ~500–700 | ~280–700 | **1,000 → 2,000 on every page, ramped smoothly** |
+| Number legibility | Overlapping, ~4 pt | OK on easy pages, small on hard ones | **Collision-aware placement, 4.6–5.2 pt (9 pt in large print), fewer than 1% labels touching** |
 | Difficulty shown on page | No | No | **1–5 stars + exact dot count** |
 | Page navigation | None | None | **Every 100th number in bold** |
 | "Lift pen" convention | Not visible | Not visible | **Hollow start dots, explained on a how-to page with a worked example** |
-| Solutions | Not visible in sample | Probably (thumbnail grid) | **Yes, 6 per page with titles** |
+| Solutions | Not visible in sample | Probably (thumbnail grid) | **Yes, 1, 2, 4 or 6 per page with titles** |
 | Bleed-through protection | Not visible | Recommends markers, risky | **Single-sided option (blank backs)** |
 | Large-print edition | No (despite targeting seniors) | No | **Yes, with `--large-print`** |
 | Frame | No | Yes | Yes (rounded) |
@@ -90,8 +90,8 @@ claims about pages outside the sample are inferences and are marked as such.
 
 ## Recommended listing (draft)
 
-- **Title:** *Extreme Dot-to-Dot for Adults: 100 Challenging Connect-the-Dots Puzzles, 300 to 1,100 Dots Each*
-- **Subtitle:** *Large, Easy-to-Read Numbers · Difficulty Ratings · Full Solutions · Single-Sided Pages*
+- **Title:** *Extreme Dot-to-Dot for Adults: 100 Challenging Connect-the-Dots Puzzles, 1,000 to 2,000 Dots Each*
+- **Subtitle:** *Over 150,000 Dots · Clear, Non-Overlapping Numbers · Difficulty Ratings · Full Solutions · Single-Sided Pages*
 - **Trim:** 8.5 × 11 in, black-and-white interior, white paper, matte cover
 - **Price:** $9.99 (same as competitors, with more features), or $8.99 to win early reviews
 - **Keywords:** extreme dot to dot for adults, dot to dot puzzle book adults, connect the dots adults hard, 1000 dot to dot, large print dot to dot seniors, mindful activity book adults, brain games adults

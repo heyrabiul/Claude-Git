@@ -5,7 +5,7 @@ from dataclasses import dataclass, field
 
 from reportlab.pdfbase.pdfmetrics import stringWidth
 
-from .geometry import bounds, fit_spacing, dots_for_spacing, order_strokes
+from .geometry import bounds, fit_spacing, dots_for_spacing, order_strokes, path_length
 
 CAP = 0.72  # cap height / font size for the number font
 
@@ -105,12 +105,30 @@ def make_puzzle(design, frame, target_dots, font_size=6.0, dot_r=None, font="Num
     pad = font_size * 2.2 if pad is None else pad
     strokes, hints = fit_to_frame(design, frame, pad)
     strokes = order_strokes(strokes)
-    spacing = fit_spacing(strokes, target_dots)
-    # Never let dots get so close that their numbers cannot fit.
-    spacing = max(spacing, font_size * 1.3)
-    sections = [s for s in dots_for_spacing(strokes, spacing) if len(s) >= 2]
-    sections = _merge_near_duplicates(sections, font_size * 0.35)
-    sections = _thin_crowded(sections, font_size * 1.05)
+    floor = font_size * 1.2  # never let dots get so close that numbers cannot fit
+    spacing = max(fit_spacing(strokes, target_dots), floor)
+    # Shapes too small to carry several readable numbers (tiny circles, the
+    # cores of spirals) are printed as solid hint lines instead of dots.
+    tiny = [s for s in strokes if path_length(s) < floor * 5]
+    if tiny:
+        keep = [s for s in strokes if path_length(s) >= floor * 5]
+        hints = hints + tiny
+        strokes = order_strokes(keep)
+        spacing = max(fit_spacing(strokes, target_dots), floor)
+    def sample(sp):
+        secs = [s for s in dots_for_spacing(strokes, sp) if len(s) >= 2]
+        secs = _merge_near_duplicates(secs, font_size * 0.35)
+        return _thin_crowded(secs, font_size * 1.05)
+
+    sections = sample(spacing)
+    # Thinning removes dots where lines bunch up; win them back elsewhere by
+    # tightening the spacing (never below the readable floor).
+    for _ in range(5):
+        n = sum(len(s) for s in sections)
+        if n >= target_dots * 0.98 or spacing <= floor:
+            break
+        spacing = max(floor, spacing * (n / target_dots) ** 0.9)
+        sections = sample(spacing)
     pz = Puzzle(design.title, design.theme, sections, hints, font_size=font_size,
                 dot_r=dot_r or max(0.7, font_size * 0.15), frame=frame)
     place_labels(pz, font, bold_font, milestone)
