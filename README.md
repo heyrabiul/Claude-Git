@@ -53,7 +53,7 @@ size and label collisions) followed by a JSON summary.
 
 | Step | Module |
 |---|---|
-| Line art: 23 built-in, randomisable designs or your SVGs | `dotdot/designs.py`, `dotdot/geometry.py` (`load_svg`) |
+| Line art: 39 built-in, randomisable designs or your SVGs | `dotdot/designs.py`, `dotdot/geometry.py` (`load_svg`) |
 | Order the strokes so each new line starts near where the last one ended | `geometry.order_strokes` |
 | Place dots by arc length, with extra dots on tight curves and sharp corners always kept | `geometry.sample_stroke` |
 | Find the spacing that hits the target dot count | `geometry.fit_spacing` |
@@ -64,10 +64,13 @@ size and label collisions) followed by a JSON summary.
 | Retry with more pattern line or smaller type (never below 4.4 pt or `--min-dots`) if a page is too sparse or crowded | `build_book.build_puzzle` |
 | Render the PDF with embedded TrueType fonts (KDP rejects non-embedded fonts) | `dotdot/render.py` |
 
-Built-in designs: butterfly, flower, sunflower, leaf, tree, nautilus, fish,
-turtle, snail, cat, owl, mushroom, sailboat, house, balloon, lighthouse,
-hearts, spirograph, mandala, Koch snowflake, dragon curve, sun and star
-polygons. Most are randomised by seed, so a 100-page book doesn't repeat itself.
+Built-in designs (39): butterfly, flower, sunflower, leaf, tree, nautilus,
+fish, turtle, snail, cat, owl, mushroom, sailboat, house, balloon, lighthouse,
+hearts, spirograph, mandala, Koch snowflake, dragon curve, sun, star polygons,
+whale, bee, bunny, songbird, ladybug, anchor, umbrella, rocket, teacup,
+cupcake, ice cream, crown, key, apple, cactus and pineapple. Each puzzle also
+gets a random border, background and fill pattern, and most designs are
+randomised by seed. Use a different `--seed` for each volume of a series.
 
 ## Using your own artwork (recommended for animal books)
 

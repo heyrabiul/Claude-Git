@@ -507,6 +507,247 @@ def star(rng):
     return Design(f"{n}-Point Star", [pts, outer, inner], [], "patterns")
 
 
+# ------------------------------------------------------------ more animals
+
+@design("whale", "sea")
+def whale(rng):
+    body = chain(
+        cubic((-3, 0), (-3, 2.2), (0.5, 2.2), (1.8, 0.6), 80),
+        quad((1.8, 0.6), (2.4, 0.6), (2.9, 1.1), 20),
+        [(2.5, 2.0), (3.1, 1.55), (3.8, 2.0), (3.3, 0.95)],
+        quad((3.3, 0.95), (2.4, 0.0), (1.6, -0.6), 30),
+        cubic((1.6, -0.6), (0.5, -1.6), (-2.2, -1.6), (-3, 0), 80),
+    )
+    mouth = quad((-3, 0), (-2.2, -0.35), (-1.3, -0.25))
+    eye = circle(-1.9, 0.45, 0.16, 20)
+    grooves = [quad((-2.6 + k * 0.5, -0.75 - k * 0.04), (-1.8 + k * 0.5, -1.0), (-1.0 + k * 0.5, -0.95 + k * 0.05))
+               for k in range(4)]
+    spout = [quad((-0.6, 1.75), (-0.7, 2.5), (-1.3, 2.8)), quad((-0.5, 1.75), (-0.4, 2.5), (0.2, 2.8)),
+             [(-0.55, 1.75), (-0.55, 2.9)]]
+    return Design("Happy Whale", [body, mouth, eye] + grooves + spout, [circle(-1.9, 0.45, 0.06, 10)], "sea")
+
+
+@design("bee", "animals")
+def bee(rng):
+    body = ellipse(0, 0, 2.0, 1.3, 180)
+    stripes = [arc(x, 0, 1.6, math.radians(140), math.radians(220), 30) for x in (1.6, 2.4, 3.2)]
+    head = circle(-2.3, 0.15, 0.8, 80)
+    wing_l = ellipse(-0.3, 1.9, 0.6, 1.1, 80, rot=0.35)
+    wing_r = ellipse(0.7, 1.8, 0.55, 1.0, 80, rot=-0.4)
+    sting = [(1.98, 0.2), (2.6, 0.0), (1.98, -0.2)]
+    ants = [quad((-2.5, 0.9), (-2.7, 1.6), (-3.2, 1.9)), quad((-2.1, 0.95), (-2.0, 1.7), (-2.4, 2.2))]
+    path = polar(lambda t: 0.25 + 0.12 * t, 0, 3 * math.pi, 220, cx=2.9, cy=2.2)
+    smile = arc(-2.35, 0.05, 0.4, math.radians(220), math.radians(320), 16)
+    hints = [circle(-2.55, 0.35, 0.1, 12), circle(-3.2, 1.9, 0.1, 12), circle(-2.4, 2.2, 0.1, 12)]
+    return Design("Busy Bee", [body, head, wing_l, wing_r, sting, smile, path] + stripes + ants, hints, "animals")
+
+
+@design("rabbit", "animals")
+def rabbit(rng):
+    head = ellipse(0, -0.6, 1.9, 1.65, 180)
+    ear_l = ellipse(-0.8, 2.35, 0.5, 1.6, 100, rot=0.18)
+    ear_r = ellipse(0.8, 2.35, 0.5, 1.6, 100, rot=-0.18)
+    in_l = ellipse(-0.8, 2.35, 0.24, 1.15, 60, rot=0.18)
+    in_r = ellipse(0.8, 2.35, 0.24, 1.15, 60, rot=-0.18)
+    eye_l, eye_r = circle(-0.7, -0.2, 0.3, 36), circle(0.7, -0.2, 0.3, 36)
+    nose = [(-0.25, -0.85), (0.25, -0.85), (0, -1.15), (-0.25, -0.85)]
+    mouth = chain(quad((-0.5, -1.55), (-0.2, -1.65), (0, -1.15)), quad((0, -1.15), (0.2, -1.65), (0.5, -1.55)))
+    teeth = [(-0.18, -1.5), (-0.18, -1.85), (0.18, -1.85), (0.18, -1.5)]
+    whiskers = []
+    for dy in (-0.95, -1.2):
+        whiskers.append([(0.55, -1.0), (2.3, dy)])
+        whiskers.append([(-0.55, -1.0), (-2.3, dy)])
+    hints = [circle(-0.65, -0.12, 0.1, 12), circle(0.75, -0.12, 0.1, 12)]
+    return Design("Bunny", [head, ear_l, ear_r, in_l, in_r, eye_l, eye_r, nose, mouth, teeth] + whiskers, hints, "animals")
+
+
+@design("bird", "animals")
+def bird(rng):
+    body = ellipse(0, 0, 2.0, 1.3, 180, rot=-0.15)
+    head = circle(1.75, 1.05, 0.8, 90)
+    beak = [(2.45, 1.25), (3.15, 1.0), (2.45, 0.8)]
+    wing = chain(cubic((-1.2, 0.4), (-0.2, 1.2), (1.0, 0.6), (1.0, 0.1), 40),
+                 cubic((1.0, 0.1), (0.2, -0.6), (-0.8, -0.4), (-1.2, 0.4), 40))
+    feathers = [quad((-0.8, 0.25), (-0.1, 0.4), (0.6, 0.15)), quad((-0.6, 0.0), (0.0, 0.1), (0.5, -0.15))]
+    tail = [(-1.85, 0.4), (-3.2, 1.1), (-2.9, 0.25), (-3.2, -0.6), (-1.95, -0.25)]
+    legs = [[(-0.2, -1.25), (-0.3, -2.0)], [(0.4, -1.3), (0.35, -2.0)]]
+    branch = chain(quad((-3.4, -2.0), (0, -2.2), (3.4, -1.9)))
+    leaves = [chain(quad((2.4, -1.95), (2.9, -1.4), (3.4, -1.3)), quad((3.4, -1.3), (2.9, -2.0), (2.4, -1.95))),
+              chain(quad((-2.6, -2.05), (-3.0, -2.6), (-3.5, -2.7)), quad((-3.5, -2.7), (-3.0, -2.0), (-2.6, -2.05)))]
+    hints = [circle(1.95, 1.25, 0.12, 14)]
+    return Design("Songbird", [body, head, beak, wing, tail, branch] + feathers + legs + leaves, hints, "animals")
+
+
+@design("ladybug", "animals")
+def ladybug(rng):
+    shell = circle(0, 0, 2.0, 200)
+    head = chain(arc(0, 1.85, 0.95, math.radians(-10), math.radians(190), 50))
+    split = [(0, 1.98), (0, -2.0)]
+    spots = []
+    for x, y, r in [(-1.0, 0.9, 0.38), (1.0, 0.9, 0.38), (-1.2, -0.3, 0.45), (1.2, -0.3, 0.45), (-0.6, -1.3, 0.35), (0.6, -1.3, 0.35)]:
+        spots.append(circle(x, y + rng.uniform(-0.08, 0.08), r, 40))
+    ants = [quad((-0.4, 2.7), (-0.7, 3.3), (-1.2, 3.5)), quad((0.4, 2.7), (0.7, 3.3), (1.2, 3.5))]
+    legs = []
+    for y in (0.8, -0.1, -1.0):
+        legs.append([(-1.9, y), (-2.6, y - 0.3), (-2.9, y - 0.1)])
+        legs.append([(1.9, y), (2.6, y - 0.3), (2.9, y - 0.1)])
+    hints = [circle(-1.2, 3.5, 0.12, 12), circle(1.2, 3.5, 0.12, 12)]
+    return Design("Ladybug", [shell, head, split] + spots + ants + legs, hints, "animals")
+
+
+# ------------------------------------------------------------ objects
+
+@design("anchor", "sea")
+def anchor(rng):
+    ring = circle(0, 3.25, 0.45, 60)
+    shank = [(-0.18, 2.8), (-0.18, -2.3), (0.18, -2.3), (0.18, 2.8)]
+    stock = [(-1.3, 2.25), (1.3, 2.25), (1.3, 1.95), (-1.3, 1.95), (-1.3, 2.25)]
+    arms = arc(0, -0.2, 2.3, math.radians(200), math.radians(340), 80)
+    fl_l = [(-2.6, -0.3), (-2.16, -0.99), (-1.55, -0.55)]
+    fl_r = mirror_x(fl_l)
+    rope = cubic((0.4, 3.0), (2.4, 2.4), (-2.4, 0.6), (0.6, -0.8), 80)
+    return Design("Ship's Anchor", [ring, shank, stock, arms, fl_l, fl_r, rope], [], "sea")
+
+
+@design("umbrella", "travel")
+def umbrella(rng):
+    canopy = chain(arc(0, 0, 3.0, 0, math.pi, 120),
+                   *[arc(cx, 0, 0.75, math.pi, 0, 24) for cx in (-2.25, -0.75, 0.75, 2.25)])
+    ribs = [quad((0, 3.0), (-1.0, 1.6), (-1.5, 0)), quad((0, 3.0), (0, 1.5), (0, 0)), quad((0, 3.0), (1.0, 1.6), (1.5, 0))]
+    tip = [(0, 3.0), (0, 3.5)]
+    handle = chain([(0, 0), (0, -3.0)], arc(-0.45, -3.0, 0.45, 0, -math.pi, 24))
+    drops = []
+    for x, y in [(-3.3, 2.6), (3.2, 3.0), (-2.6, -1.4), (2.7, -1.0), (3.4, -2.6), (-3.4, -2.8)]:
+        drops.append(chain(quad((x, y + 0.45), (x - 0.25, y), (x, y - 0.2)), quad((x, y - 0.2), (x + 0.25, y), (x, y + 0.45))))
+    return Design("Rainy Umbrella", [canopy, tip, handle] + ribs + drops, [], "travel")
+
+
+@design("rocket", "travel")
+def rocket(rng):
+    left = cubic((-0.9, -2.0), (-1.15, 0.5), (-0.8, 2.3), (0, 3.5), 60)
+    body = chain(left, mirror_x(left)[::-1], [(-0.9, -2.0)])
+    win = circle(0, 1.2, 0.45, 50)
+    win2 = circle(0, 0.0, 0.3, 36)
+    fin_l = [(-0.95, -0.8), (-1.9, -2.5), (-0.9, -2.0)]
+    fin_r = mirror_x(fin_l)
+    flame = [(-0.6, -2.0), (-0.45, -2.8), (-0.2, -2.3), (0, -3.3), (0.2, -2.3), (0.45, -2.8), (0.6, -2.0)]
+    planet = circle(2.4, 2.3, 0.6, 60)
+    ring = ellipse(2.4, 2.3, 1.0, 0.25, 80, rot=-0.3)
+    stars = []
+    for x, y, s in [(-2.5, 2.6, 0.35), (-2.2, -1.2, 0.3), (2.3, -0.6, 0.3), (-2.8, 0.6, 0.25)]:
+        stars.append([(x + s * 1.0 * math.cos(math.pi / 2 + k * math.pi / 5) * (1 if k % 2 == 0 else 0.45),
+                       y + s * math.sin(math.pi / 2 + k * math.pi / 5) * (1 if k % 2 == 0 else 0.45)) for k in range(11)])
+    return Design("Space Rocket", [body, win, win2, fin_l, fin_r, flame, planet, ring] + stars, [], "travel")
+
+
+@design("teacup", "misc")
+def teacup(rng):
+    rim = ellipse(0, 1.5, 2.0, 0.35, 120)
+    left = cubic((-2.0, 1.5), (-2.0, -0.8), (-1.0, -1.5), (0, -1.5), 50)
+    cup = chain(left, mirror_x(left)[::-1])
+    handle = chain(arc(2.0, 0.45, 0.75, math.radians(110), math.radians(-80), 40))
+    saucer = ellipse(0, -1.7, 2.9, 0.45, 160)
+    steam = [parametric(lambda t, x=x: x + 0.25 * math.sin(3 * t), lambda t: 2.0 + t, 0, 1.4, 60) for x in (-0.7, 0, 0.7)]
+    heart = [(math.sin(t) ** 3 * 0.45, (13 * math.cos(t) - 5 * math.cos(2 * t) - 2 * math.cos(3 * t) - math.cos(4 * t)) / 16 * 0.45 + 0.15)
+             for t in [TAU * i / 80 for i in range(81)]]
+    return Design("Cup of Tea", [rim, cup, handle, saucer, heart] + steam, [], "misc")
+
+
+@design("cupcake", "misc")
+def cupcake(rng):
+    wrapper = [(-1.6, 0), (1.6, 0), (1.2, -2.4), (-1.2, -2.4), (-1.6, 0)]
+    pleats = [[(x, 0), (x * 0.75, -2.4)] for x in (-0.8, 0, 0.8)]
+    frosting = chain(arc(-1.2, 0.35, 0.7, math.pi * 1.05, math.pi * 0.4, 24),
+                     arc(0, 1.1, 0.9, math.pi * 0.9, math.pi * 0.1, 30),
+                     arc(1.2, 0.35, 0.7, math.pi * 0.6, -math.pi * 0.05, 24),
+                     [(-1.87, 0.17)])
+    swirl = arc(0, 1.6, 0.55, math.pi * 1.0, 0, 24)
+    cherry = circle(0, 2.55, 0.35, 40)
+    stem = quad((0.1, 2.88), (0.3, 3.3), (0.6, 3.5))
+    return Design("Cupcake", [wrapper, frosting, swirl, cherry, stem] + pleats, [], "misc")
+
+
+@design("icecream", "misc")
+def icecream(rng):
+    cone = [(-1.1, 0), (1.1, 0), (0, -3.4), (-1.1, 0)]
+    hatch = []
+    for k in range(1, 4):
+        y = -k * 0.75
+        w = 1.1 * (1 + y / 3.4)
+        hatch.append([(-w, y), (w, y)])
+    scoop1 = chain(arc(0, 0.85, 1.3, -0.2, math.pi + 0.2, 60),
+                   parametric(lambda t: -t, lambda t: 0.6 + 0.12 * math.sin(6 * t), 1.27, -1.27, 60)[::-1])
+    scoop2 = arc(0, 2.45, 0.95, -0.15, math.pi + 0.15, 50)
+    cherry = circle(0, 3.65, 0.3, 36)
+    return Design("Ice Cream Cone", [cone, scoop1, scoop2, cherry] + hatch, [], "misc")
+
+
+@design("crown", "misc")
+def crown(rng):
+    outline = [(-2.4, -1.0), (-2.6, 1.6), (-1.3, 0.4), (0, 2.2), (1.3, 0.4), (2.6, 1.6), (2.4, -1.0), (-2.4, -1.0)]
+    band = [(-2.45, -0.4), (2.45, -0.4)]
+    tips = [circle(x, y + 0.3, 0.25, 30) for x, y in [(-2.6, 1.6), (0, 2.2), (2.6, 1.6)]]
+    gems = [ellipse(x, -0.7, 0.3, 0.18, 30) for x in (-1.4, 0, 1.4)]
+    jewel = [(0, 1.0), (0.35, 0.55), (0, 0.1), (-0.35, 0.55), (0, 1.0)]
+    return Design("Royal Crown", [outline, band, jewel] + tips + gems, [], "misc")
+
+
+@design("key", "misc")
+def key(rng):
+    bow = circle(-2.0, 0, 1.1, 120)
+    inner = circle(-2.0, 0, 0.5, 60)
+    shaft = [(-0.92, 0.25), (2.8, 0.25), (2.8, -0.25), (2.6, -0.25), (2.6, -0.9), (2.2, -0.9), (2.2, -0.25),
+             (1.8, -0.25), (1.8, -0.7), (1.5, -0.7), (1.5, -0.25), (-0.92, -0.25)]
+    collar = [[(-0.6, 0.4), (-0.6, -0.4)], [(-0.35, 0.4), (-0.35, -0.4)]]
+    return Design("Old Key", [bow, inner, shaft] + collar, [], "misc")
+
+
+@design("apple", "nature")
+def apple(rng):
+    right = chain(cubic((0, 1.3), (0.6, 2.0), (2.3, 2.0), (2.2, 0.2), 50),
+                  cubic((2.2, 0.2), (2.1, -1.6), (1.0, -2.4), (0.4, -2.2), 40), quad((0.4, -2.2), (0.2, -2.1), (0, -2.15), 10))
+    body = chain(right, mirror_x(right)[::-1])
+    stem = quad((0, 1.3), (0.1, 2.0), (0.35, 2.6))
+    leaf = chain(quad((0.2, 2.2), (0.9, 2.9), (1.6, 2.5)), quad((1.6, 2.5), (0.9, 1.9), (0.2, 2.2)))
+    shine = arc(-1.1, 0.4, 0.8, math.radians(110), math.radians(170), 20)
+    return Design("Apple", [body, stem, leaf, shine], [], "nature")
+
+
+@design("cactus", "nature")
+def cactus(rng):
+    body = chain([(-0.6, -2.5), (-0.6, 2.0)], arc(0, 2.0, 0.6, math.pi, 0, 30), [(0.6, -2.5)])
+    arm_r = chain([(0.6, 0.4), (1.2, 0.4), (1.2, 1.5)], arc(1.55, 1.5, 0.35, math.pi, 0, 16),
+                  [(1.9, 0.0)], quad((1.9, 0.0), (1.9, -0.3), (1.4, -0.3)), [(0.6, -0.3)])
+    arm_l = chain([(-0.6, -0.4), (-1.1, -0.4), (-1.1, 0.6)], arc(-1.45, 0.6, 0.35, 0, math.pi, 16),
+                  [(-1.8, -0.8)], quad((-1.8, -0.8), (-1.8, -1.1), (-1.3, -1.1)), [(-0.6, -1.1)])
+    ribs = [[(-0.2, -2.5), (-0.2, 2.3)], [(0.2, -2.5), (0.2, 2.3)]]
+    rim = [(-1.5, -2.5), (1.5, -2.5), (1.5, -2.95), (-1.5, -2.95), (-1.5, -2.5)]
+    pot = [(-1.3, -2.95), (-1.05, -4.2), (1.05, -4.2), (1.3, -2.95)]
+    flower = polar(lambda t: 0.25 + 0.2 * abs(math.cos(2.5 * t)), n=200, cy=2.85)
+    return Design("Cactus", [body, arm_r, arm_l, rim, pot, flower] + ribs, [], "nature")
+
+
+@design("pineapple", "nature")
+def pineapple(rng):
+    body = ellipse(0, -0.9, 1.6, 2.2, 180)
+    hatch = []
+    for k in range(-3, 4):
+        for sgn in (1, -1):
+            pts = []
+            for i in range(60):
+                y = -3.1 + 4.4 * i / 59
+                x = sgn * (y + 0.9) * 0.7 + k * 0.7
+                if (x / 1.5) ** 2 + ((y + 0.9) / 2.1) ** 2 < 1:
+                    pts.append((x, y))
+            if len(pts) > 4:
+                hatch.append(pts)
+    leaves = []
+    for a, s in [(-0.7, 0.8), (-0.35, 1.0), (0, 1.2), (0.35, 1.0), (0.7, 0.8)]:
+        leaf = chain(quad((0, 0), (-0.28, 0.9), (0, 1.8)), quad((0, 1.8), (0.28, 0.9), (0, 0)))
+        leaves.append(transform(leaf, dx=0, dy=1.25, s=s, rot=a))
+    return Design("Pineapple", [body] + hatch + leaves, [], "nature")
+
+
 def decorate(d, aspect, rng):
     """Add a decorative dotted border that fills the page around a design.
     Used when a picture alone cannot carry the requested number of dots."""
