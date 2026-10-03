@@ -39,7 +39,7 @@ def ice_cream_cone(rng):
     c = cone(0, -0.2, 1.3, 2.8)
     s = scoop(0, 0.6, 1.5, 6)
     sprinkles = [[(x, y), (x + 0.2 * math.cos(a), y + 0.2 * math.sin(a))] for x, y, a in [(-0.6, 1.2, 0.5), (0.3, 1.6, 2.0), (0.8, 0.8, 1.0), (-0.2, 0.5, 2.6), (0.6, 1.9, 0.2)]]
-    return make("Ice Cream Cone", c + [s] + cherry(0, 2.35, 0.3) + sprinkles)
+    return make("Waffle Cone Ice Cream", c + [s] + cherry(0, 2.35, 0.3) + sprinkles)
 
 
 @design("ds_triple_scoop", T)

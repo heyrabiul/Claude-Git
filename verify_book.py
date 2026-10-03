@@ -36,9 +36,13 @@ MIN_DOTS, MAX_DOTS = 1000, 2000
 SOLUTIONS_PER_PAGE = 4
 
 TITLE_THEME = {}
+DUP_TITLES = []  # two designs sharing a title would make theme checks ambiguous
 for name, (fn, theme) in designs.REGISTRY.items():
     try:
-        TITLE_THEME[designs.build(name, 0).title] = theme
+        title = designs.build(name, 0).title
+        if title in TITLE_THEME:
+            DUP_TITLES.append(title)
+        TITLE_THEME[title] = theme
     except Exception as e:  # a broken design must not stop verification
         print(f"WARNING: design {name} cannot be built: {e}")
 
@@ -327,6 +331,9 @@ def main(paths):
             main_books[m].append(r["file"])
     shared_mains = [m for m, f in main_books.items() if len(f) > 1]
     print(f"Niche main pictures used in more than one book: {len(shared_mains)}")
+    print(f"Design titles shared by more than one design: {len(DUP_TITLES)}")
+    if DUP_TITLES:
+        reports[0]["errors"].append(f"design titles not unique: {DUP_TITLES[:5]}")
     if shared_mains:
         reports[0]["errors"].append(f"niche main pictures repeated across books: {shared_mains[:5]}")
     print(f"\nScenes appearing in more than one book: {len(cross)}")

@@ -160,7 +160,7 @@ def spider_web(rng):
         rings.append(pts + [pts[0]])
     spider = [circle(1.8, -1.9, 0.35, 20), circle(1.8, -1.4, 0.2, 14), [(1.8, -1.2), (cx + 1.8 * math.cos(-0.97), cy + 1.8 * math.sin(-0.97))]]
     legs = [[(1.8 + s * 0.3, -1.9 + dy), (1.8 + s * 0.7, -1.7 + dy), (1.8 + s * 0.9, -2.1 + dy)] for s in (-1, 1) for dy in (0.15, -0.15)]
-    return make("Spider Web", spokes + rings + spider + legs)
+    return make("Spooky Spider Web", spokes + rings + spider + legs)
 
 
 @design("hw_spooky_owl", T)
