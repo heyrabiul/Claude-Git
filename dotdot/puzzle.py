@@ -115,6 +115,7 @@ def make_puzzle(design, frame, target_dots, font_size=6.0, dot_r=None, font="Num
     strokes, hints = fit_to_frame(design, frame, pad)
     strokes = order_strokes(strokes)
     floor = font_size * 1.2  # never let dots get so close that numbers cannot fit
+    dot_radius = dot_r or max(0.7, font_size * 0.15)
     spacing = max(fit_spacing(strokes, target_dots), floor)
     # Shapes too small to carry several readable numbers (tiny circles, the
     # cores of spirals) are printed as solid hint lines instead of dots.
@@ -126,7 +127,7 @@ def make_puzzle(design, frame, target_dots, font_size=6.0, dot_r=None, font="Num
         spacing = max(fit_spacing(strokes, target_dots), floor)
     def sample(sp):
         secs = [s for s in dots_for_spacing(strokes, sp) if len(s) >= 2]
-        secs = _merge_near_duplicates(secs, font_size * 0.35)
+        secs = _merge_near_duplicates(secs, max(font_size * 0.35, 2 * dot_radius + 1.2))
         return _thin_crowded(secs, font_size * 1.05)
 
     sections = sample(spacing)
@@ -139,7 +140,7 @@ def make_puzzle(design, frame, target_dots, font_size=6.0, dot_r=None, font="Num
         spacing = max(floor, spacing * (n / target_dots) ** 0.9)
         sections = sample(spacing)
     pz = Puzzle(design.title, design.theme, sections, hints, font_size=font_size,
-                dot_r=dot_r or max(0.7, font_size * 0.15), frame=frame)
+                dot_r=dot_radius, frame=frame)
     place_labels(pz, font, bold_font, milestone)
     # Repair: a dot whose number could be misread is removed (the line
     # simply runs straight past it) and the page is renumbered.
@@ -223,7 +224,7 @@ class _PointGrid:
 
 
 CLAIM_MARGIN = 1.2   # placement: own dot must be this much closer than any other
-AUDIT_MARGIN = 0.6   # audit: anything tighter than this counts as ambiguous
+AUDIT_MARGIN = 0.9   # audit: anything tighter than this counts as ambiguous (verifier uses 0.5)
 
 
 def _flat_dots(pz):
@@ -382,7 +383,16 @@ def audit_labels(pz):
     for i, rc in enumerate(rects):
         label_grid.add(rc, i)
     bad = {}
+    # Two different dots this close look like one blob.
+    touch = 2 * r + 1.0
+    for idx, d in enumerate(dots):
+        p = d[0]
+        for q, j in dot_grid.near((p[0] - touch, p[1] - touch, p[0] + touch, p[1] + touch)):
+            if j > idx and q is not p and q != p and math.dist(p, q) < touch:
+                bad[j] = "dot touches a dot"
     for idx, rect in enumerate(rects):
+        if idx in bad:
+            continue
         p = dots[idx][0]
         if rect[0] < fx0 or rect[2] > fx1 or rect[1] < fy0 or rect[3] > fy1:
             bad[idx] = "outside frame"
