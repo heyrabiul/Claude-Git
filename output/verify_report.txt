@@ -73,3 +73,14 @@
    margins (in): {'left': 0.615, 'top': 0.591, 'right': 0.615, 'bottom': 0.625}  required gutter: 0.375
    scenes: 50 distinct of 50; themes {'halloween': 132}
    OK
+
+== output/niche_desserts.pdf: 117 pages, 50 puzzles, 71342 dots (min 1003, max 1919)
+   margins (in): {'left': 0.615, 'top': 0.591, 'right': 0.615, 'bottom': 0.625}  required gutter: 0.375
+   scenes: 50 distinct of 50; themes {'desserts': 133}
+   OK
+Niche main pictures used in more than one book: 0
+Design titles shared by more than one design: 0
+
+Scenes appearing in more than one book: 0
+Total errors: 0
+verify exit code: 0
