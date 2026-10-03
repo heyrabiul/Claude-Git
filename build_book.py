@@ -142,6 +142,12 @@ def build_puzzle(item, seed, target, frame, args):
         if short and not crowded and pz.dot_count < args.min_dots:
             target = int(target * args.min_dots / max(1, pz.dot_count)) + 5
         pz = make_puzzle(d, frame, target, font_size=fs)
+    # Hard cap: never exceed --max-dots.
+    for _ in range(3):
+        if pz.dot_count <= args.max_dots:
+            break
+        target -= pz.dot_count - args.max_dots + 3
+        pz = make_puzzle(d, frame, target, font_size=fs)
     return pz
 
 
