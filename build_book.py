@@ -60,6 +60,9 @@ def difficulty_targets(args, rng):
 
 def scene_schedule(args, rng):
     """Unique multi-subject scenes: this volume's slice of the series plan."""
+    if args.niche:
+        keys = compose.all_plans()[f"niche:{args.niche}"]
+        return [(key, compose.key_seed(key), t) for key, t in zip(keys, difficulty_targets(args, rng))]
     pool = compose.scene_pool(args.theme)
     plan = compose.plan_series(pool, args.volumes, args.puzzles, args.series_seed)
     keys = plan[args.volume - 1]
@@ -288,6 +291,7 @@ def main(argv=None):
     ap.add_argument("--series-seed", type=int, default=7, help="seed of the series-wide scene plan")
     ap.add_argument("--single-subjects", action="store_true",
                     help="one subject per page instead of unique multi-subject scenes")
+    ap.add_argument("--niche", help="build the 50-puzzle book for this niche (see dotdot/niches)")
     ap.add_argument("--theme", nargs="*", help=f"limit to these design themes: {', '.join(themes)}")
     ap.add_argument("--only", nargs="*", help=f"limit to these built-in designs: {', '.join(designs.REGISTRY)}")
     ap.add_argument("--solutions-per-page", type=int, choices=(1, 2, 4, 6), default=4,
@@ -300,6 +304,16 @@ def main(argv=None):
     ap.add_argument("--author", default="")
     ap.add_argument("--out", default="output/dot_to_dot_book.pdf")
     args = ap.parse_args(argv)
+    if args.niche:
+        from dotdot.niches import NICHES
+        if args.niche not in NICHES:
+            sys.exit(f"unknown niche {args.niche!r}; choose from: {', '.join(NICHES)}")
+        args.puzzles = compose.NICHE_BOOK_PUZZLES
+        name = NICHES[args.niche]["title"]
+        if args.title == ap.get_default("title"):
+            args.title = f"{name} Extreme Dot-to-Dot for Adults"
+        if args.subtitle == ap.get_default("subtitle"):
+            args.subtitle = f"{args.puzzles} unique scenes, {args.min_dots:,} to {args.max_dots:,} dots each"
     if args.large_print:
         args.max_dots = min(args.max_dots, 450)
         args.min_dots = min(args.min_dots, 150)

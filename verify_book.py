@@ -263,14 +263,20 @@ def verify(path, kind):
     if unknown:
         rep["errors"].append(f"unknown subjects: {unknown}")
     themes = Counter(TITLE_THEME.get(p, "custom") for p in names)
-    if kind in designs.HOLIDAY_THEMES:
+    if kind.startswith("niche:"):
+        from dotdot.compose import niche_pool
+        allowed = {designs.build(n, 0).title for n in niche_pool(kind[6:])}
+        wrong = [p for p in names if p not in allowed]
+        if wrong:
+            rep["errors"].append(f"subjects outside the {kind[6:]} niche: {sorted(set(wrong))}")
+    elif kind in designs.HOLIDAY_THEMES:
         wrong = [p for p in names if TITLE_THEME.get(p) != kind]
         if wrong:
             rep["errors"].append(f"non-{kind} subjects: {sorted(set(wrong))}")
     else:
-        hol = [p for p in names if TITLE_THEME.get(p) in designs.HOLIDAY_THEMES]
+        hol = [p for p in names if TITLE_THEME.get(p) in designs.SPECIAL_THEMES]
         if hol:
-            rep["errors"].append(f"holiday subjects in a regular book: {sorted(set(hol))}")
+            rep["errors"].append(f"holiday/niche subjects in a regular book: {sorted(set(hol))}")
     rep["themes"] = dict(themes)
     dups = [t for t, c in Counter(rep["subjects"]).items() if c > 1]
     if dups:
@@ -284,7 +290,9 @@ def verify(path, kind):
 def main(paths):
     reports = []
     for p in paths:
-        kind = "christmas" if "christmas" in p else "thanksgiving" if "thanksgiving" in p else "regular"
+        m = re.search(r"niche_([a-z]+)", p)
+        kind = (f"niche:{m.group(1)}" if m else "christmas" if "christmas" in p
+                else "thanksgiving" if "thanksgiving" in p else "regular")
         r = verify(p, kind)
         reports.append(r)
         dc = [d for d in r.get("dot_counts", []) if d]

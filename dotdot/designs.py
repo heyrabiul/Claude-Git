@@ -754,6 +754,9 @@ def pineapple(rng):
 # Holiday themes are left out of normal books; select them with --theme.
 
 HOLIDAY_THEMES = {"christmas", "thanksgiving"}
+# Themes kept out of the general books: holidays plus every niche theme
+# (niche modules add theirs when they are imported at the end of this file).
+SPECIAL_THEMES = set(HOLIDAY_THEMES)
 
 
 def _star_pts(cx, cy, r, n=5, inner=0.45):
@@ -1135,3 +1138,7 @@ def build(name, seed):
     d = fn(random.Random(seed))
     d.theme = theme
     return d
+
+
+# Niche designs register themselves (theme = niche slug) on import.
+from . import niches  # noqa: E402,F401

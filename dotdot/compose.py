@@ -43,16 +43,25 @@ def scene_pool(themes=None, holiday=False):
         if themes:
             if theme in themes:
                 out.append(name)
-        elif holiday == (theme in designs.HOLIDAY_THEMES):
+        elif not holiday and theme not in designs.SPECIAL_THEMES:
+            out.append(name)
+        elif holiday and theme in designs.HOLIDAY_THEMES:
             out.append(name)
     return out
+
+
+def niche_pool(slug):
+    """Designs for a niche book: its own designs plus any reused ones."""
+    from .niches import NICHES
+    own = [n for n, (_, t) in designs.REGISTRY.items() if t == slug]
+    return own + [n for n in NICHES[slug]["reuse"] if n not in own]
 
 
 def _theme(name):
     return designs.REGISTRY[name][1]
 
 
-def plan_series(pool, books, per_book, seed):
+def plan_series(pool, books, per_book, seed, used=None, all_friends=False):
     """Plan `books` volumes of `per_book` scenes each.
 
     Returns a list (one per volume) of (main, (companion, ...)) keys.
@@ -60,7 +69,7 @@ def plan_series(pool, books, per_book, seed):
     subjects are spread as evenly as possible and never repeat back to back.
     """
     rng = random.Random(seed)
-    used = set()
+    used = set() if used is None else used
     plan = []
     for _ in range(books):
         # Main subjects: cycle through the pool so each is used about
@@ -75,7 +84,10 @@ def plan_series(pool, books, per_book, seed):
         mains = mains[:per_book]
         volume = []
         for main in mains:
-            friends = [n for n in pool if n != main and _theme(n) in FRIENDS.get(_theme(main), [])]
+            if all_friends:
+                friends = [n for n in pool if n != main]
+            else:
+                friends = [n for n in pool if n != main and _theme(n) in FRIENDS.get(_theme(main), [_theme(main)])]
             others = [n for n in pool if n != main and n not in friends]
             key = None
             for attempt in range(400):
@@ -157,3 +169,31 @@ def _union(boxes):
 
 def _overlap(a, b, pad):
     return a[0] < b[2] + pad and b[0] < a[2] + pad and a[1] < b[3] + pad and b[1] < a[3] + pad
+
+
+# Series that already exist, planned exactly as build_all.sh builds them.
+GENERAL = dict(volumes=4, per_book=100, seed=7)
+HOLIDAYS = {"christmas": 1225, "thanksgiving": 1127}
+NICHE_BOOK_PUZZLES = 50
+
+
+def all_plans():
+    """Every book's scene plan, in a fixed order, sharing one used-set so
+    that no scene appears twice anywhere across all books."""
+    from .niches import NICHES
+    used = set()
+    out = {}
+    general = plan_series(scene_pool(), GENERAL["volumes"], GENERAL["per_book"], GENERAL["seed"])
+    for v, keys in enumerate(general, 1):
+        out[f"vol{v}"] = keys
+    for name, seed in HOLIDAYS.items():
+        out[name] = plan_series(scene_pool([name]), 1, 50, seed)[0]
+    for keys in out.values():
+        used.update(keys)
+    for slug, cfg in NICHES.items():
+        pool = niche_pool(slug)
+        if len(pool) < 6:
+            continue  # niche art not drawn yet
+        seed = int(hashlib.sha1(slug.encode()).hexdigest()[:8], 16)
+        out[f"niche:{slug}"] = plan_series(pool, 1, NICHE_BOOK_PUZZLES, seed, used=used, all_friends=True)[0]
+    return out
