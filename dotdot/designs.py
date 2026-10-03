@@ -27,6 +27,8 @@ REGISTRY = {}
 
 def design(name, theme):
     def deco(fn):
+        if name in REGISTRY:
+            raise ValueError(f"duplicate design name: {name}")
         REGISTRY[name] = (fn, theme)
         return fn
     return deco
