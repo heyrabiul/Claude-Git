@@ -51,10 +51,30 @@ def scene_pool(themes=None, holiday=False):
 
 
 def niche_pool(slug):
-    """Designs for a niche book: its own designs plus any reused ones."""
-    from .niches import NICHES
-    own = [n for n, (_, t) in designs.REGISTRY.items() if t == slug]
-    return own + [n for n in NICHES[slug]["reuse"] if n not in own]
+    """A niche book's own designs.  Nothing is borrowed from other books, so
+    every main picture in the niche book is new."""
+    return [n for n, (_, t) in designs.REGISTRY.items() if t == slug]
+
+
+def plan_niche(pool, per_book, seed, used):
+    """One niche book: every page gets a DIFFERENT main picture (the pool
+    must hold at least `per_book` designs), plus one or two companions from
+    the same niche.  Keys are added to the shared `used` set."""
+    rng = random.Random(seed)
+    if len(pool) < per_book:
+        raise ValueError(f"need {per_book} designs, have {len(pool)}")
+    mains = pool[:]
+    rng.shuffle(mains)
+    out = []
+    for main in mains[:per_book]:
+        others = [n for n in pool if n != main]
+        for _ in range(200):
+            comp = tuple(sorted(rng.sample(others, 1 if rng.random() < 0.35 else 2)))
+            if (main, comp) not in used:
+                break
+        used.add((main, comp))
+        out.append((main, comp))
+    return out
 
 
 def _theme(name):
@@ -190,10 +210,10 @@ def all_plans():
         out[name] = plan_series(scene_pool([name]), 1, 50, seed)[0]
     for keys in out.values():
         used.update(keys)
-    for slug, cfg in NICHES.items():
+    for slug in NICHES:
         pool = niche_pool(slug)
-        if len(pool) < 6:
-            continue  # niche art not drawn yet
+        if len(pool) < NICHE_BOOK_PUZZLES:
+            continue  # niche art not finished yet
         seed = int(hashlib.sha1(slug.encode()).hexdigest()[:8], 16)
-        out[f"niche:{slug}"] = plan_series(pool, 1, NICHE_BOOK_PUZZLES, seed, used=used, all_friends=True)[0]
+        out[f"niche:{slug}"] = plan_niche(pool, NICHE_BOOK_PUZZLES, seed, used)
     return out

@@ -10,7 +10,8 @@ import pkgutil
 
 from .. import designs
 
-# slug: title (book: "<title> Extreme Dot-to-Dot for Adults"), reuse.
+# slug: title (book: "<title> Extreme Dot-to-Dot for Adults").  "reuse" is
+# kept for reference only: niche books no longer borrow other books' art.
 NICHES = {
     "ocean": {"title": "Ocean Life", "reuse": ["fish", "turtle", "whale", "nautilus"]},
     "cats": {"title": "Cats", "reuse": ["cat"]},
@@ -73,6 +74,11 @@ for _m in pkgutil.iter_modules(__path__):
 
 
 def ready():
-    """Niches whose art exists (enough designs to plan 50 unique scenes)."""
+    """Niches whose art is finished: 50 different main pictures."""
+    from ..compose import NICHE_BOOK_PUZZLES, niche_pool
+    return [s for s in NICHES if len(niche_pool(s)) >= NICHE_BOOK_PUZZLES]
+
+
+def progress():
     from ..compose import niche_pool
-    return [s for s in NICHES if len(niche_pool(s)) >= 6]
+    return {s: len(niche_pool(s)) for s in NICHES}
