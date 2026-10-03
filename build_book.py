@@ -195,7 +195,11 @@ def build_puzzle(item, seed, target, frame, args):
             target -= pz.dot_count - args.max_dots + 5
         else:
             target += 7 if k % 2 else -11
-        if extreme and k % 4 == 0:
+        if extreme and pz.collisions and k % 2 == 0:
+            # Crowded: more pattern line spreads the same dots further apart.
+            budget = min(budget * 1.15, 4.0)
+            d = scene(budget, salt=k // 2)
+        elif extreme and k % 4 == 0:
             d = scene(budget, salt=k // 4)
         pz = make_puzzle(d, frame, target, font_size=fs)
     if not ok(pz):

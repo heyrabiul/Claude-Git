@@ -29,19 +29,19 @@
    scenes: 50 distinct of 50; themes {'thanksgiving': 131}
    OK
 
-== output/niche_ocean.pdf: 117 pages, 50 puzzles, 70774 dots (min 1003, max 1908)
+== output/niche_autumn.pdf: 117 pages, 50 puzzles, 69289 dots (min 1002, max 1906)
    margins (in): {'left': 0.615, 'top': 0.591, 'right': 0.615, 'bottom': 0.625}  required gutter: 0.375
-   scenes: 50 distinct of 50; themes {'ocean': 137}
+   scenes: 50 distinct of 50; themes {'autumn': 133}
    OK
 
-== output/niche_cats.pdf: 117 pages, 50 puzzles, 70876 dots (min 1004, max 1948)
+== output/niche_aviation.pdf: 117 pages, 50 puzzles, 70450 dots (min 1005, max 1917)
    margins (in): {'left': 0.615, 'top': 0.591, 'right': 0.615, 'bottom': 0.625}  required gutter: 0.375
-   scenes: 50 distinct of 50; themes {'cats': 132}
+   scenes: 50 distinct of 50; themes {'aviation': 133}
    OK
 
-== output/niche_dogs.pdf: 117 pages, 50 puzzles, 71430 dots (min 1012, max 1940)
+== output/niche_beach.pdf: 117 pages, 50 puzzles, 71086 dots (min 1012, max 1891)
    margins (in): {'left': 0.615, 'top': 0.591, 'right': 0.615, 'bottom': 0.625}  required gutter: 0.375
-   scenes: 50 distinct of 50; themes {'dogs': 138}
+   scenes: 50 distinct of 50; themes {'beach': 132}
    OK
 
 == output/niche_birds.pdf: 117 pages, 50 puzzles, 70802 dots (min 1002, max 1931)
@@ -54,9 +54,34 @@
    scenes: 50 distinct of 50; themes {'bugs': 139}
    OK
 
-== output/niche_garden.pdf: 117 pages, 50 puzzles, 70501 dots (min 1005, max 1929)
+== output/niche_cats.pdf: 117 pages, 50 puzzles, 70876 dots (min 1004, max 1948)
    margins (in): {'left': 0.615, 'top': 0.591, 'right': 0.615, 'bottom': 0.625}  required gutter: 0.375
-   scenes: 50 distinct of 50; themes {'garden': 134}
+   scenes: 50 distinct of 50; themes {'cats': 132}
+   OK
+
+== output/niche_coffee.pdf: 117 pages, 50 puzzles, 70890 dots (min 1003, max 1937)
+   margins (in): {'left': 0.615, 'top': 0.591, 'right': 0.615, 'bottom': 0.625}  required gutter: 0.375
+   scenes: 50 distinct of 50; themes {'coffee': 138}
+   OK
+
+== output/niche_desserts.pdf: 117 pages, 50 puzzles, 71342 dots (min 1003, max 1919)
+   margins (in): {'left': 0.615, 'top': 0.591, 'right': 0.615, 'bottom': 0.625}  required gutter: 0.375
+   scenes: 50 distinct of 50; themes {'desserts': 133}
+   OK
+
+== output/niche_dinosaurs.pdf: 117 pages, 50 puzzles, 70264 dots (min 1000, max 1938)
+   margins (in): {'left': 0.615, 'top': 0.591, 'right': 0.615, 'bottom': 0.625}  required gutter: 0.375
+   scenes: 50 distinct of 50; themes {'dinosaurs': 132}
+   OK
+
+== output/niche_dogs.pdf: 117 pages, 50 puzzles, 71430 dots (min 1012, max 1940)
+   margins (in): {'left': 0.615, 'top': 0.591, 'right': 0.615, 'bottom': 0.625}  required gutter: 0.375
+   scenes: 50 distinct of 50; themes {'dogs': 138}
+   OK
+
+== output/niche_easter.pdf: 117 pages, 50 puzzles, 70808 dots (min 1001, max 1991)
+   margins (in): {'left': 0.615, 'top': 0.591, 'right': 0.615, 'bottom': 0.625}  required gutter: 0.375
+   scenes: 50 distinct of 50; themes {'easter': 132}
    OK
 
 == output/niche_farm.pdf: 117 pages, 50 puzzles, 70767 dots (min 1016, max 1966)
@@ -64,9 +89,14 @@
    scenes: 50 distinct of 50; themes {'farm': 129}
    OK
 
-== output/niche_space.pdf: 117 pages, 50 puzzles, 71193 dots (min 1000, max 1878)
+== output/niche_fruits.pdf: 117 pages, 50 puzzles, 70584 dots (min 1002, max 1930)
    margins (in): {'left': 0.615, 'top': 0.591, 'right': 0.615, 'bottom': 0.625}  required gutter: 0.375
-   scenes: 50 distinct of 50; themes {'space': 134}
+   scenes: 50 distinct of 50; themes {'fruits': 134}
+   OK
+
+== output/niche_garden.pdf: 117 pages, 50 puzzles, 70501 dots (min 1005, max 1929)
+   margins (in): {'left': 0.615, 'top': 0.591, 'right': 0.615, 'bottom': 0.625}  required gutter: 0.375
+   scenes: 50 distinct of 50; themes {'garden': 134}
    OK
 
 == output/niche_halloween.pdf: 117 pages, 50 puzzles, 70592 dots (min 1001, max 1914)
@@ -74,9 +104,59 @@
    scenes: 50 distinct of 50; themes {'halloween': 132}
    OK
 
-== output/niche_desserts.pdf: 117 pages, 50 puzzles, 71342 dots (min 1003, max 1919)
+== output/niche_ocean.pdf: 117 pages, 50 puzzles, 70774 dots (min 1003, max 1908)
    margins (in): {'left': 0.615, 'top': 0.591, 'right': 0.615, 'bottom': 0.625}  required gutter: 0.375
-   scenes: 50 distinct of 50; themes {'desserts': 133}
+   scenes: 50 distinct of 50; themes {'ocean': 137}
+   OK
+
+== output/niche_patriotic.pdf: 117 pages, 50 puzzles, 70562 dots (min 1002, max 1949)
+   margins (in): {'left': 0.615, 'top': 0.591, 'right': 0.615, 'bottom': 0.625}  required gutter: 0.375
+   scenes: 50 distinct of 50; themes {'patriotic': 132}
+   OK
+
+== output/niche_safari.pdf: 117 pages, 50 puzzles, 71090 dots (min 1013, max 1946)
+   margins (in): {'left': 0.615, 'top': 0.591, 'right': 0.615, 'bottom': 0.625}  required gutter: 0.375
+   scenes: 50 distinct of 50; themes {'safari': 134}
+   OK
+
+== output/niche_ships.pdf: 117 pages, 50 puzzles, 70872 dots (min 1047, max 1900)
+   margins (in): {'left': 0.615, 'top': 0.591, 'right': 0.615, 'bottom': 0.625}  required gutter: 0.375
+   scenes: 50 distinct of 50; themes {'ships': 134}
+   OK
+
+== output/niche_space.pdf: 117 pages, 50 puzzles, 71193 dots (min 1000, max 1878)
+   margins (in): {'left': 0.615, 'top': 0.591, 'right': 0.615, 'bottom': 0.625}  required gutter: 0.375
+   scenes: 50 distinct of 50; themes {'space': 134}
+   OK
+
+== output/niche_spring.pdf: 117 pages, 50 puzzles, 71223 dots (min 1023, max 1941)
+   margins (in): {'left': 0.615, 'top': 0.591, 'right': 0.615, 'bottom': 0.625}  required gutter: 0.375
+   scenes: 50 distinct of 50; themes {'spring': 136}
+   OK
+
+== output/niche_stpatrick.pdf: 117 pages, 50 puzzles, 70014 dots (min 1001, max 1930)
+   margins (in): {'left': 0.615, 'top': 0.591, 'right': 0.615, 'bottom': 0.625}  required gutter: 0.375
+   scenes: 50 distinct of 50; themes {'stpatrick': 130}
+   OK
+
+== output/niche_trains.pdf: 117 pages, 50 puzzles, 69968 dots (min 1012, max 1930)
+   margins (in): {'left': 0.615, 'top': 0.591, 'right': 0.615, 'bottom': 0.625}  required gutter: 0.375
+   scenes: 50 distinct of 50; themes {'trains': 133}
+   OK
+
+== output/niche_valentine.pdf: 117 pages, 50 puzzles, 70832 dots (min 1003, max 1941)
+   margins (in): {'left': 0.615, 'top': 0.591, 'right': 0.615, 'bottom': 0.625}  required gutter: 0.375
+   scenes: 50 distinct of 50; themes {'valentine': 131}
+   OK
+
+== output/niche_vehicles.pdf: 117 pages, 50 puzzles, 69660 dots (min 1009, max 1918)
+   margins (in): {'left': 0.615, 'top': 0.591, 'right': 0.615, 'bottom': 0.625}  required gutter: 0.375
+   scenes: 50 distinct of 50; themes {'vehicles': 129}
+   OK
+
+== output/niche_winter.pdf: 117 pages, 50 puzzles, 70605 dots (min 1001, max 1900)
+   margins (in): {'left': 0.615, 'top': 0.591, 'right': 0.615, 'bottom': 0.625}  required gutter: 0.375
+   scenes: 50 distinct of 50; themes {'winter': 132}
    OK
 Niche main pictures used in more than one book: 0
 Design titles shared by more than one design: 0
