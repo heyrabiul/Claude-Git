@@ -579,20 +579,19 @@ def crook_lantern(rng):
 
 @design("faith_wheat_sheaf", T)
 def wheat_sheaf(rng):
+    # Five well-spaced stalks: the old nine-stalk sheaf crowded its dots.
     stalks, heads = [], []
-    for k in range(9):
-        a = R(90 + (k - 4) * 9)
-        bx = (k - 4) * 0.25
-        top = (bx * 0.2 + 2.6 * math.cos(a) * 1.4, 0.3 + 2.0 * math.sin(a))
-        stalks.append([(bx * 0.35, 0.0), top])
-        bot = (bx * 1.1, -2.8)
-        stalks.append([(bx * 0.35, -0.6), bot])
-        ang = math.atan2(top[1] - 0.0, top[0] - bx * 0.35)
+    for k in range(-2, 3):
+        a = R(90 - k * 14)
+        base = (k * 0.3, 0.0)
+        top = (k * 0.3 + 2.3 * math.cos(a), 2.3 * math.sin(a))
+        stalks.append([base, top])
+        stalks.append([(k * 0.3, -0.6), (k * 0.65, -2.8)])
         for j in range(4):
-            px = top[0] + 0.28 * j * math.cos(ang)
-            py = top[1] + 0.28 * j * math.sin(ang)
-            heads.append(lens((px, py), (px + 0.3 * math.cos(ang + 0.6), py + 0.3 * math.sin(ang + 0.6)), 0.35))
-            heads.append(lens((px, py), (px + 0.3 * math.cos(ang - 0.6), py + 0.3 * math.sin(ang - 0.6)), 0.35))
+            px = top[0] + 0.32 * j * math.cos(a)
+            py = top[1] + 0.32 * j * math.sin(a)
+            heads.append(lens((px, py), (px + 0.38 * math.cos(a + 0.6), py + 0.38 * math.sin(a + 0.6)), 0.35))
+            heads.append(lens((px, py), (px + 0.38 * math.cos(a - 0.6), py + 0.38 * math.sin(a - 0.6)), 0.35))
     tie = [rrect(-0.85, -0.6, 0.85, 0.0, 0.1), lens((0, -0.3), (-0.9, -1.2), 0.3), lens((0, -0.3), (0.9, -1.2), 0.3)]
     return make("Sheaf of Wheat", stalks + heads + tie)
 
