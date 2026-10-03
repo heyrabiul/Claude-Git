@@ -8,6 +8,7 @@ from reportlab.pdfbase.pdfmetrics import stringWidth
 from .geometry import bounds, fit_spacing, dots_for_spacing, order_strokes, path_length
 
 CAP = 0.72  # cap height / font size for the number font
+CLAIM_PENALTY = 400  # number nearer to another dot than to its own
 
 
 @dataclass
@@ -40,9 +41,11 @@ class Puzzle:
     def section_count(self):
         return len(self.sections)
 
+    defects: int = 0  # numbers that could be misread (see audit_labels)
+
     @property
     def collisions(self):
-        return sum(1 for l in self.labels if l.overlap > 0.5)
+        return self.defects
 
 
 class _Grid:
@@ -77,6 +80,12 @@ class _Grid:
                 if id(it) not in seen:
                     seen.add(id(it))
                     yield rr, it
+
+
+def _rect_dist(p, r):
+    dx = max(r[0] - p[0], 0.0, p[0] - r[2])
+    dy = max(r[1] - p[1], 0.0, p[1] - r[3])
+    return math.hypot(dx, dy)
 
 
 def _inter(a, b):
@@ -132,6 +141,15 @@ def make_puzzle(design, frame, target_dots, font_size=6.0, dot_r=None, font="Num
     pz = Puzzle(design.title, design.theme, sections, hints, font_size=font_size,
                 dot_r=dot_r or max(0.7, font_size * 0.15), frame=frame)
     place_labels(pz, font, bold_font, milestone)
+    # Repair: a dot whose number could be misread is removed (the line
+    # simply runs straight past it) and the page is renumbered.
+    for _ in range(10):
+        bad = audit_labels(pz)
+        if not bad:
+            break
+        _drop_dots(pz, bad)
+        place_labels(pz, font, bold_font, milestone)
+    pz.defects = len(audit_labels(pz))
     return pz
 
 
@@ -155,12 +173,15 @@ def _thin_crowded(sections, min_gap):
     grid = defaultdict(list)
     cell = min_gap
 
-    def near(p, skip):
+    touch_gap = min_gap * 0.55  # endpoints are only dropped if nearly touching
+
+    def near(p, skip, gap=None):
+        gap = min_gap if gap is None else gap
         gx, gy = int(p[0] // cell), int(p[1] // cell)
         for i in (gx - 1, gx, gx + 1):
             for j in (gy - 1, gy, gy + 1):
                 for q in grid.get((i, j), ()):
-                    if q is not skip and math.dist(p, q) < min_gap:
+                    if q is not skip and math.dist(p, q) < gap:
                         return True
         return False
 
@@ -169,7 +190,12 @@ def _thin_crowded(sections, min_gap):
         keep = []
         for k, p in enumerate(sec):
             endpoint = k == 0 or k == len(sec) - 1
-            if not endpoint and near(p, keep[-1] if keep else None):
+            if p is sec[0] and k > 0:
+                if not keep or keep[0] is not sec[0]:
+                    continue  # the loop's start was dropped, so is its end
+            elif not endpoint and near(p, keep[-1] if keep else None):
+                continue
+            elif endpoint and near(p, keep[-1] if keep else None, touch_gap):
                 continue
             keep.append(p)
             if p is not sec[0] or k == 0:
@@ -179,49 +205,69 @@ def _thin_crowded(sections, min_gap):
     return out
 
 
+class _PointGrid:
+    """Spatial hash of points (dots, line samples) for fast neighbourhood scans."""
+
+    def __init__(self, cell):
+        self.cell = cell
+        self.cells = defaultdict(list)
+
+    def add(self, p, item):
+        self.cells[(int(p[0] // self.cell), int(p[1] // self.cell))].append((p, item))
+
+    def near(self, r):
+        c = self.cell
+        for gx in range(int(r[0] // c), int(r[2] // c) + 1):
+            for gy in range(int(r[1] // c), int(r[3] // c) + 1):
+                yield from self.cells.get((gx, gy), ())
+
+
+CLAIM_MARGIN = 1.2   # placement: own dot must be this much closer than any other
+AUDIT_MARGIN = 0.6   # audit: anything tighter than this counts as ambiguous
+
+
+def _flat_dots(pz):
+    out = []
+    for si, sec in enumerate(pz.sections):
+        for i, p in enumerate(sec):
+            prev = sec[i - 1] if i > 0 else None
+            nxt = sec[i + 1] if i < len(sec) - 1 else None
+            out.append((p, prev, nxt, si, i))
+    return out
+
+
 def place_labels(pz, font, bold_font, milestone):
     fs = pz.font_size
     h = fs * CAP
     r = pz.dot_r
     fx0, fy0, fx1, fy1 = pz.frame
     inset = 2.0
+    dots = _flat_dots(pz)
 
-    dots = []
-    for sec in pz.sections:
-        for i, p in enumerate(sec):
-            prev = sec[i - 1] if i > 0 else None
-            nxt = sec[i + 1] if i < len(sec) - 1 else None
-            dots.append((p, prev, nxt))
-
-    grid = _Grid(max(8.0, fs * 2))
-    dot_rects = []
-    for (p, _, _) in dots:
-        rr = r + 0.6
-        rect = (p[0] - rr, p[1] - rr, p[0] + rr, p[1] + rr)
-        dot_rects.append(rect)
-        grid.add(rect, ("dot", p))
+    dot_grid = _PointGrid(8.0)
+    for idx, d in enumerate(dots):
+        dot_grid.add(d[0], idx)
     # Sample the lines the solver will draw so numbers avoid sitting on them.
+    line_grid = _PointGrid(8.0)
     step = fs * 0.5
     for sec in pz.sections:
         for a, b in zip(sec, sec[1:]):
-            L = math.dist(a, b)
-            n = max(1, int(L / step))
+            n = max(1, int(math.dist(a, b) / step))
             for k in range(1, n):
                 t = k / n
-                q = (a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t)
-                grid.add((q[0] - 0.3, q[1] - 0.3, q[0] + 0.3, q[1] + 0.3), ("line", q))
+                line_grid.add((a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t), None)
     for hint in pz.hints:
         for q in hint[::2]:
-            grid.add((q[0] - 0.4, q[1] - 0.4, q[0] + 0.4, q[1] + 0.4), ("line", q))
+            line_grid.add(q, None)
+    label_grid = _Grid(max(8.0, fs * 2))
 
     angles = [math.radians(a) for a in range(0, 360, 20)]
-    labels = []
-    rects = []
+    pad_x, pad_y = 0.9, 0.45   # visible gap kept between two numbers
 
     def candidates(idx):
-        (p, prev, nxt) = dots[idx]
+        p, prev, nxt = dots[idx][:3]
         num = idx + 1
-        bold = milestone and num % milestone == 0
+        bold = bool(milestone) and num % milestone == 0
         w = stringWidth(str(num), bold_font if bold else font, fs)
         # Preferred direction: away from the neighbouring line segments.
         vx = vy = 0.0
@@ -233,78 +279,165 @@ def place_labels(pz, font, bold_font, milestone):
                 vy += dy / L
         pref = math.atan2(vy, vx) if math.hypot(vx, vy) > 0.2 else None
         out = []
+        # Corner anchors: the label's nearest corner sits just off the dot,
+        # so even a wide 4-digit number stays closest to its own dot.
+        for gap in (0.5, 1.2, 2.2):
+            for sx in (-1, 1):
+                for sy in (-1, 1):
+                    x0 = p[0] + r + gap if sx > 0 else p[0] - r - gap - w
+                    y0 = p[1] + r * 0.5 + gap * 0.6 if sy > 0 else p[1] - r * 0.5 - gap * 0.6 - h
+                    a = math.atan2(sy, sx)
+                    bias = gap * 0.9 + (0.8 * (1 - math.cos(a - pref)) if pref is not None else 0.2)
+                    out.append(((x0, y0, x0 + w, y0 + h), bias, w, bold))
         for gap in (0.6, 1.6, 3.0):
             for a in angles:
                 ca, sa = math.cos(a), math.sin(a)
                 ext = abs(ca) * w / 2 + abs(sa) * h / 2
                 cx = p[0] + ca * (r + gap + ext)
                 cy = p[1] + sa * (r + gap + ext)
-                rect = (cx - w / 2, cy - h / 2, cx + w / 2, cy + h / 2)
                 bias = gap * 0.9
                 if pref is not None:
                     bias += 0.8 * (1 - math.cos(a - pref))
                 else:
                     bias += 0.25 * (1 - abs(math.sin(a)))  # lines run straight: prefer above/below
-                out.append((rect, bias, w, bold))
+                out.append(((cx - w / 2, cy - h / 2, cx + w / 2, cy + h / 2), bias, w, bold))
         return out
 
-    def cost(rect, bias, own_dot):
+    def cost(rect, bias, idx, skip_label=None):
+        p = dots[idx][0]
         c = bias
         if rect[0] < fx0 + inset or rect[2] > fx1 - inset or rect[1] < fy0 + inset or rect[3] > fy1 - inset:
             c += 1e5
-        for rr, it in grid.query(rect):
-            a = _inter(rect, rr)
-            if a <= 0:
+        d_own = _rect_dist(p, rect)
+        reach = d_own + CLAIM_MARGIN + r + 0.5
+        for q, j in dot_grid.near((rect[0] - reach, rect[1] - reach, rect[2] + reach, rect[3] + reach)):
+            if q is p or q == p:
                 continue
-            kind = it[0] if isinstance(it, tuple) else "label"
-            if kind == "dot":
-                c += 40 + 30 * a if it[1] is not own_dot else 0
-            elif kind == "line":
+            d = _rect_dist(q, rect)
+            if d < d_own + CLAIM_MARGIN:
+                c += CLAIM_PENALTY + 120 * (d_own + CLAIM_MARGIN - d)
+            if d < r + 0.6:
+                c += 60
+        for q, _ in line_grid.near(rect):
+            if rect[0] <= q[0] <= rect[2] and rect[1] <= q[1] <= rect[3]:
                 c += 2.5
-            else:
+        padded = (rect[0] - pad_x, rect[1] - pad_y, rect[2] + pad_x, rect[3] + pad_y)
+        for rr, lab in label_grid.query(padded):
+            if lab is skip_label:
+                continue
+            a = _inter(padded, rr)
+            if a > 0:
                 c += 60 + 25 * a
         return c
 
+    labels, rects = [], []
     for idx in range(len(dots)):
         best = None
         for rect, bias, w, bold in candidates(idx):
-            c = cost(rect, bias, dots[idx][0])
+            c = cost(rect, bias, idx)
             if best is None or c < best[0]:
                 best = (c, rect, w, bold)
         c, rect, w, bold = best
         lab = Label(idx + 1, rect[0], rect[1], w, h, bold)
         labels.append(lab)
         rects.append(rect)
-        grid.add(rect, lab)
+        label_grid.add(rect, lab)
 
-    # Refinement: re-seat labels that still collide, now that every label is known.
+    # Refinement: re-seat labels now that every label is known.
     for _ in range(3):
         moved = 0
         for idx, lab in enumerate(labels):
             rect = rects[idx]
-            grid.remove(rect, lab)
-            cur = cost(rect, 0, dots[idx][0])
+            cur = cost(rect, 0, idx, skip_label=lab)
+            if cur < 1:
+                continue
             best = None
             for cand, bias, w, bold in candidates(idx):
-                c = cost(cand, bias, dots[idx][0])
-                if best is None or c < best[0]:
-                    best = (c, cand)
+                cc = cost(cand, bias, idx, skip_label=lab)
+                if best is None or cc < best[0]:
+                    best = (cc, cand)
             if best[0] + 0.5 < cur:
-                rect = best[1]
-                rects[idx] = rect
-                lab.x, lab.y = rect[0], rect[1]
+                label_grid.remove(rect, lab)
+                rects[idx] = best[1]
+                lab.x, lab.y = best[1][0], best[1][1]
+                label_grid.add(best[1], lab)
                 moved += 1
-            grid.add(rect, lab)
         if not moved:
             break
-
-    for idx, lab in enumerate(labels):
-        rect = rects[idx]
-        ov = 0.0
-        for rr, it in grid.query(rect):
-            if it is lab:
-                continue
-            if isinstance(it, Label) or (isinstance(it, tuple) and it[0] == "dot" and it[1] is not dots[idx][0]):
-                ov += _inter(rect, rr)
-        lab.overlap = ov
     pz.labels = labels
+
+
+def audit_labels(pz):
+    """Indices of dots whose number could be misread: closer (or nearly as
+    close) to another dot, overlapping or touching another number, covering
+    another dot, or outside the frame.  Returns {index: reason}."""
+    dots = _flat_dots(pz)
+    r = pz.dot_r
+    fx0, fy0, fx1, fy1 = pz.frame
+    dot_grid = _PointGrid(8.0)
+    for idx, d in enumerate(dots):
+        dot_grid.add(d[0], idx)
+    label_grid = _Grid(max(8.0, pz.font_size * 2))
+    rects = [(l.x, l.y, l.x + l.w, l.y + l.h) for l in pz.labels]
+    for i, rc in enumerate(rects):
+        label_grid.add(rc, i)
+    bad = {}
+    for idx, rect in enumerate(rects):
+        p = dots[idx][0]
+        if rect[0] < fx0 or rect[2] > fx1 or rect[1] < fy0 or rect[3] > fy1:
+            bad[idx] = "outside frame"
+            continue
+        d_own = _rect_dist(p, rect)
+        reach = d_own + AUDIT_MARGIN + 1
+        for q, j in dot_grid.near((rect[0] - reach, rect[1] - reach, rect[2] + reach, rect[3] + reach)):
+            if q is p or q == p:
+                continue
+            d = _rect_dist(q, rect)
+            if d < d_own + AUDIT_MARGIN:
+                bad[idx] = "ambiguous"
+                break
+            if d < r:
+                bad[idx] = "covers a dot"
+                break
+        if idx in bad:
+            continue
+        padded = (rect[0] - 0.8, rect[1] - 0.3, rect[2] + 0.8, rect[3] + 0.3)
+        for rr, j in label_grid.query(padded):
+            if j != idx and _inter(padded, rr) > 0:
+                bad[max(idx, j)] = "touches a number"
+    return bad
+
+
+def _drop_dots(pz, indices):
+    """Remove the given dots (flat indices) keeping every line valid."""
+    dots = _flat_dots(pz)
+    kill = defaultdict(set)
+    for idx in indices:
+        _, _, _, si, i = dots[idx]
+        kill[si].add(i)
+    new = []
+    for si, sec in enumerate(pz.sections):
+        k = kill.get(si)
+        if not k:
+            new.append(sec)
+            continue
+        closed = len(sec) > 2 and sec[-1] is sec[0]
+        if closed:
+            last = len(sec) - 1
+            body = [p for i, p in enumerate(sec[:-1]) if i not in k]
+            if (0 in k or last in k) and len(body) >= 4:
+                # Trouble at the start/closing dot: drop the start (if it is
+                # still there) and restart the loop from its middle.
+                if sec[0] in body and body[0] is sec[0]:
+                    body = body[1:]
+                half = len(body) // 2
+                body = body[half:] + body[:half]
+            if len(body) >= 3:
+                new.append(body + [body[0]])
+            elif len(body) >= 2:
+                new.append(body)
+        else:
+            body = [p for i, p in enumerate(sec) if i not in k]
+            if len(body) >= 2:
+                new.append(body)
+    pz.sections = new

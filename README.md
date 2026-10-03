@@ -11,26 +11,51 @@ designed around.
 ## Quick start
 
 ```bash
-pip install -r requirements.txt
+pip install -r requirements.txt pymupdf
 
-# 100 puzzles, 1,000 -> 2,000 dots (the defaults), blank backs so markers don't bleed through
-python build_book.py --puzzles 100 --single-sided --out output/extreme_dot_to_dot_100.pdf
+# The whole series: 4 regular volumes (100 puzzles each) + Christmas (50)
+# + Thanksgiving (50), then a full verification report.
+./build_all.sh
 
-# Sample with one full-size solution per page
-python build_book.py --puzzles 12 --solutions-per-page 1 --out output/sample.pdf
+# One volume of a series (every volume must use the same --volumes and
+# --series-seed, so scenes never repeat across the series)
+python build_book.py --volumes 4 --volume 2 --series-seed 7 --single-sided \
+    --out output/extreme_dot_to_dot_vol2.pdf
 
-# Large-print edition (9 pt numbers, up to 450 dots per page)
-python build_book.py --large-print --puzzles 40 --single-sided --out output/large_print.pdf
+# Holiday book: only that holiday's subjects
+python build_book.py --theme christmas --puzzles 50 --single-sided --out output/christmas.pdf
 
-# Add your own pictures (SVG line art) to the rotation
-python build_book.py --svg-dir examples/ --puzzles 30
-
-# Only your own pictures
-python build_book.py --svg-dir my_art/ --no-builtins --puzzles 50
+# Verify finished PDFs
+python verify_book.py output/*.pdf
 ```
 
-Each run prints one line per puzzle (dot count, number of separate lines, font
-size and label collisions) followed by a JSON summary.
+Each run prints one line per puzzle (scene, dot count, number of separate
+lines, font size, and the count of numbers that could be misread, which must
+be 0) followed by a JSON summary.
+
+## Unique scenes
+
+Every puzzle is a scene: one large main subject plus one or two companion
+subjects that suit it (a whale with an anchor, a cat with a butterfly and a
+flower), on its own border, background and fill pattern. `dotdot/compose.py`
+plans all volumes of a series together, so **no scene appears twice
+anywhere in the series**. Inside a book no main subject is used more than 3
+times, and never twice in a row. Holiday books only use that holiday's
+subjects; regular books never use holiday subjects.
+
+## Verification (`verify_book.py`)
+
+The verifier reads only the finished PDF and checks:
+
+- The page size is 8.5 × 11 in and every font is embedded.
+- Nothing is printed inside KDP's minimum margins (the gutter depends on page count).
+- Every puzzle has 1,000 to 2,000 dots, and its numbers run 1..N with each one printed exactly once.
+- Every number is next to a dot, every dot has a number, and no number is as close to another dot as to its own.
+- No numbers overlap or touch, and no dots touch.
+- The back of every puzzle page is blank.
+- The solutions are at the back, 4 per page, numbered 1..N.
+- No scene repeats inside a book or across books.
+- Holiday books contain only their holiday's subjects.
 
 ## What is in the book
 
@@ -38,9 +63,12 @@ size and label collisions) followed by a JSON summary.
 2. **"This book belongs to" and How to play**, with a worked mini example
 3. **Puzzles**, one per page, inside a rounded frame. The footer shows the puzzle
    number, a 1–5 star difficulty rating, the exact dot count and a "Time: ____" box.
-4. **Solutions**, four finished pictures per page by default
+4. **Solutions** at the back, four finished pictures per page by default
    (`--solutions-per-page 1|2|4|6`), with titles. Titles never appear on the
    puzzle pages, so they don't spoil the reveal.
+
+With `--single-sided`, the back of every puzzle page is left blank so markers
+don't bleed through.
 
 ### Puzzle conventions
 

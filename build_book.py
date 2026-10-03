@@ -22,7 +22,7 @@ import time
 
 from reportlab.pdfgen import canvas
 
-from dotdot import designs
+from dotdot import compose, designs
 from dotdot.designs import Design
 from dotdot.geometry import load_svg, path_length
 from dotdot.scene import fill_scene
@@ -47,6 +47,23 @@ def font_for(target, large_print):
         if target <= cap:
             return size
     return 4.6
+
+
+def difficulty_targets(args, rng):
+    out = []
+    for i in range(args.puzzles):
+        t = i / max(1, args.puzzles - 1)
+        target = args.min_dots + (args.max_dots - args.min_dots) * (t ** 1.15)
+        out.append(int(min(args.max_dots, max(args.min_dots, target * rng.uniform(0.95, 1.05)))))
+    return out
+
+
+def scene_schedule(args, rng):
+    """Unique multi-subject scenes: this volume's slice of the series plan."""
+    pool = compose.scene_pool(args.theme)
+    plan = compose.plan_series(pool, args.volumes, args.puzzles, args.series_seed)
+    keys = plan[args.volume - 1]
+    return [(key, compose.key_seed(key), t) for key, t in zip(keys, difficulty_targets(args, rng))]
 
 
 def schedule(args, rng, svg_designs):
@@ -99,7 +116,12 @@ def _scale(d, frame, fs):
 
 
 def build_puzzle(item, seed, target, frame, args):
-    d = item if isinstance(item, Design) else designs.build(item, seed)
+    if isinstance(item, Design):
+        d = item
+    elif isinstance(item, tuple):
+        d = compose.compose(item, (frame[2] - frame[0]) / (frame[3] - frame[1]), seed)
+    else:
+        d = designs.build(item, seed)
     rng = random.Random(seed)
     fs = font_for(target, args.large_print)
     floor = 9.0 if args.large_print else 4.4
@@ -121,8 +143,8 @@ def build_puzzle(item, seed, target, frame, args):
         d = scene(budget)
     can_decorate = not extreme and not args.no_borders
     pz = make_puzzle(d, frame, target, font_size=fs)
-    for _ in range(8):
-        crowded = pz.collisions / max(1, pz.dot_count) > 0.015
+    for _ in range(12):
+        crowded = pz.collisions > 0  # any misreadable number must be fixed
         short = pz.dot_count < max(goal * (0.95 if extreme else 0.8), args.min_dots)
         if not crowded and not short:
             break
@@ -151,10 +173,18 @@ def build_puzzle(item, seed, target, frame, args):
     return pz
 
 
-def title_page(c, W, H, args):
-    centered(c, args.title.upper(), W / 2, H * 0.70, "NumBold", 30)
+def fit_size(c, text, font, size, width):
+    """Largest size <= `size` at which `text` fits in `width`."""
+    w = c.stringWidth(text, font, size)
+    return size if w <= width else size * width / w
+
+
+def title_page(c, W, H, M, args):
+    usable = W - 2 * M
+    title = args.title.upper()
+    centered(c, title, W / 2, H * 0.70, "NumBold", fit_size(c, title, "NumBold", 30, usable))
     y = H * 0.70 - 40
-    centered(c, args.subtitle, W / 2, y, "Num", 15, SOFT)
+    centered(c, args.subtitle, W / 2, y, "Num", fit_size(c, args.subtitle, "Num", 15, usable), SOFT)
     centered(c, f"{args.puzzles} puzzles  ·  {args.min_dots}–{args.max_dots} dots each", W / 2, y - 30, "Num", 12)
     if args.author:
         centered(c, args.author, W / 2, H * 0.18, "Num", 14)
@@ -230,7 +260,8 @@ def solutions(c, W, H, M, puzzles, cols=2, rows=3):
             x = M + col * (cw + gap)
             y = top - (row + 1) * (ch + 14) - row * gap + 14
             draw_solution(c, pz, x, y, cw, ch)
-            centered(c, f"#{n}  {pz.title}", x + cw / 2, y - 12, "Num", 9)
+            cap = f"#{n}  {pz.title}"
+            centered(c, cap, x + cw / 2, y - 12, "Num", fit_size(c, cap, "Num", 9, cw))
         c.showPage()
 
 
@@ -245,6 +276,12 @@ def main(argv=None):
     ap.add_argument("--large-print", action="store_true", help="9pt numbers, fewer dots per page")
     ap.add_argument("--svg-dir", help="folder of line-art SVGs to add to the rotation")
     themes = sorted({t for _, t in designs.REGISTRY.values()})
+    ap.add_argument("--volume", type=int, default=1, help="which volume of the series to build (1-based)")
+    ap.add_argument("--volumes", type=int, default=1,
+                    help="volumes in the series; scenes never repeat across them")
+    ap.add_argument("--series-seed", type=int, default=7, help="seed of the series-wide scene plan")
+    ap.add_argument("--single-subjects", action="store_true",
+                    help="one subject per page instead of unique multi-subject scenes")
     ap.add_argument("--theme", nargs="*", help=f"limit to these design themes: {', '.join(themes)}")
     ap.add_argument("--only", nargs="*", help=f"limit to these built-in designs: {', '.join(designs.REGISTRY)}")
     ap.add_argument("--solutions-per-page", type=int, choices=(1, 2, 4, 6), default=4,
@@ -270,12 +307,17 @@ def main(argv=None):
     frame = (M, M + footer, W - M, H - M)
     rng = random.Random(args.seed)
     svg_designs = load_svg_designs(args.svg_dir) if args.svg_dir else []
-    plan = schedule(args, rng, svg_designs)
+    if args.svg_dir or args.only or args.single_subjects:
+        plan = schedule(args, rng, svg_designs)
+    else:
+        plan = scene_schedule(args, rng)
     if not plan:
         sys.exit("No designs to build.")
 
     os.makedirs(os.path.dirname(os.path.abspath(args.out)), exist_ok=True)
-    c = canvas.Canvas(args.out, pagesize=(W, H))
+    # The default font must be an embedded one, or ReportLab references
+    # Helvetica without embedding it (KDP rejects that).
+    c = canvas.Canvas(args.out, pagesize=(W, H), initialFontName="Num", initialFontSize=10)
     c.setTitle(args.title)
     c.setAuthor(args.author or "")
 
@@ -287,7 +329,7 @@ def main(argv=None):
         print(f"  #{i:3d} {pz.title:<18} target {target:5d} -> {pz.dot_count:5d} dots, "
               f"{pz.section_count:3d} lines, font {pz.font_size:.1f}pt, collisions {pz.collisions}", flush=True)
 
-    title_page(c, W, H, args)
+    title_page(c, W, H, M, args)
     if args.single_sided:
         c.showPage()
     how_to_page(c, W, H, M, args)
