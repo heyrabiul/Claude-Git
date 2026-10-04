@@ -383,12 +383,17 @@ def audit_labels(pz):
     for i, rc in enumerate(rects):
         label_grid.add(rc, i)
     bad = {}
-    # Two different dots this close look like one blob.
-    touch = 2 * r + 1.0
+    # Two different dots this close look like one blob.  Section starts are
+    # printed hollow and larger (render.py: 1.45 x radius), so use the size
+    # each dot is actually drawn at.
+    def size(k):
+        return r * 1.45 if dots[k][4] == 0 else r
+
+    reach = 2 * r * 1.45 + 1.0
     for idx, d in enumerate(dots):
         p = d[0]
-        for q, j in dot_grid.near((p[0] - touch, p[1] - touch, p[0] + touch, p[1] + touch)):
-            if j > idx and q is not p and q != p and math.dist(p, q) < touch:
+        for q, j in dot_grid.near((p[0] - reach, p[1] - reach, p[0] + reach, p[1] + reach)):
+            if j > idx and q is not p and q != p and math.dist(p, q) < size(idx) + size(j) + 1.0:
                 bad[j] = "dot touches a dot"
     for idx, rect in enumerate(rects):
         if idx in bad:
