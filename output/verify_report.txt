@@ -98,3 +98,189 @@
    margins (in): {'left': 0.615, 'top': 0.591, 'right': 0.615, 'bottom': 0.625}  required gutter: 0.375
    scenes: 50 distinct of 50; themes {'dragons': 131}
    OK
+
+== output/niche_easter.pdf: 117 pages, 50 puzzles, 70808 dots (min 1001, max 1991)
+   margins (in): {'left': 0.615, 'top': 0.591, 'right': 0.615, 'bottom': 0.625}  required gutter: 0.375
+   scenes: 50 distinct of 50; themes {'easter': 132}
+   OK
+
+== output/niche_faith.pdf: 117 pages, 50 puzzles, 71167 dots (min 1004, max 1930)
+   margins (in): {'left': 0.615, 'top': 0.591, 'right': 0.615, 'bottom': 0.625}  required gutter: 0.375
+   scenes: 50 distinct of 50; themes {'faith': 130}
+   OK
+
+== output/niche_farm.pdf: 117 pages, 50 puzzles, 70767 dots (min 1016, max 1966)
+   margins (in): {'left': 0.615, 'top': 0.591, 'right': 0.615, 'bottom': 0.625}  required gutter: 0.375
+   scenes: 50 distinct of 50; themes {'farm': 129}
+   OK
+
+== output/niche_fishing.pdf: 117 pages, 50 puzzles, 70871 dots (min 1013, max 1937)
+   margins (in): {'left': 0.615, 'top': 0.591, 'right': 0.615, 'bottom': 0.625}  required gutter: 0.375
+   scenes: 50 distinct of 50; themes {'fishing': 137}
+   OK
+
+== output/niche_fruits.pdf: 117 pages, 50 puzzles, 70584 dots (min 1002, max 1930)
+   margins (in): {'left': 0.615, 'top': 0.591, 'right': 0.615, 'bottom': 0.625}  required gutter: 0.375
+   scenes: 50 distinct of 50; themes {'fruits': 134}
+   OK
+
+== output/niche_garden.pdf: 117 pages, 50 puzzles, 70501 dots (min 1005, max 1929)
+   margins (in): {'left': 0.615, 'top': 0.591, 'right': 0.615, 'bottom': 0.625}  required gutter: 0.375
+   scenes: 50 distinct of 50; themes {'garden': 134}
+   OK
+
+== output/niche_halloween.pdf: 117 pages, 50 puzzles, 70592 dots (min 1001, max 1914)
+   margins (in): {'left': 0.615, 'top': 0.591, 'right': 0.615, 'bottom': 0.625}  required gutter: 0.375
+   scenes: 50 distinct of 50; themes {'halloween': 132}
+   OK
+
+== output/niche_horses.pdf: 117 pages, 50 puzzles, 70776 dots (min 1000, max 1902)
+   margins (in): {'left': 0.615, 'top': 0.591, 'right': 0.615, 'bottom': 0.625}  required gutter: 0.375
+   scenes: 50 distinct of 50; themes {'horses': 127}
+   OK
+
+== output/niche_houseplants.pdf: 117 pages, 50 puzzles, 71043 dots (min 1008, max 1941)
+   margins (in): {'left': 0.615, 'top': 0.591, 'right': 0.615, 'bottom': 0.625}  required gutter: 0.375
+   scenes: 50 distinct of 50; themes {'houseplants': 134}
+   OK
+
+== output/niche_jungle.pdf: 117 pages, 50 puzzles, 69753 dots (min 1002, max 1944)
+   margins (in): {'left': 0.615, 'top': 0.591, 'right': 0.615, 'bottom': 0.625}  required gutter: 0.375
+   scenes: 50 distinct of 50; themes {'jungle': 133}
+   OK
+
+== output/niche_kawaii.pdf: 117 pages, 50 puzzles, 71239 dots (min 1026, max 1906)
+   margins (in): {'left': 0.615, 'top': 0.591, 'right': 0.615, 'bottom': 0.625}  required gutter: 0.375
+   scenes: 50 distinct of 50; themes {'kawaii': 136}
+   OK
+
+== output/niche_kitchen.pdf: 117 pages, 50 puzzles, 71038 dots (min 1001, max 1940)
+   margins (in): {'left': 0.615, 'top': 0.591, 'right': 0.615, 'bottom': 0.625}  required gutter: 0.375
+   scenes: 50 distinct of 50; themes {'kitchen': 135}
+   OK
+
+== output/niche_landmarks.pdf: 117 pages, 50 puzzles, 70631 dots (min 1046, max 1999)
+   margins (in): {'left': 0.615, 'top': 0.591, 'right': 0.615, 'bottom': 0.625}  required gutter: 0.375
+   scenes: 50 distinct of 50; themes {'landmarks': 133}
+   OK
+
+== output/niche_lunar.pdf: 117 pages, 50 puzzles, 70362 dots (min 1002, max 1854)
+   margins (in): {'left': 0.615, 'top': 0.591, 'right': 0.615, 'bottom': 0.625}  required gutter: 0.375
+   scenes: 50 distinct of 50; themes {'lunar': 132}
+   OK
+
+== output/niche_mermaids.pdf: 117 pages, 50 puzzles, 70588 dots (min 1006, max 1957)
+   margins (in): {'left': 0.615, 'top': 0.591, 'right': 0.615, 'bottom': 0.625}  required gutter: 0.375
+   scenes: 50 distinct of 50; themes {'mermaids': 131}
+   OK
+
+== output/niche_music.pdf: 117 pages, 50 puzzles, 70905 dots (min 1012, max 1921)
+   margins (in): {'left': 0.615, 'top': 0.591, 'right': 0.615, 'bottom': 0.625}  required gutter: 0.375
+   scenes: 50 distinct of 50; themes {'music': 130}
+   OK
+
+== output/niche_ocean.pdf: 117 pages, 50 puzzles, 70774 dots (min 1003, max 1908)
+   margins (in): {'left': 0.615, 'top': 0.591, 'right': 0.615, 'bottom': 0.625}  required gutter: 0.375
+   scenes: 50 distinct of 50; themes {'ocean': 137}
+   OK
+
+== output/niche_patriotic.pdf: 117 pages, 50 puzzles, 70562 dots (min 1002, max 1949)
+   margins (in): {'left': 0.615, 'top': 0.591, 'right': 0.615, 'bottom': 0.625}  required gutter: 0.375
+   scenes: 50 distinct of 50; themes {'patriotic': 132}
+   OK
+
+== output/niche_pets.pdf: 117 pages, 50 puzzles, 71494 dots (min 1016, max 1974)
+   margins (in): {'left': 0.615, 'top': 0.591, 'right': 0.615, 'bottom': 0.625}  required gutter: 0.375
+   scenes: 50 distinct of 50; themes {'pets': 133}
+   OK
+
+== output/niche_pirates.pdf: 117 pages, 50 puzzles, 70820 dots (min 1002, max 1929)
+   margins (in): {'left': 0.615, 'top': 0.591, 'right': 0.615, 'bottom': 0.625}  required gutter: 0.375
+   scenes: 50 distinct of 50; themes {'pirates': 134}
+   OK
+
+== output/niche_polar.pdf: 117 pages, 50 puzzles, 70425 dots (min 1007, max 1915)
+   margins (in): {'left': 0.615, 'top': 0.591, 'right': 0.615, 'bottom': 0.625}  required gutter: 0.375
+   scenes: 50 distinct of 50; themes {'polar': 134}
+   OK
+
+== output/niche_safari.pdf: 117 pages, 50 puzzles, 71090 dots (min 1013, max 1946)
+   margins (in): {'left': 0.615, 'top': 0.591, 'right': 0.615, 'bottom': 0.625}  required gutter: 0.375
+   scenes: 50 distinct of 50; themes {'safari': 134}
+   OK
+
+== output/niche_ships.pdf: 117 pages, 50 puzzles, 70872 dots (min 1047, max 1900)
+   margins (in): {'left': 0.615, 'top': 0.591, 'right': 0.615, 'bottom': 0.625}  required gutter: 0.375
+   scenes: 50 distinct of 50; themes {'ships': 134}
+   OK
+
+== output/niche_space.pdf: 117 pages, 50 puzzles, 71193 dots (min 1000, max 1878)
+   margins (in): {'left': 0.615, 'top': 0.591, 'right': 0.615, 'bottom': 0.625}  required gutter: 0.375
+   scenes: 50 distinct of 50; themes {'space': 134}
+   OK
+
+== output/niche_sports.pdf: 117 pages, 50 puzzles, 71119 dots (min 1019, max 1942)
+   margins (in): {'left': 0.615, 'top': 0.591, 'right': 0.615, 'bottom': 0.625}  required gutter: 0.375
+   scenes: 50 distinct of 50; themes {'sports': 129}
+   OK
+
+== output/niche_spring.pdf: 117 pages, 50 puzzles, 71223 dots (min 1023, max 1941)
+   margins (in): {'left': 0.615, 'top': 0.591, 'right': 0.615, 'bottom': 0.625}  required gutter: 0.375
+   scenes: 50 distinct of 50; themes {'spring': 136}
+   OK
+
+== output/niche_stpatrick.pdf: 117 pages, 50 puzzles, 70014 dots (min 1001, max 1930)
+   margins (in): {'left': 0.615, 'top': 0.591, 'right': 0.615, 'bottom': 0.625}  required gutter: 0.375
+   scenes: 50 distinct of 50; themes {'stpatrick': 130}
+   OK
+
+== output/niche_trains.pdf: 117 pages, 50 puzzles, 69968 dots (min 1012, max 1930)
+   margins (in): {'left': 0.615, 'top': 0.591, 'right': 0.615, 'bottom': 0.625}  required gutter: 0.375
+   scenes: 50 distinct of 50; themes {'trains': 133}
+   OK
+
+== output/niche_unicorns.pdf: 117 pages, 50 puzzles, 70283 dots (min 1012, max 1931)
+   margins (in): {'left': 0.615, 'top': 0.591, 'right': 0.615, 'bottom': 0.625}  required gutter: 0.375
+   scenes: 50 distinct of 50; themes {'unicorns': 135}
+   OK
+
+== output/niche_valentine.pdf: 117 pages, 50 puzzles, 70832 dots (min 1003, max 1941)
+   margins (in): {'left': 0.615, 'top': 0.591, 'right': 0.615, 'bottom': 0.625}  required gutter: 0.375
+   scenes: 50 distinct of 50; themes {'valentine': 131}
+   OK
+
+== output/niche_vehicles.pdf: 117 pages, 50 puzzles, 69660 dots (min 1009, max 1918)
+   margins (in): {'left': 0.615, 'top': 0.591, 'right': 0.615, 'bottom': 0.625}  required gutter: 0.375
+   scenes: 50 distinct of 50; themes {'vehicles': 129}
+   OK
+
+== output/niche_vintage.pdf: 117 pages, 50 puzzles, 71261 dots (min 1003, max 1979)
+   margins (in): {'left': 0.615, 'top': 0.591, 'right': 0.615, 'bottom': 0.625}  required gutter: 0.375
+   scenes: 50 distinct of 50; themes {'vintage': 130}
+   OK
+
+== output/niche_wildwest.pdf: 117 pages, 50 puzzles, 71399 dots (min 1033, max 1911)
+   margins (in): {'left': 0.615, 'top': 0.591, 'right': 0.615, 'bottom': 0.625}  required gutter: 0.375
+   scenes: 50 distinct of 50; themes {'wildwest': 138}
+   OK
+
+== output/niche_winter.pdf: 117 pages, 50 puzzles, 70605 dots (min 1001, max 1900)
+   margins (in): {'left': 0.615, 'top': 0.591, 'right': 0.615, 'bottom': 0.625}  required gutter: 0.375
+   scenes: 50 distinct of 50; themes {'winter': 132}
+   OK
+
+== output/niche_woodland.pdf: 117 pages, 50 puzzles, 70215 dots (min 1002, max 1875)
+   margins (in): {'left': 0.615, 'top': 0.591, 'right': 0.615, 'bottom': 0.625}  required gutter: 0.375
+   scenes: 50 distinct of 50; themes {'woodland': 140}
+   OK
+
+== output/niche_zen.pdf: 117 pages, 50 puzzles, 68834 dots (min 1013, max 1915)
+   margins (in): {'left': 0.615, 'top': 0.591, 'right': 0.615, 'bottom': 0.625}  required gutter: 0.375
+   scenes: 50 distinct of 50; themes {'zen': 137}
+   OK
+Niche main pictures used in more than one book: 0
+Design titles shared by more than one design: 0
+
+Scenes appearing in more than one book: 0
+Total errors: 0
+verify exit code: 0
