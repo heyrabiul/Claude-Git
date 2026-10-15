@@ -321,7 +321,7 @@ def m01_cover(cover, color):
     return c
 
 
-def m02_book3d(cover, color):
+def m02_book3d(cover, color, head="PAPERBACK  •  8.5 x 11 IN  •  117 PAGES"):
     c = background(color)
     W, H = cover.size
     face = cover.convert("RGBA")
@@ -340,7 +340,7 @@ def m02_book3d(cover, color):
     c.paste((0, 0, 0), (0, 0), shadow)
     for lay in (pages, spine, layer):
         c.paste(lay, (0, 0), lay)
-    headline(c, "PAPERBACK  •  8.5 x 11 IN  •  117 PAGES", "", color)
+    headline(c, head, "", color)
     return c
 
 
@@ -434,13 +434,13 @@ def m08_spread(page_img, color):
     return c
 
 
-def m09_inside(cover, color):
+def m09_inside(cover, color, feats=None):
     c = background(color)
     headline(c, "WHAT'S INSIDE", "", color)
     cv = fit_into(cover, 560, 724)
     paste_shadow(c, cv, (90, 330))
     dr = ImageDraw.Draw(c)
-    feats = [
+    feats = feats or [
         ("50 unique puzzles", "a different picture on every page"),
         ("1,000 - 2,000 dots", "true extreme challenge for adults"),
         ("Large 8.5 x 11 pages", "plenty of room, easy to read"),
