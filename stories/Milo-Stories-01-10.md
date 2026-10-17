@@ -332,7 +332,7 @@ Medium close-up, slow arc then push-in as Milo happily hands a slice of cake to 
 [Scene 3] Big breath in, puff your cheeks, ready, ready, one, two... wait!
 [Scene 4] Achoo! The puppy blew them out! Oh no, oh no, what a sneezy shout!
 [Scene 5] Everybody laughs, ha-ha-hee, cake for you and cake for me!
-[Scene 6] Share a slice and share a smile, happy birthday, Milo, two!
+[Scene 6] Share a slice and share a smile, happy birthday, Milo, now you are two!
 ```
 **Music prompt:** `Festive birthday nursery song, exactly 30 seconds, 116 BPM, party horns, glockenspiel, bright piano, handclaps and bass, joyful kid choir with warm lead female vocal, comedic stop and a cute sneeze sound effect at 15-20s, then a big celebratory return for the ending`
 
@@ -482,6 +482,207 @@ Learn triangle, circle and square with Milo.
 **Tags:**
 ```
 baby milo, kite song, learn shapes, shapes song for kids, triangle circle square, flying a kite, nursery rhymes, toddler songs, kids songs, try again song, preschool learning, 3d cartoon for kids, baby songs, outdoor songs for kids
+```
+
+---
+
+## Story 8 — Milo's Day at the Zoo
+
+**গল্প:** চিড়িয়াখানায় হাতি শুঁড় দিয়ে Milo-র দিকে মজার পানির ঝরনা ছুঁড়ে দেয়, আর লম্বা জিরাফ নিচু হয়ে হ্যালো বলে। তারপর এক দুষ্টু বানর Milo-র কলা নিয়ে পালায়, কিন্তু শেষে খোসা ছাড়িয়ে অর্ধেক ফিরিয়ে দেয়।
+**শেখা:** প্রাণীর নাম আর ডাক — হাতি (প্যাঁ-ও!), জিরাফ (লম্বা গলা), বানর (উ-উ-আ-আ), সিংহ (গররর)।
+**Milo বর্ণনা:** ডিফল্ট
+
+| # | সময় | কী ঘটে |
+| --- | --- | --- |
+| 1 | 0–5s | হাতি শুঁড় তুলে "প্যাঁ-ও!" ডাকে আর হালকা পানির ঝরনা ছোড়ে — Milo ভিজে খিলখিলিয়ে হাসে। |
+| 2 | 5–10s | লম্বা জিরাফ গলা নিচু করে Milo-র মুখের সামনে এসে চোখ পিটপিট করে। |
+| 3 | 10–15s | সিংহশাবক আলসে হাই তুলে "গররর" করে, Milo-ও নকল করে। |
+| 4 | 15–20s | এক দুষ্টু বানর গাছ থেকে নেমে Milo-র হাত থেকে কলা নিয়ে যায় — Milo অবাক। |
+| 5 | 20–25s | বানর খোসা ছাড়িয়ে অর্ধেক কলা Milo-কে ফিরিয়ে দেয়; দুজনে একসাথে খায়। |
+| 6 | 25–30s | Milo বাবার কাঁধে বসে সব প্রাণীকে টাটা দেয়; হাতি আবার পানির ঝরনা ছোড়ে — শুরুর দৃশ্যে ফেরে। |
+
+**Scene 1 (0–5s)**
+```
+Medium close-up at a sunny zoo, quick upward tilt as a friendly gray baby elephant with big floppy ears raises its trunk and sprays a gentle sparkly fountain of water in the air, rainbow droplets sprinkle over Milo who squeezes his eyes and bursts into giggles, mom's hand holding his, lush green trees, bright midday light + Style block
+```
+**Scene 2 (5–10s)**
+```
+Low-angle shot, slow tilt from the top of a tall spotted giraffe's head all the way down its long neck as it bends gently to meet Milo face to face, the giraffe blinks its long eyelashes, Milo touches his own neck and stretches up on tiptoes laughing, soft blue sky, warm sunshine + Style block
+```
+**Scene 3 (10–15s)**
+```
+Medium shot, gentle side dolly as a fluffy golden lion cub lying on a rock gives a big lazy yawn and a tiny soft roar, Milo copies it with his hands up like little paws and a cute "grr" face, dappled sunlight through leaves, playful mood + Style block
+```
+**Scene 4 (15–20s)**
+```
+Medium close-up, quick comedic whip-pan as a cheeky little brown monkey swings down from a tree branch and swipes the yellow banana right out of Milo's hand, Milo's mouth drops open in a surprised "hey" with empty fingers wiggling, the monkey grins on the branch, bright playful light + Style block
+```
+**Scene 5 (20–25s)**
+```
+Close-up, slow push-in as the monkey peels the banana, breaks it in half and kindly hands one half back down to Milo, Milo beams and they both take a bite at the same time with puffed cheeks, warm golden sunlight, friendly sweet mood + Style block
+```
+**Scene 6 (25–30s)**
+```
+Medium wide shot, slow arc then rise as Milo rides on dad's shoulders waving goodbye to the giraffe, lion cub and monkey, then the baby elephant lifts its trunk and sprays a sparkly water fountain again with rainbow droplets over Milo, matching the opening shot, bright cheerful light + Style block
+```
+
+**গান (৩০ সেকেন্ড)**
+```
+[Scene 1] Elephant says "Pa-wooo!" with a splashy spray, hello, hello, zoo day!
+[Scene 2] Giraffe is tall, tall, tall, the tallest neck of all!
+[Scene 3] Little lion goes "grr, grr, grr", a sleepy yawn and fluffy fur!
+[Scene 4] Ooh-ooh, aah-aah, cheeky monkey, oh! He took my banana, where did it go?
+[Scene 5] Half for you and half for me, the monkey shares, yum-yum, yippee!
+[Scene 6] Elephant, giraffe, lion, monkey too, bye-bye, bye-bye, see you at the zoo!
+```
+**Music prompt:** `Playful jungle nursery song, exactly 30 seconds, 118 BPM, marimba, bongos, tuba, trumpet and kazoo accents, bright cheerful female vocal with animal sound effects, mischievous plucky pizzicato chase at 15-20s, then warm joyful finale with full band`
+
+**Title:** `Milo's Day at the Zoo 🐘 | Animal Sounds Song for Kids`
+**Description:**
+```
+Baby Milo visits the zoo! 🐘🦒🦁
+A splashy elephant, a tall giraffe, and a cheeky monkey who takes his banana 🐒🍌
+Learn animal names and sounds with Milo!
+
+#KidsSongs #NurseryRhymes #AnimalSounds
+```
+**Tags:**
+```
+baby milo, zoo song, animal sounds, animal sounds for kids, zoo animals, elephant song, giraffe song, monkey song, nursery rhymes, toddler songs, kids songs, learn animals, preschool songs, 3d cartoon for kids, baby songs
+```
+
+---
+
+## Story 9 — Milo Walks the Puppy
+
+**গল্প:** মায়ের সাথে Milo তার কুকুরছানাকে হাঁটাতে বের হয়, হঠাৎ একটা কাঠবিড়ালি দেখে কুকুরছানা দড়ি টেনে দৌড়ায়। শেষে সবাই একটা বড় গাছের ছায়ায় বসে বিশ্রাম নেয়, আর Milo আলতো করে কুকুরছানার মাথায় হাত বোলায়।
+**শেখা:** পোষা প্রাণীর সাথে নরম ব্যবহার — আলতো হাত বোলানো, পানি খাওয়ানো, ধীরে কথা বলা।
+**Milo বর্ণনা:** ডিফল্ট
+
+| # | সময় | কী ঘটে |
+| --- | --- | --- |
+| 1 | 0–5s | দরজা খুলতেই কুকুরছানা লেজ নেড়ে লাফিয়ে Milo-র গাল চেটে দেয় — Milo খিলখিল করে হাসে। |
+| 2 | 5–10s | Milo আর মা একসাথে দড়ি ধরে পার্কের রাস্তায় হাঁটে, কুকুরছানা টুকটুক করে চলে। |
+| 3 | 10–15s | Milo আলতো করে কুকুরছানার পিঠে হাত বোলায়, কুকুরছানা চোখ বন্ধ করে খুশি। |
+| 4 | 15–20s | একটা কাঠবিড়ালি দেখে কুকুরছানা দড়ি টেনে দৌড়ায়, Milo আর মা পেছনে ছোট ছোট পায়ে দৌড়ায়। |
+| 5 | 20–25s | কাঠবিড়ালি গাছে উঠে যায়; সবাই হাঁপিয়ে গাছের ছায়ায় বসে, Milo কুকুরছানাকে পানি দেয়। |
+| 6 | 25–30s | Milo কুকুরছানাকে আলতো জড়িয়ে ধরে, কুকুরছানা আবার গাল চেটে দেয় — শুরুর দৃশ্যে ফেরে। |
+
+**Scene 1 (0–5s)**
+```
+Close-up at a cozy front doorway, quick push-in as a fluffy cream-and-brown puppy with floppy ears bounces up wagging its tail and gives Milo a big lick on his rosy cheek, Milo scrunches his eyes and bursts into giggles, warm golden morning sunlight, flower pots by the door + Style block
+```
+**Scene 2 (5–10s)**
+```
+Wide tracking shot, smooth side dolly along a curving park path as Milo and his mom walk together, both holding the soft red leash, the puppy trotting happily ahead with its tail wagging, green trees, pastel flowers, bright gentle sunshine + Style block
+```
+**Scene 3 (10–15s)**
+```
+Medium close-up, slow push-in as Milo kneels and gently strokes the puppy's back with one open soft hand, the puppy closes its eyes blissfully and leans into him, Milo smiles tenderly, mom crouching nearby smiling, warm soft sunlight with dreamy bokeh + Style block
+```
+**Scene 4 (15–20s)**
+```
+Medium wide shot, playful fast tracking as a fluffy cartoon squirrel scampers across the path and the puppy excitedly tugs the leash after it, Milo and mom hurry behind with little giggling running steps, mom's hand firmly on the leash, leaves swirling, comedic bouncy mood, bright safe park setting + Style block
+```
+**Scene 5 (20–25s)**
+```
+Low-angle shot, gentle crane down as the squirrel zips up a big leafy oak tree and waves its fluffy tail, Milo, mom and the puppy flop down together on the soft grass in the cool shade, Milo carefully holds a small water bowl while the puppy laps happily, dappled golden light through leaves + Style block
+```
+**Scene 6 (25–30s)**
+```
+Close-up, slow push-in as Milo gives the puppy a soft gentle hug under the tree, the puppy wags its tail and gives Milo a big lick on his rosy cheek, Milo scrunches his eyes and giggles exactly like the opening shot, warm golden afternoon light + Style block
+```
+
+**গান (৩০ সেকেন্ড)**
+```
+[Scene 1] Woof, woof, puppy, wiggle, wag, a slurpy kiss, a happy tag!
+[Scene 2] Walk, walk, walk along, puppy and me, we sing a song!
+[Scene 3] Gentle hands, soft and slow, pat, pat, pat, I love you so!
+[Scene 4] Oh! A squirrel! Off we go, puppy, puppy, slow, slow, slow!
+[Scene 5] Rest in the shade, a drink for you, cool little puppy, tired too!
+[Scene 6] Gentle hugs and gentle pats, a happy puppy, how about that!
+```
+**Music prompt:** `Sweet strolling nursery song, exactly 30 seconds, 106 BPM, acoustic guitar, whistling, soft brushed drums, glockenspiel and upright bass, warm gentle female vocal, fast playful chase with quick fiddle runs at 15-18s, then relaxed slower lullaby-like ending`
+
+**Title:** `Milo Walks the Puppy 🐶 | Be Gentle with Pets Song for Kids`
+**Description:**
+```
+Baby Milo takes his puppy for a walk in the park! 🐶🌳
+Oh no, a squirrel! The puppy runs, then everyone rests under a big tree 🐿️
+A sweet song about being gentle with pets.
+
+#KidsSongs #NurseryRhymes #PuppySong
+```
+**Tags:**
+```
+baby milo, puppy song, dog song for kids, be gentle with pets, kindness to animals, walking the dog, nursery rhymes, toddler songs, kids songs, pets for kids, squirrel song, preschool songs, 3d cartoon for kids, baby songs
+```
+
+---
+
+## Story 10 — Milo Shares the Ball
+
+**গল্প:** পার্কে Milo-র দেখা হয় নতুন বন্ধু Lily-র সাথে, আর দুজনেই একই লাল বলটা চায়। একটু টানাটানির পর Milo বলটা Lily-র দিকে গড়িয়ে দেয়, আর দুজনে মিলে আনন্দে খেলে।
+**শেখা:** ভাগ করে খেলা, পালা করে খেলা, আর নতুন বন্ধুকে "হাই" বলা।
+**Milo বর্ণনা:** ডিফল্ট (Lily: `Lily, a cheerful 2-year-old toddler girl with dark brown curly pigtails tied with yellow bows, big brown eyes, rosy cheeks, a lavender dress with white polka dots and white sneakers`)
+
+| # | সময় | কী ঘটে |
+| --- | --- | --- |
+| 1 | 0–5s | একটা বড় লাল বল লাফিয়ে Milo-র সামনে এসে থামে — Milo খুশিতে "বল!" বলে দৌড়ায়। |
+| 2 | 5–10s | ঝোপের পেছন থেকে Lily উঁকি দেয়, দুজনে লাজুক হাসি দিয়ে হাত নাড়ে। |
+| 3 | 10–15s | দুজনেই একসাথে বলটা ধরে — দুজনেই বলটা চায়! |
+| 4 | 15–20s | একটু টানাটানি, দুজনের মুখ গোমড়া; Milo থেমে একটু ভাবে। |
+| 5 | 20–25s | Milo বলটা আলতো করে Lily-র দিকে গড়িয়ে দেয়, Lily আবার ফেরত দেয় — দুজনে হাসে। |
+| 6 | 25–30s | দুজনে বল ছুঁড়ে-ধরে খেলে, বলটা লাফিয়ে আবার Milo-র সামনে এসে থামে — শুরুর দৃশ্যে ফেরে। |
+
+**Scene 1 (0–5s)**
+```
+Low-angle close-up on soft green grass in a sunny park playground, quick push-in as a big shiny red ball bounces into frame and rolls to a stop right at Milo's orange sneakers, Milo gasps with sparkling eyes, points and starts running toward it with a big excited smile, bright morning light, pastel playground in soft bokeh + Style block
+```
+**Scene 2 (5–10s)**
+```
+Medium shot, gentle pan right as Lily peeks out shyly from behind a round flowering bush, she and Milo lock eyes, both give a bashful little smile and a tiny wave, butterflies floating by, warm soft sunlight, sweet friendly mood + Style block
+```
+**Scene 3 (10–15s)**
+```
+Medium close-up, slow push-in as Milo and Lily both reach the red ball at the same moment and grab it with both hands from opposite sides, they look at each other with surprised round eyes, bright cheerful park light + Style block
+```
+**Scene 4 (15–20s)**
+```
+Medium shot, static camera with a soft comedic tone as Milo and Lily gently tug the ball back and forth, both with cute pouty faces and puffed cheeks, then Milo pauses, lets go a little and tilts his head thinking, a small cloud passes and gently dims the sunlight + Style block
+```
+**Scene 5 (20–25s)**
+```
+Wide low shot along the grass, gentle dolly as Milo sits down and kindly rolls the red ball across the grass to Lily, Lily's face lights up and she rolls it right back, both burst into giggles, the sun comes back bright and golden, warm happy mood + Style block
+```
+**Scene 6 (25–30s)**
+```
+Medium wide shot, playful arc around the two friends as Milo and Lily toss and catch the red ball together laughing, the ball bounces off Lily's hands and rolls to a stop right at Milo's orange sneakers, ending in a low-angle grass-level framing identical to the opening shot, bright sunny light + Style block
+```
+
+**গান (৩০ সেকেন্ড)**
+```
+[Scene 1] Bounce, bounce, a big red ball, rolling, rolling, not too small!
+[Scene 2] Who is that behind the tree? A brand new friend to play with me!
+[Scene 3] I want the ball! She wants it too! Oh dear, oh dear, what shall we do?
+[Scene 4] Pull, pull, tug, tug, frowny face, no one's happy in this place!
+[Scene 5] Roll it to you, roll it to me, sharing is fun, now we're happy!
+[Scene 6] Bounce and catch and share all day, best friends, Milo and Lily, play!
+```
+**Music prompt:** `Friendly playground nursery song, exactly 30 seconds, 114 BPM, ukulele, bouncy bass, glockenspiel, handclaps and light drums, duet of warm boy-like and girl-like child-friendly vocals, slower minor-key tug-of-war moment with soft bassoon at 15-20s, then bright major-key handclap chorus for the sharing ending`
+
+**Title:** `Milo Shares the Ball ⚽ | Sharing Is Caring Song for Kids`
+**Description:**
+```
+Baby Milo meets a new friend, Lily, at the park! 👫
+They both want the big red ball... so they learn to share and play together 🔴😊
+A sweet sharing song for toddlers.
+
+#KidsSongs #NurseryRhymes #SharingIsCaring
+```
+**Tags:**
+```
+baby milo, sharing song, sharing is caring, taking turns, making friends, friendship song for kids, ball song, nursery rhymes, toddler songs, kids songs, good manners for kids, preschool songs, 3d cartoon for kids, baby songs
 ```
 
 ---

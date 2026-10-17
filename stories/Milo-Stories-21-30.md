@@ -371,3 +371,358 @@ baby milo, pumpkin song for kids, big and small, opposites for toddlers, autumn 
 ```
 
 ---
+
+## Story 26 — Milo Gets Dressed
+
+**গল্প:** সকালে Milo নিজে নিজে জামা পরতে গিয়ে টি-শার্টে মাথা আটকে ফেলে আর মোজা পরে হাতে! শেষে সে ধাপে ধাপে ঠিকঠাক জামা পরে গর্বে লাফ দেয়।
+**শেখা:** জামা পরার ক্রম — আগে টি-শার্ট, তারপর ওভারঅল, তারপর মোজা, শেষে জুতো।
+**Milo বর্ণনা:** সিন ১–৪: `Milo, a chubby 2-year-old toddler with a curly ginger-orange hair tuft, big sparkling hazel eyes, rosy cheeks, wearing a soft plain white sleeveless cotton bodysuit,` — সিন ৫–৬: ডিফল্ট (পুরো জামা পরা)
+
+| # | সময় | কী ঘটে |
+| --- | --- | --- |
+| 1 | 0–5s | রোদেলা শোবার ঘরে Milo বিছানায় লাফিয়ে ওঠে, পাশে জামাকাপড়ের ছোট্ট স্তূপ — "আমি নিজে পরব!" ভঙ্গি। |
+| 2 | 5–10s | Milo টি-শার্ট টানে, মাথা গলার বদলে হাতার ভেতর আটকে যায় — সে টলমল করে হাঁটে। |
+| 3 | 10–15s | মাথা বের করে হাসে, তারপর মোজা দুটো হাতে পরে পুতুলের মতো নাড়ায়। |
+| 4 | 15–20s | Milo থেমে স্তূপটা দেখে মাথা চুলকায়, তারপর জামাগুলো ক্রমমতো সাজায়: টি-শার্ট, ওভারঅল, মোজা, জুতো। |
+| 5 | 20–25s | একে একে ঠিকঠাক পরে — টি-শার্ট, ওভারঅল, মোজা, কমলা জুতো; আয়নায় নিজেকে দেখে হাসে। |
+| 6 | 25–30s | পুরো জামা পরা Milo বিছানায় আবার লাফিয়ে ওঠে, প্রথম শটের মতো (লুপ)। |
+
+**Scene 1 (0–5s)**
+```
+Medium wide shot, quick bouncy push-in, Milo in a soft plain white sleeveless bodysuit climbs and bounces happily on a cozy bed in a sunny bedroom, beside a small neat pile of clothes (a white t-shirt, green denim overalls, a pair of white socks and little orange sneakers), Milo points at his chest with a proud excited "I can do it" face, warm morning sunlight, pastel walls and plush toys + Style block
+```
+
+**Scene 2 (5–10s)**
+```
+Medium shot, camera follows with a gentle wobble, Milo pulls the white t-shirt over his head but his head gets stuck halfway with one arm through the neck hole, he waddles around in a funny wobbly walk with the shirt over his face, muffled giggles, playful silly mood, sunny pastel bedroom + Style block
+```
+
+**Scene 3 (10–15s)**
+```
+Medium close-up, slow push-in, Milo's head pops out of the t-shirt with messy curly hair and a big laugh, then he pulls two white socks onto his hands like puppets and wiggles them, making them "talk" to each other, comedic cheerful mood, bright warm morning light + Style block
+```
+
+**Scene 4 (15–20s)**
+```
+Overhead top-down shot, slow rotation, Milo sits on the soft rug, scratches his head thoughtfully, then lays his clothes out in a neat row from left to right: white t-shirt, green denim overalls with a yellow star patch, white socks, little orange sneakers, he nods with a smart "aha" face, calm gentle moment, soft warm light + Style block
+```
+
+**Scene 5 (20–25s)**
+```
+Medium shot, smooth playful quick-cut style montage feel within one continuous take, Milo correctly puts on the white t-shirt, steps into the green denim overalls and clips the straps, pulls on white socks on his feet, then slips into orange sneakers, then turns to a round child-safe mirror and beams proudly at his reflection, joyful triumphant mood, bright sunny bedroom + Style block
+```
+
+**Scene 6 (25–30s)**
+```
+Medium wide shot, quick bouncy push-in, fully dressed Milo climbs and bounces happily on the cozy bed in the sunny bedroom and points at his chest with a proud excited face, warm morning sunlight, pastel walls and plush toys, matching the composition of the opening shot for a seamless loop + Style block
+```
+
+**গান (৩০ সেকেন্ড)**
+```
+[Scene 1] Good morning, sun! Time to get dressed, Milo can do it, he's the best!
+[Scene 2] Shirt goes on... oops, where's my head? I'm stuck in here, said Milo instead!
+[Scene 3] Pop! Hello! Now socks on hands? Silly sock puppets, that's not the plan!
+[Scene 4] Let's line them up, one, two, three, four, shirt, overalls, socks and shoes, for sure!
+[Scene 5] Shirt, then overalls, socks on feet, orange shoes, now I'm complete!
+[Scene 6] Step by step, I got dressed today, now I'm ready, hip hooray!
+```
+**Music prompt:** `Bright morning toddler routine song, exactly 30 seconds, 108 BPM, acoustic guitar, glockenspiel, bouncy upright bass and finger snaps, cheerful child-friendly female vocal, silly and playful in the first half, at 15s a calm counting break with soft woodblock ticks, then a proud marching finish`
+
+**Title:** `Milo Gets Dressed 👕 | Getting Dressed Song for Kids`
+**Description:**
+```
+👕 Oops! Baby Milo gets his shirt stuck and puts socks on his hands!
+👟 Learn the right order to get dressed, step by step, with this silly morning song 🎶
+
+#KidsSongs #NurseryRhymes #GettingDressed
+```
+**Tags:**
+```
+baby milo, getting dressed song, morning routine for kids, toddler routine, clothes song for kids, nursery rhymes, kids songs, 3d cartoon for kids, preschool learning, toddler songs, kids shorts, self help skills, baby songs
+```
+
+---
+
+## Story 27 — Milo's Snail Race
+
+**গল্প:** বাগানে Milo একটা শামুকের সাথে দৌড় প্রতিযোগিতা করে আর সাঁই করে এগিয়ে যায়। পথে উল্টে পড়া একটা লেডিবাগকে সাহায্য করতে থামে, আর ধীরে ধীরে শামুক জিতে যায় — সবাই মিলে আনন্দে হাততালি!
+**শেখা:** ধীর (slow) আর দ্রুত (fast) চেনা; অন্যকে সাহায্য করা জেতার চেয়েও সুন্দর।
+**Milo বর্ণনা:** ডিফল্ট
+
+| # | সময় | কী ঘটে |
+| --- | --- | --- |
+| 1 | 0–5s | বাগানের ঘাসে হামাগুড়ি দিয়ে Milo একটা রঙিন খোলসের শামুকের মুখোমুখি হয়, দুজনে চোখাচোখি — দৌড় শুরু! |
+| 2 | 5–10s | Milo দ্রুত হামাগুড়ি দিয়ে সামনে চলে যায়, শামুক খুব ধীরে ধীরে এগোয়। |
+| 3 | 10–15s | Milo ফুলের তোরণের (ফিনিশ লাইন) কাছে প্রায় পৌঁছে গেছে, খুশিতে হাসছে। |
+| 4 | 15–20s | পাশে একটা লেডিবাগ পাতার ওপর উল্টে পড়ে পা নাড়ছে; Milo থেমে আলতো করে ওকে সোজা করে দেয়। |
+| 5 | 20–25s | এর মধ্যে শামুক ধীরে ধীরে ফুলের তোরণ পার হয়ে যায়; Milo, লেডিবাগ সবাই আনন্দে হাততালি দেয়। |
+| 6 | 25–30s | Milo আবার শামুকের মুখোমুখি হয়ে চোখ টিপে হাসে — আরেকটা দৌড় (লুপ)। |
+
+**Scene 1 (0–5s)**
+```
+Low ground-level close-up, quick dramatic push-in, Milo lies on his tummy on soft green garden grass nose-to-nose with a cute smiling snail with a swirly pastel rainbow shell and big friendly eyes on its stalks, both narrow their eyes playfully like racers, then Milo grins with excitement, bright morning sunlight, dewdrops sparkling, daisies and clover around + Style block
+```
+
+**Scene 2 (5–10s)**
+```
+Low wide tracking shot, camera glides alongside, Milo crawls fast on his hands and knees across the grass with a giggling zoomy face and little cartoon speed puffs, while the snail far behind moves very slowly and steadily with a calm happy smile, playful energetic mood, sunny garden with flowers + Style block
+```
+
+**Scene 3 (10–15s)**
+```
+Medium shot, camera low facing Milo, Milo crawls toward a pretty arch made of bending pink and yellow flowers that serves as the finish line, he is almost there and laughs proudly, bees and butterflies floating, bright warm garden light + Style block
+```
+
+**Scene 4 (15–20s)**
+```
+Close-up, gentle slow push-in, Milo stops and notices a tiny red ladybug with black spots lying upside down on a green leaf, wiggling its little legs, Milo's face turns soft and caring, he gently offers one finger and carefully helps the ladybug flip right side up, the ladybug smiles and flutters its wings, tender kind moment, soft dappled sunlight + Style block
+```
+
+**Scene 5 (20–25s)**
+```
+Medium wide shot, camera slowly pans, the smiling snail slowly glides under the pink and yellow flower arch, Milo sits up with the ladybug on his fingertip and they all cheer, Milo claps his hands happily, the snail does a proud little wiggle, flower petals and sparkles float down, joyful celebration, bright sunny garden + Style block
+```
+
+**Scene 6 (25–30s)**
+```
+Low ground-level close-up, quick dramatic push-in, Milo lies on his tummy on the soft green grass nose-to-nose with the smiling rainbow-shell snail, the ladybug watching from a clover leaf, both narrow their eyes playfully like racers and Milo grins with excitement, bright morning sunlight and sparkling dewdrops, matching the opening shot for a seamless loop + Style block
+```
+
+**গান (৩০ সেকেন্ড)**
+```
+[Scene 1] Ready, steady, snail and me, who will win the race? Let's see!
+[Scene 2] Fast, fast, fast goes Milo, slow, slow, slow goes snail, oh!
+[Scene 3] Almost there, the flower gate, Milo's zooming, isn't it great?
+[Scene 4] Oh, little ladybug, upside down, Milo stops and turns her around!
+[Scene 5] Slow and steady, snail wins the race, hooray! Big smiles on every face!
+[Scene 6] Fast or slow, it's fun to play, and being kind is the best way!
+```
+**Music prompt:** `Playful garden race toddler song, exactly 30 seconds, 116 BPM, pizzicato strings, flute, bouncy marimba and light snare, cheerful child-friendly male vocal, racing energy in the first 15s, at 15s gentle tender pause with soft harp, then joyful slow-and-steady march into a big happy cheer`
+
+**Title:** `Milo's Snail Race 🐌 | Fast and Slow Song for Kids`
+**Description:**
+```
+🐌 Baby Milo races a snail in the garden! Who will win?
+🐞 Milo stops to help a little ladybug and learns that being kind is the best 🎶
+
+#KidsSongs #NurseryRhymes #FastAndSlow
+```
+**Tags:**
+```
+baby milo, snail race song, fast and slow, opposites for kids, kindness song, ladybug song, nursery rhymes, kids songs, 3d cartoon for kids, preschool learning, toddler songs, kids shorts, garden song for kids, baby songs
+```
+
+---
+
+## Story 28 — Milo's Car Wash
+
+**গল্প:** Milo তার লাল খেলনা গাড়িটা স্পঞ্জ, বুদবুদ আর ছোট্ট পাইপের পানি দিয়ে ধুয়ে ঝকঝকে করে। হঠাৎ ভেজা কুকুরছানা গা ঝাড়া দিয়ে Milo-কে ভিজিয়ে দেয়, আর দুজনে মিলে হাসতে হাসতে কাজ শেষ করে!
+**শেখা:** রং চেনা (লাল গাড়ি, হলুদ স্পঞ্জ, নীল বালতি, সবুজ পাইপ) আর কাজে সাহায্য করা।
+**Milo বর্ণনা:** ডিফল্ট
+
+| # | সময় | কী ঘটে |
+| --- | --- | --- |
+| 1 | 0–5s | উঠোনে কাদামাখা লাল খেলনা গাড়ি দেখে Milo অবাক হয়, তারপর হলুদ স্পঞ্জ তুলে উত্তেজনায় লাফায়। |
+| 2 | 5–10s | নীল বালতিতে স্পঞ্জ ডুবিয়ে Milo গাড়িতে ঘষে, রঙিন বুদবুদে ভরে যায়। |
+| 3 | 10–15s | সবুজ পাইপ থেকে আলতো পানি দিয়ে Milo বুদবুদ ধুয়ে দেয়, ছোট্ট রংধনু দেখা দেয়। |
+| 4 | 15–20s | বুদবুদে ভেজা কুকুরছানা Milo-র পাশে এসে গা ঝাড়া দেয় — পানির ফোঁটায় Milo ভিজে যায়! |
+| 5 | 20–25s | Milo খিলখিল হাসে, কুকুরছানা একটা কাপড় মুখে এনে গাড়ি মুছতে সাহায্য করে; গাড়ি ঝকঝকে। |
+| 6 | 25–30s | Milo গাড়িতে বসে, কিন্তু চাকা আবার একটু কাদায় পড়ে — Milo হলুদ স্পঞ্জ তুলে লাফায় (লুপ)। |
+
+**Scene 1 (0–5s)**
+```
+Medium shot, quick push-in, Milo stands in a sunny backyard driveway next to his little red plastic ride-on toy car splattered with cute brown mud spots, he gasps with wide eyes, then grabs a big fluffy yellow sponge and hops with excitement, bright summer sunlight, green lawn, a blue bucket and a coiled green garden hose nearby + Style block
+```
+
+**Scene 2 (5–10s)**
+```
+Medium close-up, camera slowly circles the toy car, Milo dips the yellow sponge into a blue bucket of foamy water and scrubs the red toy car, big shimmering rainbow soap bubbles puff up and float around him, Milo hums happily, playful cheerful mood, bright sunlight sparkling on the suds + Style block
+```
+
+**Scene 3 (10–15s)**
+```
+Medium shot, gentle tilt up, Milo holds the end of the green garden hose with both hands and a gentle soft trickle of water rinses the bubbles off the red toy car, a small rainbow appears in the fine water mist, Milo looks up at it in wonder, bright sunny summer day + Style block
+```
+
+**Scene 4 (15–20s)**
+```
+Medium shot, playful quick pan, a small fluffy brown puppy covered in soap bubbles trots up beside Milo and gives a big wiggly full-body shake, a burst of sparkly water droplets sprays all over Milo, Milo scrunches his face and squeals with a surprised laugh, funny gentle mood, glittering droplets in sunlight + Style block
+```
+
+**Scene 5 (20–25s)**
+```
+Medium wide shot, slow push-in, dripping wet Milo giggles happily, the puppy brings a soft blue cloth in its mouth and rubs it on the car while Milo wipes with the yellow sponge, together they make the red toy car shine with a cartoon twinkle, teamwork and joy, bright warm sunshine + Style block
+```
+
+**Scene 6 (25–30s)**
+```
+Medium shot, quick push-in, Milo stands next to his little red ride-on toy car in the sunny backyard driveway, a cute little splash of mud lands on one wheel, he gasps with wide eyes, then grabs the big fluffy yellow sponge and hops with excitement, the puppy beside him, blue bucket and green hose nearby, matching the opening shot for a seamless loop + Style block
+```
+
+**গান (৩০ সেকেন্ড)**
+```
+[Scene 1] Oh no, my red car is muddy today, let's wash it, wash it, hip hooray!
+[Scene 2] Yellow sponge in a blue bucket, scrub, scrub, bubbles everywhere, rub-a-dub!
+[Scene 3] Green hose, gentle water flow, rinse it off, look, a rainbow!
+[Scene 4] Shake, shake, shake! Puppy's wet, now I'm the wettest one yet!
+[Scene 5] Puppy helps me, wipe, wipe, wipe, my shiny red car looks just right!
+[Scene 6] Red, yellow, blue and green, helping makes things squeaky clean!
+```
+**Music prompt:** `Sunny summer toddler song, exactly 30 seconds, 114 BPM, steel drums, ukulele, bubbly synth pops and bright hand claps, happy child-friendly female vocal, splashy and cheerful, at 15s a funny splash sound effect and a playful shaking maraca break, then warm teamwork chorus to finish`
+
+**Title:** `Milo's Car Wash 🚗 | Colors and Helping Song for Kids`
+**Description:**
+```
+🚗 Baby Milo washes his little red toy car with bubbles and water!
+🐶 Splash! Puppy shakes and helps out too. Learn colors and helping with Milo 🫧
+
+#KidsSongs #NurseryRhymes #LearnColors
+```
+**Tags:**
+```
+baby milo, car wash song, learn colors, colors for toddlers, helping song, toy car for kids, nursery rhymes, kids songs, 3d cartoon for kids, preschool learning, toddler songs, kids shorts, bubbles song, baby songs
+```
+
+---
+
+## Story 29 — Milo at the Playground
+
+**গল্প:** পার্কে Milo দোলনায় চড়তে দৌড়ে যায়, কিন্তু সেখানে আরেকটা ছোট্ট মেয়ে দোল খাচ্ছে। Milo ধৈর্য ধরে নিজের পালার অপেক্ষা করে, তারপর দোলনা চড়ে আর নতুন বন্ধুর সাথে মিলে স্লাইডে নামে!
+**শেখা:** পালা করে খেলা (taking turns) আর অপেক্ষা করা।
+**Milo বর্ণনা:** ডিফল্ট — বন্ধু (সব সিনে একই): `a little toddler girl friend with brown skin, black curly puffy pigtails with purple bows, a pink t-shirt, purple shorts and white sneakers`
+
+| # | সময় | কী ঘটে |
+| --- | --- | --- |
+| 1 | 0–5s | রঙিন খেলার মাঠে ঢুকে Milo দোলনা দেখে খুশিতে চিৎকার করে দৌড় দেয়। |
+| 2 | 5–10s | দোলনায় আগেই একটা ছোট্ট মেয়ে দোল খাচ্ছে; Milo থেমে যায়, একটু মন খারাপ। |
+| 3 | 10–15s | Milo পাশে দাঁড়িয়ে হাত পেছনে রেখে অপেক্ষা করে, আঙুলে গুনে গুনে পা দোলায়। |
+| 4 | 15–20s | মেয়েটি নেমে হেসে Milo-কে দোলনা দেয়; Milo দোল খায়, এবার মেয়েটি অপেক্ষা করে। |
+| 5 | 20–25s | দুজনে হাত ধরে দৌড়ে স্লাইডে যায়, একসাথে হাসতে হাসতে নেমে আসে। |
+| 6 | 25–30s | Milo আবার খেলার মাঠের গেট থেকে দোলনা দেখে খুশিতে দৌড় দেয় (লুপ)। |
+
+**Scene 1 (0–5s)**
+```
+Wide shot, energetic push-in, Milo runs through the entrance of a bright colorful playground with a red slide, a yellow climbing frame and blue swings on soft green rubber ground, he spots the swings and his face lights up with a happy squeal, arms stretched out as he runs, sunny afternoon, fluffy clouds, leafy trees + Style block
+```
+
+**Scene 2 (5–10s)**
+```
+Medium shot, camera stops with him, Milo arrives at the swings and sees a little toddler girl friend with brown skin, black curly puffy pigtails with purple bows, a pink t-shirt, purple shorts and white sneakers happily swinging on the only free baby swing, Milo stops and his face turns into a small sad pout, gentle mood, sunny playground + Style block
+```
+
+**Scene 3 (10–15s)**
+```
+Medium close-up, slow push-in, Milo stands patiently beside the swing set with his hands behind his back, rocking on his heels and humming, he counts on his little fingers with a sweet patient face, the girl swings gently back and forth in the background, calm warm afternoon light + Style block
+```
+
+**Scene 4 (15–20s)**
+```
+Medium wide shot, camera gently sways like a swing, the little girl hops off and with a big smile gestures for Milo to take the swing, Milo climbs on beaming and swings gently back and forth with his feet kicking happily, while the girl now waits beside him and claps, warm friendly mood, golden afternoon sunlight + Style block
+```
+
+**Scene 5 (20–25s)**
+```
+Wide shot then following move, Milo and the little girl hold hands and run to the red slide, then slide down side by side on a wide double slide laughing with arms up, landing softly on the green rubber ground, joyful friendship moment, bright sunny playground with sparkles of light + Style block
+```
+
+**Scene 6 (25–30s)**
+```
+Wide shot, energetic push-in, Milo runs through the entrance of the bright colorful playground with the red slide, yellow climbing frame and blue swings, his new friend running beside him, he spots the swings and his face lights up with a happy squeal, arms stretched out, sunny afternoon and fluffy clouds, matching the opening shot for a seamless loop + Style block
+```
+
+**গান (৩০ সেকেন্ড)**
+```
+[Scene 1] Playground, playground, here I come, swings and slides, oh what fun!
+[Scene 2] Oh, the swing is busy now, I want a turn, but how?
+[Scene 3] I can wait, I can wait, one, two, three, it's really great!
+[Scene 4] Now it's my turn, up so high, then it's yours, we touch the sky!
+[Scene 5] Hand in hand, down the slide, wheee! My friend right by my side!
+[Scene 6] Taking turns is fun to do, a turn for me, a turn for you!
+```
+**Music prompt:** `Happy playground toddler song, exactly 30 seconds, 112 BPM, acoustic guitar, xylophone, bouncy bass and soft hand claps, sweet cheerful duet of child-friendly male and female vocals, energetic start, at 10s turns gentle and patient with a soft ticking clock rhythm, at 15s swings into a lilting swaying beat, then a bright wheee slide whistle and joyful finish`
+
+**Title:** `Milo at the Playground 🛝 | Taking Turns Song for Kids`
+**Description:**
+```
+🛝 Baby Milo wants the swing, but someone is already on it!
+🤝 Milo waits for his turn and makes a new friend. Learn taking turns with this happy song 🎶
+
+#KidsSongs #NurseryRhymes #TakingTurns
+```
+**Tags:**
+```
+baby milo, taking turns song, sharing song for kids, playground song, manners for toddlers, friendship song, nursery rhymes, kids songs, 3d cartoon for kids, preschool learning, toddler songs, kids shorts, swing song, baby songs
+```
+
+---
+
+## Story 30 — Milo Feeds the Birds
+
+**গল্প:** মায়ের সাহায্যে Milo গাছে একটা পাখির খাবারের পাত্র ঝোলায়, আর লাল, নীল, হলুদ পাখিরা খেতে আসে। একটা দুষ্টু কাঠবিড়ালি বীজ চুরি করতে এলে Milo তাকে তার নিজের একটা বাদাম দেয়, আর সবাই মিলে খুশিতে খায়!
+**শেখা:** পাখির রং চেনা (লাল, নীল, হলুদ) আর ভাগ করে নেওয়া।
+**Milo বর্ণনা:** Milo, a chubby 2-year-old toddler with a curly ginger-orange hair tuft, big sparkling hazel eyes, rosy cheeks, a soft red knitted beanie, a cozy light-blue puffy jacket over green denim overalls with a yellow star patch and orange sneakers,
+
+| # | সময় | কী ঘটে |
+| --- | --- | --- |
+| 1 | 0–5s | বাগানের গাছের নিচে Milo হাতে কাঠের পাখির খাবারের পাত্র নিয়ে উত্তেজনায় লাফায়, মাথার ওপর একটা পাখি ডেকে ওঠে। |
+| 2 | 5–10s | মায়ের হাত আলতো করে পাত্রটা ডালে ঝোলাতে সাহায্য করে; Milo স্কুপ দিয়ে বীজ ঢালে। |
+| 3 | 10–15s | একে একে লাল, নীল আর হলুদ পাখি এসে বসে বীজ খায়; Milo আনন্দে হাত চেপে ধরে। |
+| 4 | 15–20s | একটা তুলতুলে কাঠবিড়ালি ডাল বেয়ে নেমে পাত্র থেকে গাল ভরে বীজ নিয়ে নেয়; পাখিরা অবাক। |
+| 5 | 20–25s | Milo তার পকেট থেকে একটা বড় বাদাম বের করে কাঠবিড়ালিকে দেয়; কাঠবিড়ালি খুশি, পাখিরা আবার খায়। |
+| 6 | 25–30s | Milo আবার গাছের নিচে হাসিমুখে লাফায়, মাথার ওপর পাখি ডেকে ওঠে (লুপ)। |
+
+**Scene 1 (0–5s)**
+```
+Medium shot, low angle quick push-in, Milo stands under a big leafy tree in a crisp sunny garden holding a small round wooden bird feeder with a little roof, he bounces with excitement as a bird chirps from a branch above and he looks up with sparkling wide eyes and an open-mouthed smile, soft golden morning light, colorful flowers and a white picket fence + Style block
+```
+
+**Scene 2 (5–10s)**
+```
+Medium close-up, gentle tilt up, a grown-up's gentle hand reaches into frame and helps hang the wooden bird feeder on a low branch, then Milo carefully pours birdseed into it from a little round scoop, a few seeds sprinkle down, Milo concentrates with his tongue poking out, warm cozy garden light + Style block
+```
+
+**Scene 3 (10–15s)**
+```
+Medium wide shot, slow orbit around the feeder, a bright red cardinal-like bird, a sky-blue bluebird and a sunny yellow finch flutter down one by one and peck at the seeds, Milo below squeezes his hands together under his chin with delight and gasps at each color, magical cheerful mood, soft dappled sunlight through leaves + Style block
+```
+
+**Scene 4 (15–20s)**
+```
+Medium shot, playful pan down the tree trunk, a fluffy grey cartoon squirrel with a big bushy tail scampers down the branch and stuffs its cheeks full of seeds from the feeder until they puff out round, the three birds hop back with funny surprised faces, Milo puts his hands on his cheeks in surprise, gentle comedic mood, sunny garden + Style block
+```
+
+**Scene 5 (20–25s)**
+```
+Close-up, gentle push-in, Milo kneels down and pulls a big round nut from his jacket pocket and holds it out kindly on his open palm, the squirrel hops down, takes the nut with both little paws and hugs it happily, then the birds flutter back to the feeder to eat, Milo smiles warmly, sharing moment, golden sparkly sunlight + Style block
+```
+
+**Scene 6 (25–30s)**
+```
+Medium shot, low angle quick push-in, Milo stands under the big leafy tree with the bird feeder now hanging above, the red, blue and yellow birds and the squirrel nearby, he bounces with excitement as a bird chirps and he looks up with sparkling wide eyes and an open-mouthed smile, soft golden morning light, matching the opening shot for a seamless loop + Style block
+```
+
+**গান (৩০ সেকেন্ড)**
+```
+[Scene 1] Tweet, tweet, tweet, up in the tree, birdies, birdies, come and see!
+[Scene 2] Hang it up and fill it high, seeds for birdies flying by!
+[Scene 3] Red bird, blue bird, yellow too, pecking seeds, hello to you!
+[Scene 4] Oh! A squirrel, cheeks so round, he took the seeds, look what he found!
+[Scene 5] Here's a nut, just for you, sharing is a kind thing to do!
+[Scene 6] Red, blue, yellow, tweet, tweet, tweet, sharing makes our garden sweet!
+```
+**Music prompt:** `Gentle garden toddler song, exactly 30 seconds, 106 BPM, flute, acoustic guitar, celesta and soft birdsong-like whistles, warm sweet female vocal, light and airy, at 15s a sneaky playful bassoon and pizzicato squirrel tiptoe moment, then warm kind melody and happy chirpy finish`
+
+**Title:** `Milo Feeds the Birds 🐦 | Bird Colors Song for Kids`
+**Description:**
+```
+🐦 Baby Milo hangs a bird feeder and red, blue and yellow birds come to eat!
+🐿️ A hungry squirrel takes the seeds, so Milo shares a nut. Learn colors and sharing 🎶
+
+#KidsSongs #NurseryRhymes #SharingIsCaring
+```
+**Tags:**
+```
+baby milo, bird song for kids, bird colors, learn colors, sharing song, squirrel song, nature for toddlers, nursery rhymes, kids songs, 3d cartoon for kids, preschool learning, toddler songs, kids shorts, baby songs
+```
+
+---
