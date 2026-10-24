@@ -225,7 +225,7 @@ VIDEOS = [
                  scene="Same park, misty morning daylight. The owner calls her name and the dog's head pops up, "
                        "and she spins and runs straight toward the camera, ears back, the long line bouncing on "
                        "the wet grass behind her as she closes the distance.",
-                 sound="owner calls \"Luna, come!\", fast paws thudding, panting"),
+                 sound="owner calls her name and \"come!\", fast paws thudding, panting"),
             dict(time="10-15s", act="Jogger distraction",
                  scene="Park path along the grass, cool hazy morning. A jogger in a grey hoodie runs past on the "
                        "paved path in the background. The dog looks at the jogger, starts to step that way, then "
