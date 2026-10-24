@@ -69,7 +69,7 @@ VIDEOS = [
                        "drinks noisily from the clear moving water, then lifts his dripping chin and looks "
                        "back at the camera, panting.",
                  sound="trickling water, lapping, heavy breathing from both of them"),
-            dict(time="20-25s", act="Cool-down",
+            dict(time="20-25s", act="Cool-down rest",
                  scene="Back at the forest pullout beside the sage green van, overcast late morning. The dog "
                        "lies on a grey foam mat in the shade of the open side door, legs stretched out, "
                        "while the owner's hand pours water into his steel bowl. He drinks lying down, then "
@@ -342,7 +342,7 @@ VIDEOS = [
                        "the green mat, holding the chew between his front paws and gnawing it with his head "
                        "tilted sideways.",
                  sound="chewing, leaves rustling, friend says \"good waiting\""),
-            dict(time="20-25s", act="Reunion",
+            dict(time="20-25s", act="Happy reunion",
                  scene="Same clearing, early afternoon sun. The owner walks across the grass toward the mat, "
                        "still wearing her helmet, auburn braid hanging down her back. The dog jumps up, tail "
                        "wagging his whole back end, and leans hard against her legs as she crouches and hugs "
@@ -598,7 +598,7 @@ VIDEOS = [
                        "grey fleece blanket on the tarp next to her sleeping bag. The dog steps off her pad "
                        "onto the fleece, turns in two circles and lies down with a heavy flop and a sigh.",
                  sound="fleece rustling, a heavy flop, crickets"),
-            dict(time="10-15s", act="Stargazing",
+            dict(time="10-15s", act="Stargazing together",
                  scene="Same meadow at night, dark sky full of stars and a faint milky band, only a dim red "
                        "headlamp lighting the scene. The camera points up at the stars, then tilts down to "
                        "the dog lying on his fleece beside the sleeping bag, head up, ears moving as he "
@@ -685,7 +685,7 @@ VIDEOS = [
                        "bag in the owner's hand is now bulging. The dog walks beside her on a loose leash with "
                        "his tail up, glancing at the bag every few steps as it rustles.",
                  sound="bag rustling, footsteps on the bridge planks, a creek below"),
-            dict(time="20-25s", act="Reward",
+            dict(time="20-25s", act="Treat reward",
                  scene="Back at the gravel trailhead lot, bright midday sun, a large dark green trash bin with "
                        "no writing. The owner's hand drops the full grey bag inside and the lid bangs shut. "
                        "The dog sits and her gloved hand offers him a small treat, which he takes gently, "
@@ -709,14 +709,14 @@ VIDEOS = [
             dict(time="5-10s", act="Misty walk",
                  scene="Narrow mown path through a wide misty meadow, grey-blue early dawn light, wet grass. "
                        "The dog walks beside the owner's boots on a short leash, nose low in the dew, ears "
-                       "swiveling at small sounds. Mist hangs low over the meadow ahead.",
+                       "swiveling at small sounds. Mist hangs low over the meadow ahead, dark trees on the far side.",
                  sound="wet grass swishing, footsteps, owner whispers \"quiet now\""),
             dict(time="10-15s", act="Deer far away",
                  scene="Same misty meadow at first light, pale pink sky above the tree line. Far across the "
                        "field two deer graze at the edge of the woods, small in the frame. The dog sits on his "
                        "short leash beside the owner, ears forward, staring at them calmly, perfectly still.",
                  sound="near silence, a bird calling, owner whispers \"good boy, stay\""),
-            dict(time="15-20s", act="Binoculars",
+            dict(time="15-20s", act="Binocular check",
                  scene="Same meadow, sunrise light starting to touch the grass. The owner's hands lift black "
                        "binoculars toward the distant tree line. The dog lies down in the wet grass at her "
                        "feet on his short leash, chin on his paws, eyes still on the far edge of the field.",
@@ -785,12 +785,12 @@ VIDEOS = [
             dict(time="10-15s", act="His own dig",
                  scene="Gravel bank at the edge of the creek, warm sunlight. The dog digs with his front paws in "
                        "the loose gravel beside the owner, sending small stones flying behind him, then stops, "
-                       "sticks his nose into the hole and sneezes.",
+                       "sticks his nose deep into the little hole, snorts and sneezes loudly.",
                  sound="gravel scattering, a sneeze, owner laughing \"find anything?\""),
             dict(time="15-20s", act="Paddle in the shallows",
                  scene="Wider shallow pool in the creek, sunny afternoon, clear water only ankle deep over flat "
                        "grey shale. The dog stands in the water drinking, then walks slowly through it, "
-                       "pawing at a ripple, his white legs wet and sandy.",
+                       "pawing at a ripple, his white legs wet and sandy, then glances back to check on the owner.",
                  sound="splashing, lapping, cicadas buzzing"),
             dict(time="20-25s", act="Showing the find",
                  scene="Sitting on a flat dry rock beside the creek, late afternoon warm light. The owner's open "
@@ -815,12 +815,12 @@ VIDEOS = [
             dict(time="5-10s", act="Swirling the pan",
                  scene="Edge of the clear stream, bright sunlight on the water. The owner's hands swirl water and "
                        "gravel around in the black pan, water sloshing over the rim. The dog leans in, nose "
-                       "almost touching the pan, watching the swirl with intense focus.",
+                       "almost touching the pan, watching the swirl with intense focus, ears pricked forward.",
                  sound="water sloshing, gravel swishing, stream flowing"),
             dict(time="10-15s", act="Playing in the riffles",
                  scene="Shallow riffles in the stream, sunny midday light, water only ankle deep over smooth "
                        "stones. The dog pounces playfully at the bubbling ripples, front paws splashing, then "
-                       "shoves his face in the water and comes up dripping, tail wagging fast.",
+                       "shoves his face in the water and comes up dripping, tail wagging fast, white chest soaked.",
                  sound="splashing, the stream bubbling, owner laughs \"you're scaring the gold\""),
             dict(time="15-20s", act="Tiny flakes",
                  scene="Close-up of the black pan in the owner's hands, sunny midday light. A thin layer of dark "
@@ -884,7 +884,7 @@ VIDEOS = [
                        "backpack on the concrete, ears up, head turning toward the sound of an approaching "
                        "train.",
                  sound="distant train horn, rails humming, owner says \"here it comes\""),
-            dict(time="5-10s", act="Boarding",
+            dict(time="5-10s", act="Boarding the train",
                  scene="Open door of a dog-friendly train carriage, bright morning daylight. The dog steps up "
                        "from the platform into the carriage on his leash, paws careful on the metal step, "
                        "while the owner's hand holds his harness. Inside are blue fabric seats and a wide "
@@ -894,7 +894,7 @@ VIDEOS = [
                  scene="Inside the dog-friendly train carriage, natural daylight through big windows, blue "
                        "fabric seats. The dog lies on the floor at the owner's feet between the seats, chin "
                        "resting on her sneaker, eyes half closed. Green hills slide past the window behind "
-                       "him.",
+                       "him through the big window.",
                  sound="steady clacking of the rails, a gentle rocking hum, a soft sigh"),
             dict(time="15-20s", act="Window view",
                  scene="Same carriage, bright midday light through the window. Outside, a wide green valley with "
