@@ -6,6 +6,7 @@
 - **Length:** 13 clips × 20 seconds (about 4 min 13 s total). Make one clip per prompt, then join them in order.
 - **Copy:** Paste the whole yellow box for each clip. Every box already contains the style, the characters and the shots.
 - **Safe zone:** Faces and key action stay in the center. Top 10% and bottom 20% of the frame stay clear, because TikTok buttons and captions cover them.
+- **No double:** Every box has a "No double" line. Keep it when you paste: it stops two Georges in one frame, repeated shots, and the previous clip playing again. When joining clips, put them end to end with no overlap.
 - **Consistency:** Keep the same character descriptions in every clip so George, the boy and the man look the same throughout.
 
 ## Character Sheet
@@ -21,9 +22,10 @@
 
 > Vertical 9:16, 1080×1920, 20 seconds, 24 fps. 2D hand-drawn-look cartoon in classic Curious George storybook style: clean dark outlines, flat bright colors, soft shading, sunny summer lakeside park. Keep faces and action in the center of the frame. No on-screen text, no subtitles, no watermark.
 > Characters: GEORGE (small brown monkey, tan face, big round eyes, no tail). MAN IN YELLOW (tall slim man, all-yellow suit, wide-brim yellow hat, round glasses, folded yellow umbrella). BOY (teen, brown hair, freckles, navy cap, red-and-white striped shirt, jeans).
-> 0–4s: Tall vertical establishing shot. Blue sky and big leafy trees at the top, a bright blue lake below, picnic tables and tents along the shore. Slow tilt down.
-> 4–9s: MAN IN YELLOW walks along the grassy shore with an umbrella and a picnic basket. GEORGE hops beside him holding a small red bucket. A woman sunbathes under a yellow umbrella behind them.
-> 9–13s: Close-up of BOY on a wooden bench, smiling proudly, holding a small black remote control. Flowers and bushes behind him.
+> No double: only ONE of each character in every shot (one George, never two or more). Every shot happens once, in order: no repeats, no loops, and do not replay the previous clip. Negative prompt: duplicate characters, twins, clones, split screen, repeated or looping frames.
+> 0–4s: Tall establishing shot: blue sky and leafy trees on top, a bright blue lake below, picnic tables on the shore. Slow tilt down.
+> 4–9s: MAN IN YELLOW walks along the shore with a picnic basket. GEORGE hops beside him holding a small red bucket.
+> 9–13s: Close-up of BOY on a wooden bench, smiling proudly, holding a small black remote control.
 > 13–17s: Top-down vertical shot of a green-and-white toy sailboat zooming across sparkling blue water, white wake trailing down the frame.
 > 17–20s: BOY and GEORGE side by side on the bench. GEORGE clasps his hands, amazed; BOY grins.
 > Audio: light bouncy orchestral kids' music, birds, gentle water, boat motor buzz.
@@ -32,6 +34,7 @@
 
 > Vertical 9:16, 1080×1920, 20 seconds, 24 fps. 2D hand-drawn-look cartoon in classic Curious George storybook style: clean dark outlines, flat bright colors, soft shading, sunny lakeside park. Keep faces and action in the center. No on-screen text, no subtitles, no watermark.
 > Characters: GEORGE (small brown monkey, tan face, big round eyes, no tail). MAN IN YELLOW (tall slim man, all-yellow suit, wide-brim yellow hat, round glasses, folded yellow umbrella). BOY (teen, brown hair, freckles, navy cap, red-and-white striped shirt, jeans).
+> No double: only ONE of each character in every shot (one George, never two or more). Every shot happens once, in order: no repeats, no loops, and do not replay the previous clip. Negative prompt: duplicate characters, twins, clones, split screen, repeated or looping frames.
 > 0–5s: On a yellow wooden dock under a big tree, MAN IN YELLOW (standing, full height in frame) gestures and explains the toy-boat contest. BOY and GEORGE listen; GEORGE bounces with excitement.
 > 5–8s: Close-up of MAN IN YELLOW smiling warmly, umbrella on his shoulder.
 > 8–12s: GEORGE leans off the dock edge and gently places a raft of colorful toy blocks on the water. Ripples spread.
@@ -43,6 +46,7 @@
 
 > Vertical 9:16, 1080×1920, 20 seconds, 24 fps. 2D hand-drawn-look cartoon in classic Curious George storybook style: clean dark outlines, flat bright colors, soft shading, sunny lakeside park. Keep faces and action in the center. No on-screen text, no subtitles, no watermark.
 > Characters: GEORGE (small brown monkey, tan face, big round eyes, no tail).
+> No double: only ONE of each character in every shot (one George, never two or more). Every shot happens once, in order: no repeats, no loops, and do not replay the previous clip. Negative prompt: duplicate characters, twins, clones, split screen, repeated or looping frames.
 > 0–5s: GEORGE in the water next to the yellow dock, sad frown, as the blurry block raft sinks under the surface.
 > 5–9s: Wide vertical shot: GEORGE carries a big red-and-orange flame-pattern bucket along the dock toward a white toy sailboat. Trees and sky above.
 > 9–13s: GEORGE waves beside the sailboat, then pulls things from the bucket: wooden spools, sticks, corks, a toy windmill.
@@ -54,6 +58,7 @@
 
 > Vertical 9:16, 1080×1920, 20 seconds, 24 fps. 2D hand-drawn-look cartoon in classic Curious George storybook style: clean dark outlines, flat bright colors, soft shading, sunny lakeside park. Keep faces and action in the center. No on-screen text, no subtitles, no watermark.
 > Characters: GEORGE (small brown monkey, tan face, big round eyes, no tail).
+> No double: only ONE of each character in every shot (one George, never two or more). Every shot happens once, in order: no repeats, no loops, and do not replay the previous clip. Negative prompt: duplicate characters, twins, clones, split screen, repeated or looping frames.
 > 0–6s: Dock-level close-up: GEORGE beside his red bucket and a green-and-red toy-block chassis, rubbing his chin, thinking.
 > 6–10s: A thought bubble appears above GEORGE showing a small wooden boat floating. His eyes light up.
 > 10–14s: GEORGE chest-deep in the lake next to the dock. A flat wooden plank floats past him.
@@ -64,6 +69,7 @@
 
 > Vertical 9:16, 1080×1920, 20 seconds, 24 fps. 2D hand-drawn-look cartoon in classic Curious George storybook style: clean dark outlines, flat bright colors, soft shading. Keep faces and action in the center. No on-screen text, no subtitles, no watermark.
 > Characters: GEORGE (small brown monkey, tan face, big round eyes, no tail). OLDER COUPLE (woman in straw hat and blue overalls; bald man with glasses, green shirt, suspenders). BOY (teen, brown hair, freckles, navy cap, red-and-white striped shirt).
+> No double: only ONE of each character in every shot (one George, never two or more). Every shot happens once, in order: no repeats, no loops, and do not replay the previous clip. Negative prompt: duplicate characters, twins, clones, split screen, repeated or looping frames.
 > 0–4s: Close-up of GEORGE at the bottom of the frame, looking up and smiling dreamily.
 > 4–12s: Above him, a soft pink dream cloud with blurred edges: the woman holds a wooden toy boat, the old man holds a grand multi-masted model ship, and BOY holds a sleek sailboat.
 > 12–15s: GEORGE's smile turns into a worried, wide-eyed look.
@@ -74,6 +80,7 @@
 
 > Vertical 9:16, 1080×1920, 20 seconds, 24 fps. 2D hand-drawn-look cartoon in classic Curious George storybook style: clean dark outlines, flat bright colors, soft shading, sunny lakeside park. Keep faces and action in the center. No on-screen text, no subtitles, no watermark.
 > Characters: GEORGE (small brown monkey, tan face, big round eyes, no tail).
+> No double: only ONE of each character in every shot (one George, never two or more). Every shot happens once, in order: no repeats, no loops, and do not replay the previous clip. Negative prompt: duplicate characters, twins, clones, split screen, repeated or looping frames.
 > 0–3s: Overhead close-up into the red flame-pattern bucket: sticks, spools, corks, plastic flower, bottle caps.
 > 3–6s: GEORGE splashes into the water and tips the bucket over.
 > 6–11s: Top-down shot: all the items scatter on the water. Corks, wood and a yellow cup float; a few things bob and sink.
@@ -85,6 +92,7 @@
 
 > Vertical 9:16, 1080×1920, 20 seconds, 24 fps. 2D hand-drawn-look cartoon in classic Curious George storybook style: clean dark outlines, flat bright colors, soft shading, sunny lakeside park. Keep faces and action in the center. No on-screen text, no subtitles, no watermark.
 > Characters: GEORGE (small brown monkey, tan face, big round eyes, no tail).
+> No double: only ONE of each character in every shot (one George, never two or more). Every shot happens once, in order: no repeats, no loops, and do not replay the previous clip. Negative prompt: duplicate characters, twins, clones, split screen, repeated or looping frames.
 > 0–4s: Imagined: a red-and-white steamboat with round portholes puffs smoke from its tall stack. GEORGE's notepad peeks in at the top of the frame.
 > 4–7s: GEORGE taps the red pencil on his lips, thinking, smoke puffs drifting.
 > 7–10s: Imagined: a red fan boat with a big propeller zips across the water.
@@ -96,6 +104,7 @@
 
 > Vertical 9:16, 1080×1920, 20 seconds, 24 fps. 2D hand-drawn-look cartoon in classic Curious George storybook style: clean dark outlines, flat bright colors, soft shading, sunny lakeside park. Keep faces and action in the center. No on-screen text, no subtitles, no watermark.
 > Characters: GEORGE (small brown monkey, tan face, big round eyes, no tail). BOY (teen, brown hair, freckles, navy cap, red-and-white striped shirt, jeans). A white duck with an orange bill.
+> No double: only ONE of each character in every shot (one George, never two or more). Every shot happens once, in order: no repeats, no loops, and do not replay the previous clip. Negative prompt: duplicate characters, twins, clones, split screen, repeated or looping frames.
 > 0–5s: Underwater: a clear bowl floats at the surface; a white duck paddles down and peers at GEORGE. GEORGE shrugs at the duck, cheeks puffed.
 > 5–12s: Sketch montage on the yellow dock: notepad pages drawn in red pencil slide in one by one — sailboat, catamaran, steamboat, fan boat.
 > 12–16s: GEORGE sits on the dock surrounded by sketches, corks and wood pieces, building his boat. Picnickers in the background.
@@ -106,6 +115,7 @@
 
 > Vertical 9:16, 1080×1920, 20 seconds, 24 fps. 2D hand-drawn-look cartoon in classic Curious George storybook style: clean dark outlines, flat bright colors, soft shading, sunny lakeside park. Keep faces and action in the center. No on-screen text, no subtitles, no watermark.
 > Characters: GEORGE (small brown monkey, tan face, big round eyes, no tail). BOY (teen, brown hair, freckles, navy cap, red-and-white striped shirt, jeans).
+> No double: only ONE of each character in every shot (one George, never two or more). Every shot happens once, in order: no repeats, no loops, and do not replay the previous clip. Negative prompt: duplicate characters, twins, clones, split screen, repeated or looping frames.
 > 0–4s: BOY on his red bike, chatting and gesturing to GEORGE.
 > 4–8s: Close-up of GEORGE listening wide-eyed, then breaking into a big grin.
 > 8–15s: Under a big tree, BOY lifts his green-and-white sailboat. Water pours out of the hull. BOY looks dismayed.
@@ -116,6 +126,7 @@
 
 > Vertical 9:16, 1080×1920, 20 seconds, 24 fps. 2D hand-drawn-look cartoon in classic Curious George storybook style: clean dark outlines, flat bright colors, soft shading, sunny lakeside park. Keep faces and action in the center. No on-screen text, no subtitles, no watermark.
 > Characters: GEORGE (small brown monkey, tan face, big round eyes, no tail). BOY (teen, brown hair, freckles, navy cap, red-and-white striped shirt, jeans).
+> No double: only ONE of each character in every shot (one George, never two or more). Every shot happens once, in order: no repeats, no loops, and do not replay the previous clip. Negative prompt: duplicate characters, twins, clones, split screen, repeated or looping frames.
 > 0–6s: BOY holds his sailboat up, worried, turning it to look.
 > 6–8s: Close-up of the yellow dock planks.
 > 8–12s: Extreme close-up of the green hull: GEORGE's finger points at a porthole. That's the leak!
@@ -127,6 +138,7 @@
 
 > Vertical 9:16, 1080×1920, 20 seconds, 24 fps. 2D hand-drawn-look cartoon in classic Curious George storybook style: clean dark outlines, flat bright colors, soft shading, sunny lakeside park. Keep faces and action in the center. No on-screen text, no subtitles, no watermark.
 > Characters: GEORGE (small brown monkey, tan face, big round eyes, no tail). BOY (teen, brown hair, freckles, navy cap, red-and-white striped shirt, jeans). MAN IN YELLOW (tall slim man, all-yellow suit, wide-brim yellow hat, round glasses).
+> No double: only ONE of each character in every shot (one George, never two or more). Every shot happens once, in order: no repeats, no loops, and do not replay the previous clip. Negative prompt: duplicate characters, twins, clones, split screen, repeated or looping frames.
 > 0–4s: Under the tree, BOY smiles, holding his fixed sailboat. GEORGE peeks out from behind the trunk.
 > 4–9s: GEORGE looks worriedly at his own homemade boat: a raft of corks and wood, a bottle mast, a spool and a pinwheel.
 > 9–13s: BOY stands proudly with his sailboat in the park.
@@ -137,6 +149,7 @@
 
 > Vertical 9:16, 1080×1920, 20 seconds, 24 fps. 2D hand-drawn-look cartoon in classic Curious George storybook style: clean dark outlines, flat bright colors, soft shading, sunny lakeside park. Keep faces and action in the center. No on-screen text, no subtitles, no watermark.
 > Characters: GEORGE (small brown monkey, tan face, big round eyes, no tail). BOY (teen, brown hair, freckles, navy cap, red-and-white striped shirt, jeans). MAN IN YELLOW (tall slim man, all-yellow suit, wide-brim yellow hat, round glasses). OLDER COUPLE at the podium.
+> No double: only ONE of each character in every shot (one George, never two or more). Every shot happens once, in order: no repeats, no loops, and do not replay the previous clip. Negative prompt: duplicate characters, twins, clones, split screen, repeated or looping frames.
 > 0–5s: GEORGE proudly holds up his cork-and-wood raft boat. BOY holds his sailboat; the OLDER COUPLE stand at the podium.
 > 5–12s: On the bleacher steps, BOY receives a blue first-place ribbon and pins it to his shirt.
 > 12–20s: GEORGE stands beside MAN IN YELLOW holding his homemade boat, watching BOY celebrate, then smiles.
@@ -146,6 +159,7 @@
 
 > Vertical 9:16, 1080×1920, 13 seconds, 24 fps. 2D hand-drawn-look cartoon in classic Curious George storybook style: clean dark outlines, flat bright colors, soft shading, sunny lakeside park. Keep faces and action in the center. No on-screen text, no subtitles, no watermark.
 > Characters: GEORGE (small brown monkey, tan face, big round eyes, no tail). BOY (teen, brown hair, freckles, navy cap, red-and-white striped shirt). MAN IN YELLOW (tall slim man, all-yellow suit, wide-brim yellow hat, round glasses).
+> No double: only ONE of each character in every shot (one George, never two or more). Every shot happens once, in order: no repeats, no loops, and do not replay the previous clip. Negative prompt: duplicate characters, twins, clones, split screen, repeated or looping frames.
 > 0–5s: Over the shoulder of MAN IN YELLOW: BOY beams, shows off his blue ribbon and points a thumb at himself.
 > 5–7s: MAN IN YELLOW turns around, smiling.
 > 7–13s: Final shot: GEORGE happily holds up his handmade boat (corks, wood, bottle, pinwheel) to MAN IN YELLOW. Both smile warmly. Slow zoom in, fade out.
