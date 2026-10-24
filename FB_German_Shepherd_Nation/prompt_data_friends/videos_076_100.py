@@ -740,7 +740,7 @@ VIDEOS = [
         slug="097_Senior_Best_Friends",
         title="Senior Best Friends",
         dog="a real 11-year-old female long-coat black-and-tan German Shepherd with a grey muzzle and grey around the eyes, a little thinner fluffy coat, moving slowly and gently, wearing a faded yellow collar with a small round tag",
-        idea="A gentle day for two old friends: a slow morning in the sun, a little yard stroll, the cat grooming "
+        idea="A gentle day for two old friends: a quiet morning in the sun, a little yard stroll, the cat grooming "
              "her ear, soft food in separate bowls and an evening on the orthopedic bed.",
         clips=[
             dict(time="0-5s", act="Slow sunny morning",
