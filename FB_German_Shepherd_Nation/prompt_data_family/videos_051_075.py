@@ -282,7 +282,7 @@ VIDEOS = [
     dict(
         slug="058_My_Daughters_Birthday_Party",
         title="My Daughter's Birthday Party",
-        idea="Our daughter turns 8 with a small backyard party: balloons on the fence, friends arriving, "
+        idea="Our daughter has a small backyard birthday party: balloons on the fence, friends arriving, "
              "cake on the high table, opening gifts and a plain dog biscuit for her best guest.",
         clips=[
             dict(time="0-5s", act="Balloons on the fence",
@@ -316,7 +316,7 @@ VIDEOS = [
                        "the dog chews.",
                  sound="loud crunching, the girl says \"you get a treat too\", kids playing"),
         ],
-        caption="My baby is 8 and her best friend did not leave her side all day.\n"
+        caption="Birthday girl all day and her best friend did not leave her side all day.\n"
                 "Does your dog get invited to the birthday parties too?",
     ),
     dict(

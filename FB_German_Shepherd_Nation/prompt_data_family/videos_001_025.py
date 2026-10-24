@@ -294,38 +294,39 @@ VIDEOS = [
         caption="Kids do the dishes, she does quality control.\nIs your dog a dishwasher inspector too?",
     ),
     dict(
-        slug="009_Kids_Bath_Time_Supervisor",
-        title="Kids' Bath Time Supervisor",
-        idea="The dog keeps watch during the daughter's evening bath: sniffing the bubbles, guarding the bath "
-             "mat, a bubble on her nose, towel time and following the wet footprints down the hall.",
+        slug="009_Teeth_Brushing_Supervisor",
+        title="Teeth Brushing Supervisor",
+        idea="The dog supervises the kids' evening teeth brushing in their pajamas: waiting at the bathroom "
+             "door, watching the foam, a sniff of the toothbrush cup, tidying up and walking them to bed.",
         clips=[
-            dict(time="0-5s", act="Running the water",
-                 scene="Small family bathroom in the evening, warm ceiling light, white tiles and a plastic "
-                       "toy bin. The mom's hand tests the running water in the tub. The dog puts her front "
-                       "half over the edge of the tub, sniffing the rising bubbles with great interest.",
-                 sound="water running, bubbles fizzing, mom saying \"you're not getting in\""),
-            dict(time="5-10s", act="Bath mat guard",
-                 scene="Bathroom, evening ceiling light, a fluffy blue bath mat beside the tub. The dog lies "
-                       "on the mat with her head up, facing the tub. A yellow rubber duck floats on thick "
-                       "bubbles and a small child's hand splashes the water, mostly out of frame.",
-                 sound="splashing, a squeaky duck, the daughter giggling"),
-            dict(time="10-15s", act="Bubble nose",
-                 scene="Bathroom, evening home lighting, the dog sitting next to the tub. A small blob of "
-                       "foam lands on the dog's nose from a splash. She blinks, shakes her head and sneezes, "
-                       "and the foam flies off onto the tile floor.",
-                 sound="a big dog sneeze, the daughter laughing loudly"),
-            dict(time="15-20s", act="Towel time",
-                 scene="Bathroom, evening ceiling light, steam on the white tiles. The mom, a woman in her "
-                       "mid 30s with shoulder-length brown hair, wraps the daughter, a 7-year-old girl, in a "
-                       "big hooded pink towel up to her chin. The dog sniffs the towel and wags.",
-                 sound="towel rubbing, the girl saying \"I'm a burrito\""),
-            dict(time="20-25s", act="Wet footprints",
-                 scene="Upstairs hallway, evening lamp light, light wooden floor. The daughter in pajamas "
-                       "with damp braids walks toward her bedroom, leaving small damp footprints. The dog "
-                       "follows behind her, sniffing each footprint one by one. Her tail swings slowly as she goes, and she stops at the bedroom door to wait for the girl.",
-                 sound="soft footsteps, claws clicking, mom saying \"she's checking your work\""),
+            dict(time="0-5s", act="Door guard",
+                 scene="Small family bathroom doorway in the evening, warm ceiling light, white tiles and a "
+                       "plastic cup of toothbrushes on the sink. The dog lies across the doorway on the hall "
+                       "floor, head up, watching as the daughter, a 7-year-old girl with two braids in pink "
+                       "pajamas, steps up onto a small stool at the sink.",
+                 sound="stool scraping, the tap running, the girl saying \"excuse me, doggy\""),
+            dict(time="5-10s", act="Watching the foam",
+                 scene="Family bathroom, evening ceiling light. The daughter in pink pajamas brushes her "
+                       "teeth at the sink with lots of white foam. The dog sits beside the stool, tilting "
+                       "her head from side to side, eyes following the toothbrush going back and forth.",
+                 sound="brushing sounds, water dripping, mom laughing softly off camera"),
+            dict(time="10-15s", act="Cup sniff",
+                 scene="Family bathroom, evening light. The son, an 11-year-old boy with short curly hair in "
+                       "blue pajamas, rinses his toothbrush and puts it back in the cup on the counter edge. "
+                       "The dog stretches her neck up and gives the cup a careful sniff without touching it.",
+                 sound="water splashing, the boy saying \"no, that's mine\", a soft snort from the dog"),
+            dict(time="15-20s", act="Towel tidy",
+                 scene="Family bathroom, evening ceiling light, a small hand towel hanging on a hook. The "
+                       "mom, a woman in her mid 30s with shoulder-length brown hair, wipes the kids' faces "
+                       "with the towel while the dog stands between the two kids, tail swinging, looking up.",
+                 sound="towel rubbing, kids giggling, tags jingling"),
+            dict(time="20-25s", act="Walk to bed",
+                 scene="Upstairs hallway, evening lamp light, light wooden floor. Both kids in pajamas walk "
+                       "toward their bedrooms with the dog trotting between them. At the bedroom door she "
+                       "stops, sits down and looks back at the camera as the light inside clicks on.",
+                 sound="soft footsteps, claws clicking, mom saying \"teeth inspector, all done\""),
         ],
-        caption="Bath time has a supervisor and she takes it very seriously.\nAnyone else's dog obsessed with bubbles?",
+        caption="Nobody goes to bed until the teeth inspector says so.\nDoes your dog have a bedtime job too?",
     ),
     dict(
         slug="010_Pajamas_and_Bedtime_Hugs",
@@ -624,7 +625,7 @@ VIDEOS = [
             dict(time="15-20s", act="Tiptoe past",
                  scene="Living room, afternoon daylight. The daughter, a 7-year-old girl with two braids, "
                        "tiptoes past the recliner with exaggerated steps. The dog lifts her head and thumps "
-                       "her tail twice on the carpet, but stays put. Her toes are pointed exaggeratedly and she covers her mouth to keep from giggling.",
+                       "her tail twice on the carpet, but stays put. The girl covers her mouth with both hands to keep from giggling.",
                  sound="the girl whispering \"shhh\", tail thumping, snoring"),
             dict(time="20-25s", act="Wake-up scratch",
                  scene="Living room, late afternoon light. The grandpa pushes up his flat cap, stretches his "
