@@ -535,7 +535,7 @@ VIDEOS = [
                  sound="tail thumping, owner saying \"good, stay\", a soft whine"),
             dict(time="10-15s", act="Staying put",
                  scene="Front hallway, evening, cool blue light outside through the open door. A friendly "
-                       "couple steps in holding a bottle bag and takes off their jackets. The dog stays "
+                       "couple steps in holding a small gift bag and takes off their jackets. The dog stays "
                        "sitting on the mat, whining softly, wiggling but not getting up. Their shoes are wet from the rain on the porch.",
                  sound="guests saying \"hi\", jackets rustling, soft whining"),
             dict(time="15-20s", act="Polite hello",
