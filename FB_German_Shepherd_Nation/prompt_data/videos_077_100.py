@@ -170,7 +170,8 @@ VIDEOS = [
             dict(time="10-15s", act="Nonstop squeaking",
                  scene="Family room carpet, morning daylight. The dog lies on its belly chomping the "
                        "yellow duck over and over, making it squeak every second, tail sweeping the carpet "
-                       "behind it, eyes looking at the camera while it chews.",
+                       "behind it, eyes looking at the camera while it chews. "
+                       "A few tufts of yellow fluff are already on the carpet.",
                  sound="squeak, squeak, squeak, squeak, owner groaning \"oh my gosh\""),
             dict(time="15-20s", act="Toss and pounce",
                  scene="Family room, morning daylight, beige carpet, grey couch behind. The dog stands and "
@@ -205,7 +206,8 @@ VIDEOS = [
             dict(time="10-15s", act="Head in the box",
                  scene="Same living room, late afternoon light, laminate floor. The dog pushes its whole "
                        "head inside the box and walks forward, sliding the box across the floor until it "
-                       "bumps the couch, then pulls its head out and shakes it.",
+                       "bumps the couch, then pulls its head out and shakes it. "
+                       "Its tail wags the whole time the box is moving.",
                  sound="box scraping on the floor, a soft bump, owner laughing"),
             dict(time="15-20s", act="Shredding time",
                  scene="Living room floor, late afternoon daylight, torn cardboard pieces all around. The "
@@ -251,7 +253,8 @@ VIDEOS = [
             dict(time="20-25s", act="Helping clean up",
                  scene="Living room, midday light. The owner's hand stuffs fluff into a white trash bag on "
                        "the floor. The dog picks up the torn pillow cover in its mouth and trots off "
-                       "across the room with it, tail wagging.",
+                       "across the room with it, tail wagging. "
+                       "A few white tufts float up behind him as he goes.",
                  sound="trash bag rustling, paws trotting, owner says \"hey, give that back\""),
         ],
         caption="I was gone for 20 minutes.\nHe has no idea what happened. None at all.",
@@ -280,7 +283,8 @@ VIDEOS = [
             dict(time="15-20s", act="Alert bark",
                  scene="Front window, mid morning, overcast daylight. A plain white van stops at the curb "
                        "outside. The dog stands up on the couch cushions, barks twice at the glass with its "
-                       "tail held stiff, then stares at the van.",
+                       "tail held stiff, then stares at the van. "
+                       "The back cushion is pushed crooked under its front paws.",
                  sound="two loud barks, van engine idling outside, owner says \"easy, easy\""),
             dict(time="20-25s", act="Half asleep on duty",
                  scene="Same beige couch, late morning, soft daylight through the front window. The dog "
@@ -305,7 +309,8 @@ VIDEOS = [
             dict(time="5-10s", act="The sprint",
                  scene="Same leafy backyard, overcast autumn morning. The grey squirrel darts toward the "
                        "oak tree and the dog bolts after it across the lawn, dry orange leaves kicking up "
-                       "behind its paws as it runs.",
+                       "behind its paws as it runs. "
+                       "The camera shakes as the owner takes a few quick steps after them.",
                  sound="leaves crunching, paws thudding, owner yelling \"hey!\""),
             dict(time="10-15s", act="Paws on the tree",
                  scene="Base of the big oak tree, overcast morning, leaves piled around the roots. The "
@@ -315,12 +320,14 @@ VIDEOS = [
             dict(time="15-20s", act="Barking up the tree",
                  scene="Under the oak tree, overcast autumn daylight, wooden fence behind. The dog stands "
                        "on all fours and barks up at the branches, walks once around the trunk, then stops "
-                       "and stares up again with its head tilted back.",
+                       "and stares up again with its head tilted back. "
+                       "A few dry leaves stick to the fur on its legs.",
                  sound="barking, squirrel chattering from above"),
             dict(time="20-25s", act="Never cared anyway",
                  scene="Backyard, overcast morning, leaves on the grass. The dog walks away from the tree, "
                        "sniffs a pile of leaves along the wooden fence, then stops and glances back over "
-                       "its shoulder at the oak tree.",
+                       "its shoulder at the oak tree. "
+                       "Its tail swings slowly and its ears stay turned toward the branches.",
                  sound="leaves crunching, sniffing, owner laughing \"next time, buddy\""),
         ],
         caption="Score: Squirrel 347, Dog 0.\nHe says next time for sure.",
@@ -344,17 +351,20 @@ VIDEOS = [
             dict(time="10-15s", act="Daily biscuit",
                  scene="Same front porch, sunny midday. The mail carrier holds out a small dog biscuit "
                        "from his shirt pocket. The dog sits right away, takes the biscuit gently from his "
-                       "fingers and crunches it, crumbs falling on the porch boards.",
+                       "fingers and crunches it, crumbs falling on the porch boards. "
+                       "The owner's slippers are visible at the edge of the frame.",
                  sound="crunching, mail carrier says \"good sit\""),
             dict(time="15-20s", act="Ear scratches",
                  scene="Front porch, sunny spring midday. The mail carrier scratches behind the dog's ears "
                        "with one hand, and the dog leans into his knee with its eyes half closed and its "
-                       "tail wagging slowly.",
+                       "tail wagging slowly. "
+                       "A few loose hairs drift off its coat in the sunlight onto the porch boards.",
                  sound="birds, happy groan from the dog, owner laughing"),
             dict(time="20-25s", act="Watching him go",
                  scene="Front porch steps, sunny midday, quiet street behind. The mail carrier walks away "
                        "down the sidewalk with his bag. The dog sits on the top step beside the owner's "
-                       "legs, watching him leave, tail wagging slowly on the step.",
+                       "legs, watching him leave, tail wagging slowly on the step. "
+                       "Its ears perk up once when he waves goodbye.",
                  sound="footsteps fading, mail carrier calls \"see you tomorrow, buddy\""),
         ],
         caption="Every other dog barks at the mail carrier.\nMine waits at the door for his best friend.",
@@ -374,22 +384,26 @@ VIDEOS = [
             dict(time="5-10s", act="Sniffing the bucket",
                  scene="Same sunny driveway, red bucket of foamy water next to the silver car. The dog "
                        "walks up and sniffs the foam, gets a bit of suds on its nose, backs away and "
-                       "sneezes, then shakes its head.",
+                       "sneezes, then shakes its head. "
+                       "Water drips down the car door behind it onto the concrete.",
                  sound="a loud sneeze, owner laughing \"that's not for you\""),
             dict(time="10-15s", act="Biting the hose water",
                  scene="Sunny driveway, wet concrete. The owner's hand sprays the garden hose at the car "
                        "and the dog jumps in and bites at the stream of water, water splashing over its "
-                       "face and chest as it snaps at the spray.",
+                       "face and chest as it snaps at the spray. "
+                       "Its collar tag flashes as it twists after the stream.",
                  sound="hose spraying, jaws snapping, splashing, owner laughing"),
             dict(time="15-20s", act="Big shake",
                  scene="Driveway next to the silver car, bright late morning sun. The soaking wet dog "
                        "stands still for a second, then shakes its whole body hard, spraying water drops "
-                       "all over the clean car door and toward the camera.",
+                       "all over the clean car door and toward the camera. "
+                       "A few drops land on the lens and the camera wobbles.",
                  sound="water spraying off the fur, tags rattling, owner yelling \"nooo!\""),
             dict(time="20-25s", act="Drying in the sun",
                  scene="Front lawn beside the driveway, sunny late morning, patchy green grass. The dog "
                        "lies on an old striped beach towel, its wet fur spiky, panting, while the clean "
-                       "silver car sits in the driveway behind it.",
+                       "silver car sits in the driveway behind it. "
+                       "Its ears twitch at a bird landing on the nearby fence.",
                  sound="panting, hose dripping, birds"),
         ],
         caption="I washed the car. He washed himself.\nThen he shook off on the car. Back to square one.",
@@ -409,17 +423,20 @@ VIDEOS = [
             dict(time="5-10s", act="Out into the rain",
                  scene="Front steps of the house, steady light rain, overcast grey morning, wet concrete "
                        "steps. The dog steps out on a red leash, pauses as drops hit its ears, shakes its "
-                       "head, then walks down the wet steps.",
+                       "head, then walks down the wet steps. "
+                       "The owner's rain boots step down right behind it on the steps.",
                  sound="rain pattering, leash clinking, footsteps on wet concrete"),
             dict(time="10-15s", act="Puddle splash",
                  scene="Neighborhood sidewalk, rainy grey morning, dark wet pavement, parked cars and bare "
                        "trees along the street. The dog walks straight through a big puddle, splashing, its "
-                       "yellow raincoat covered in raindrops.",
+                       "yellow raincoat covered in raindrops. "
+                       "Its paws come out dark and muddy, and it keeps walking without even looking down.",
                  sound="splashing, rain, a car driving past on the wet road"),
             dict(time="15-20s", act="Sniffing wet grass",
                  scene="Strip of wet grass next to the sidewalk, rainy overcast morning. The dog stops and "
                        "sniffs the soggy grass, rain dripping off the edge of its raincoat, its ears and "
-                       "face soaked and shiny.",
+                       "face soaked and shiny. "
+                       "The red leash hangs loose and drips water onto the sidewalk.",
                  sound="rain, sniffing, owner says \"come on, let's go home\""),
             dict(time="20-25s", act="Towel rub at home",
                  scene="Back in the front hallway, grey rainy daylight through the door window, the wet "
@@ -438,27 +455,32 @@ VIDEOS = [
             dict(time="0-5s", act="Frozen in boots",
                  scene="Kitchen, cold winter morning, pale daylight through the window, grey tile floor. "
                        "The dog stands wearing four new red rubber dog boots, looking down at its front "
-                       "paws, not moving at all, ears pulled back slightly.",
+                       "paws, not moving at all, ears pulled back slightly. "
+                       "A water bowl and a food bowl sit by the back door.",
                  sound="quiet kitchen, owner laughing \"you can walk, I promise\""),
             dict(time="5-10s", act="High-step walk",
                  scene="Same kitchen, pale winter daylight, grey tile floor. The dog walks across the "
                        "tiles lifting each leg very high with stiff exaggerated steps, like it is stepping "
-                       "on something sticky, the red boots tapping on the floor.",
+                       "on something sticky, the red boots tapping on the floor. "
+                       "Its tail is tucked low and it keeps glancing at its feet.",
                  sound="boots squeaking on tile, owner cracking up"),
             dict(time="10-15s", act="Shaking a boot",
                  scene="Kitchen floor, pale morning light. The dog stops, lifts one back leg and shakes it "
                        "quickly a few times trying to flick the red boot off, then puts it down and looks "
-                       "at it.",
+                       "at it. "
+                       "The boot stays on and the dog lets out a small huff.",
                  sound="boot flapping, tags jingling, owner says \"nope, they stay on\""),
             dict(time="15-20s", act="Careful snow steps",
                  scene="Snowy front yard, overcast winter morning, fresh white snow, bare trees and a "
                        "cleared path. The dog steps onto the snow in its red boots, still high-stepping "
-                       "carefully for a few steps, then starts to trot.",
+                       "carefully for a few steps, then starts to trot. "
+                       "Its paw prints leave neat round marks in the fresh snow behind it.",
                  sound="snow crunching, cold wind, owner says \"there you go\""),
             dict(time="20-25s", act="Running free",
                  scene="Same snowy front yard, overcast winter daylight. The dog runs a big loop through "
                        "the snow, boots kicking up powder, then comes back to the camera panting, its "
-                       "breath showing in the cold air.",
+                       "breath showing in the cold air. "
+                       "Snow sticks to the fur on its chest and chin.",
                  sound="snow crunching, heavy panting, owner cheering"),
         ],
         caption="First 5 minutes: he forgot how legs work.\nNext 5 minutes: he loves them. Did your dog do the boot walk too?",
@@ -482,12 +504,14 @@ VIDEOS = [
             dict(time="10-15s", act="First lick",
                  scene="Inside the parked car, sunny afternoon. The owner's hand holds the small cup of "
                        "plain whipped cream in front of the dog, and the dog licks it eagerly, getting "
-                       "white cream all over its nose and whiskers.",
+                       "white cream all over its nose and whiskers. "
+                       "Its tail thumps against the back of the seat as it licks.",
                  sound="loud licking, owner laughing \"slow down\""),
             dict(time="15-20s", act="Cleaning his nose",
                  scene="Back seat of the car, sunny daylight. The dog sits back and licks the whipped "
                        "cream off its nose and lips with long swipes of its tongue, while the empty cup "
-                       "sits in the owner's hand.",
+                       "sits in the owner's hand. "
+                       "A little white cream is still stuck to its whiskers.",
                  sound="lip licking, tags jingling, happy panting"),
             dict(time="20-25s", act="Happy ride home",
                  scene="Back seat of the moving car, afternoon sunlight through the windows, still in its "
@@ -512,22 +536,26 @@ VIDEOS = [
             dict(time="5-10s", act="Cat rubs",
                  scene="Same living room, late afternoon daylight, beige carpet. The orange cat walks past "
                        "the lying dog, rubbing the side of its face against the dog's chin, tail held up. "
-                       "The dog stays still and sniffs the cat gently.",
+                       "The dog stays still and sniffs the cat gently. "
+                       "The dog's tail gives a slow wag on the carpet.",
                  sound="purring, a quiet meow, the dog sniffing"),
             dict(time="10-15s", act="Sharing the sun",
                  scene="Living room, a bright patch of afternoon sunlight on the carpet by the window. "
                        "The dog and the orange cat lie about a foot apart in the sun patch, both dozing, "
-                       "the cat's tail tip twitching now and then.",
+                       "the cat's tail tip twitching now and then. "
+                       "The dog's paws twitch a little in its sleep.",
                  sound="quiet room, slow breathing, a clock ticking"),
             dict(time="15-20s", act="Gentle lick",
                  scene="Same sunny spot on the living room carpet, afternoon daylight. The dog lifts its "
                        "head and gives the cat one slow lick on top of its head. The cat closes its eyes "
-                       "and stays lying where it is.",
+                       "and stays lying where it is. "
+                       "The fur on top of the cat's head is left a little wet.",
                  sound="purring gets louder, owner laughing softly"),
             dict(time="20-25s", act="Following the cat",
                  scene="Kitchen, early evening daylight, white tile floor. The orange cat walks across the "
                        "tiles with its tail up, and the dog follows a few steps behind, sniffing the air, "
-                       "both stopping near the back door.",
+                       "both stopping near the back door. "
+                       "The dog's nails click softly on the tiles as it walks.",
                  sound="soft paw steps, a meow, tags jingling"),
         ],
         caption="They were supposed to be enemies.\nNobody told them.",
@@ -546,22 +574,26 @@ VIDEOS = [
             dict(time="5-10s", act="Gentle pushing",
                  scene="Same backyard lawn, sunny early evening. Dad lightly pushes the dog's shoulder with "
                        "his hand, the dog springs back, then hops in again and paws at his arm, its mouth "
-                       "open and relaxed, tail wagging.",
+                       "open and relaxed, tail wagging. "
+                       "Dad's knees have grass stains and a few blades stick to the dog's fur.",
                  sound="dad laughing, play growls, grass rustling"),
             dict(time="10-15s", act="Belly rubs",
                  scene="Backyard grass, early evening sun. The dog flops onto its back in the grass with its "
                        "legs kicking, while dad rubs its belly with both hands and the dog gently mouths at "
-                       "his sleeve.",
+                       "his sleeve. "
+                       "Its back leg kicks a little when dad finds the right spot.",
                  sound="happy grunts, dad saying \"you're a big baby\""),
             dict(time="15-20s", act="Rope tug",
                  scene="Backyard lawn, sunny early evening. Dad holds one end of a thick knotted blue rope "
                        "toy and the dog pulls the other end backward, growling playfully, its back paws "
-                       "digging into the grass.",
+                       "digging into the grass. "
+                       "Dad lets the dog pull him forward a few inches across the lawn.",
                  sound="playful growling, rope creaking, dad grunting"),
             dict(time="20-25s", act="Resting together",
                  scene="Backyard grass, early evening, long shadows from the swing set. Dad lies flat on "
                        "his back in the grass and the dog lies beside him panting, resting its head on his "
-                       "chest. Filmed from mom's view standing nearby.",
+                       "chest. Filmed from mom's view standing nearby. "
+                       "Dad's hand rests on the dog's back.",
                  sound="panting, crickets starting, mom says \"who won?\""),
         ],
         caption="Mom said no rough playing in the yard.\nThey heard nothing.",
@@ -575,27 +607,32 @@ VIDEOS = [
             dict(time="0-5s", act="Kitchen shadow",
                  scene="Kitchen, morning daylight, beige tile floor, white cabinets. Camera is mom's point "
                        "of view looking down: the dog stands right behind her bare feet at the counter, so "
-                       "close its nose touches her calf, staring up at her.",
+                       "close its nose touches her calf, staring up at her. "
+                       "When she steps to the fridge, the dog steps with her.",
                  sound="coffee maker gurgling, mom says \"you're right there again\""),
             dict(time="5-10s", act="Laundry room",
                  scene="Small laundry room, overcast daylight from a high window, white washing machine, a "
                        "plastic laundry basket. The dog lies across the doorway right behind mom's feet "
-                       "while her hands drop a few towels into the washer.",
+                       "while her hands drop a few towels into the washer. "
+                       "Its eyes follow every move of her hands.",
                  sound="washer door clicking, a big dog sigh"),
             dict(time="10-15s", act="Bathroom door",
                  scene="Inside a small bathroom, dim daylight, looking at the gap under the closed door. "
                        "The dog's black nose pokes under the gap from the hallway side, sniffing loudly, "
-                       "and its paws shuffle back and forth on the other side.",
+                       "and its paws shuffle back and forth on the other side. "
+                       "A bath mat and a towel are in the bottom of the frame.",
                  sound="loud sniffing, a soft whine, mom sighs \"I'll be out in a minute\""),
             dict(time="15-20s", act="Up the stairs",
                  scene="Carpeted staircase, afternoon daylight from a window at the top. The camera looks "
                        "back over mom's shoulder as she walks up, and the dog climbs one step behind her, "
-                       "looking up at her the whole way.",
+                       "looking up at her the whole way. "
+                       "When she stops on the landing, the dog stops and sits too.",
                  sound="footsteps on carpet, tags jingling"),
             dict(time="20-25s", act="Under the desk",
                  scene="Small home office, afternoon window light, wooden desk, office chair. Camera looks "
                        "down under the desk where the dog lies on the floor with its head resting on mom's "
-                       "socked feet, sighing and closing its eyes.",
+                       "socked feet, sighing and closing its eyes. "
+                       "A phone charger cable and a pair of slippers are on the floor beside it.",
                  sound="keyboard typing, a long sigh"),
         ],
         caption="I have not been alone since he came home.\nDoes your dog follow you to the bathroom too?",
@@ -625,12 +662,14 @@ VIDEOS = [
             dict(time="15-20s", act="His own stretch",
                  scene="Next to the purple yoga mat, morning daylight on the hardwood floor. The dog does "
                        "its own long stretch, front legs out in front and rear in the air, then stands up "
-                       "and gives a big yawn.",
+                       "and gives a big yawn. "
+                       "Its collar tag dangles down toward the floor.",
                  sound="squeaky yawn, mom saying \"good form\""),
             dict(time="20-25s", act="Lap time",
                  scene="Living room, morning daylight through sheer curtains. Mom sits cross-legged on the "
                        "yoga mat in leggings and the dog lies down beside her, resting its head in her lap "
-                       "while her hand strokes its ears.",
+                       "while her hand strokes its ears. "
+                       "Its eyes slowly close as she keeps stroking.",
                  sound="quiet room, a content dog sigh, mom says \"okay, you win\""),
         ],
         caption="Trying to find inner peace.\nHe found my face instead.",
@@ -650,12 +689,14 @@ VIDEOS = [
             dict(time="5-10s", act="Sniffing the phone",
                  scene="Same couch, early evening grey daylight. The phone screen still faces away from the "
                        "camera. The dog tilts its head one way, then the other, then leans in and sniffs "
-                       "the phone in mom's hand, tail starting to wag.",
+                       "the phone in mom's hand, tail starting to wag. "
+                       "Its ears keep twitching at every word.",
                  sound="dad's voice saying \"good boy\", sniffing, tail thumping on the couch"),
             dict(time="10-15s", act="Checking the door",
                  scene="Front hallway, dim evening daylight through the door window, shoes on a mat. The "
                        "dog runs in from the living room to the front door, sniffs along the bottom of the "
-                       "door, then looks back over its shoulder.",
+                       "door, then looks back over its shoulder. "
+                       "Its tail slowly drops when the door stays shut.",
                  sound="claws on the floor, sniffing, mom saying \"he's not here, honey\""),
             dict(time="15-20s", act="Whining at the phone",
                  scene="Back on the living room couch, evening grey daylight. Mom holds the phone up with "
@@ -665,7 +706,8 @@ VIDEOS = [
             dict(time="20-25s", act="Waiting by the door",
                  scene="Front hallway, dim evening daylight, the phone call over. The dog lies down on the "
                        "doormat facing the front door with its chin on its front paws, eyes on the door, "
-                       "ears still turning toward any sound.",
+                       "ears still turning toward any sound. "
+                       "Dad's worn sneakers sit on the mat next to it.",
                  sound="quiet house, a long sigh, mom says \"three more days, bud\""),
         ],
         caption="Dad's been away for work for a week.\nHe still checks the door every time he hears his voice.",
@@ -679,27 +721,32 @@ VIDEOS = [
             dict(time="0-5s", act="Hello sniff",
                  scene="Fenced backyard, cool cloudy afternoon, short brown-green grass, tall wooden fence. "
                        "A grey and white Siberian Husky trots up and the two dogs sniff each other's faces, "
-                       "both tails wagging high.",
+                       "both tails wagging high. "
+                       "The husky's owner's legs in jeans stand near the gate, and a few fallen leaves cover the grass.",
                  sound="excited sniffing, tags jingling, owner says \"say hi to your friend\""),
             dict(time="5-10s", act="Fence chase",
                  scene="Same fenced backyard, cloudy afternoon. The husky runs off across the yard and the "
                        "dog chases a few steps behind, both running in a wide loop along the wooden fence, "
-                       "ears back and tongues out.",
+                       "ears back and tongues out. "
+                       "The dog's tail streams out behind it as it runs.",
                  sound="paws pounding on grass, panting, owners laughing"),
             dict(time="10-15s", act="Play bows and talking",
                  scene="Middle of the backyard, cloudy afternoon. The two dogs face each other a few feet "
                        "apart. The dog drops into a play bow and the husky bounces sideways and makes its "
-                       "loud husky talking sounds.",
+                       "loud husky talking sounds. "
+                       "Both dogs' tails wag fast, and the dog hops forward once, then back.",
                  sound="husky woo-woo howling, a playful bark"),
             dict(time="15-20s", act="Water break",
                  scene="Backyard patio, cloudy afternoon, grey concrete pavers. The two dogs stand side by "
                        "side drinking from a big steel water bowl, water dripping from their chins onto the "
-                       "pavers.",
+                       "pavers. "
+                       "A garden hose is coiled next to the bowl, and the husky finishes first and walks away.",
                  sound="loud lapping, dripping water"),
             dict(time="20-25s", act="Resting in the grass",
                  scene="Backyard lawn, late cloudy afternoon, cool grey light. The two dogs lie in the grass "
                        "a few feet apart, both panting. The husky rolls onto its back for a second while "
-                       "the dog watches it.",
+                       "the dog watches it. "
+                       "Bits of grass stick to both coats.",
                  sound="panting, wind in the trees, owner says \"they're done\""),
         ],
         caption="Husky talks, shepherd listens.\nBest buddies since puppy class. Tag a husky friend!",
@@ -723,17 +770,20 @@ VIDEOS = [
             dict(time="10-15s", act="First paddle",
                  scene="Shallow end of the pool, bright sunny afternoon. The owner's hand holds the handle "
                        "on the orange life vest as the dog paddles forward, front legs splashing, head held "
-                       "high above the water, eyes wide.",
+                       "high above the water, eyes wide. "
+                       "Sunlight ripples on the pool floor below the dog.",
                  sound="splashing, heavy breathing, owner says \"good boy, good boy\""),
             dict(time="15-20s", act="Back to the steps",
                  scene="Shallow end of the pool, sunny afternoon. The dog in its orange life vest paddles "
                        "on its own toward the pool steps, the owner walking beside it in the water, and "
-                       "climbs out onto the steps.",
+                       "climbs out onto the steps. "
+                       "Water streams off the life vest as it steps up.",
                  sound="splashing, water dripping, owner cheering"),
             dict(time="20-25s", act="Big shake",
                  scene="Pool deck, sunny summer afternoon, light grey concrete. The dog stands in its "
                        "orange life vest and shakes the water off hard, then rolls on a striped towel on the "
-                       "warm concrete, panting.",
+                       "warm concrete, panting. "
+                       "Drops splash onto the owner's bare feet at the edge of the frame.",
                  sound="water spraying, towel rustling, owner laughing"),
         ],
         caption="Swim lesson number one: done.\nHe paddled like a champ (with a little help).",
@@ -747,26 +797,31 @@ VIDEOS = [
             dict(time="0-5s", act="Suspicious sniff",
                  scene="Bedroom, late morning daylight through a window, light wood floor, an unmade bed "
                        "in the background. A brand new large grey dog bed sits on the floor. The dog walks "
-                       "around it slowly, sniffing the edges, tail held still.",
+                       "around it slowly, sniffing the edges, tail held still. "
+                       "The torn plastic wrap lies crumpled nearby.",
                  sound="sniffing, quiet room, owner says \"it's yours, go on\""),
             dict(time="5-10s", act="Testing it",
                  scene="Same bedroom, late morning daylight, light wood floor. The dog puts one front paw "
                        "into the new grey bed, pauses, then steps in with all four paws and stands in the "
-                       "middle looking at the camera.",
+                       "middle looking at the camera. "
+                       "Its tail starts a slow, careful wag.",
                  sound="soft cushion sound, tags jingling"),
             dict(time="10-15s", act="Digging and circling",
                  scene="Bedroom floor, late morning light. Standing in the new grey bed, the dog scratches "
-                       "at the cushion with its front paws, digging, then turns in a circle and digs again.",
+                       "at the cushion with its front paws, digging, then turns in a circle and digs again. "
+                       "The cushion bunches up into a lumpy pile in one corner of the bed.",
                  sound="scratching on fabric, owner laughing \"you'll ruin it\""),
             dict(time="15-20s", act="The big flop",
                  scene="Bedroom, late morning daylight on the wood floor. The dog circles one more time and "
                        "flops down in the new bed with a big sigh, rolling onto its side and stretching all "
-                       "four legs out.",
+                       "four legs out. "
+                       "One back paw hangs over the edge of the bed.",
                  sound="thud, a big sigh, cushion squishing"),
             dict(time="20-25s", act="Dozing off",
                  scene="Bedroom, early afternoon daylight through the window. The dog is curled up in the "
                        "new grey bed with its chin on the raised edge, eyes slowly closing. The old flat "
-                       "worn bed sits pushed into the corner behind it.",
+                       "worn bed sits pushed into the corner behind it. "
+                       "A sock lies on the floor next to it.",
                  sound="slow breathing, a soft snore, owner whispering \"best money I ever spent\""),
         ],
         caption="He took one sniff and decided he lives here now.\nThe old bed is officially retired.",
@@ -789,17 +844,20 @@ VIDEOS = [
             dict(time="5-10s", act="Short gentle walk",
                  scene="Quiet tree-lined sidewalk, mild late morning, overcast daylight, a few fallen "
                        "leaves. The dog walks slowly beside the owner's legs on a loose leash, stopping "
-                       "often, ears relaxed, the owner matching its slow pace.",
+                       "often, ears relaxed, the owner matching its slow pace. "
+                       "Its tail hangs low and swings gently with each step.",
                  sound="slow paw steps, birds, leaves rustling"),
             dict(time="10-15s", act="Long sniff",
                  scene="Front lawn of the house, overcast late morning, patchy grass with clover. The dog "
                        "stands still with its nose down, sniffing one patch of clover for a long time, tail "
-                       "swaying slowly behind it.",
+                       "swaying slowly behind it. "
+                       "The owner waits patiently, the leash slack in the frame.",
                  sound="sniffing, a neighbor's wind chime, owner says \"take your time\""),
             dict(time="15-20s", act="Soft brushing",
                  scene="Back porch, afternoon daylight, worn wooden boards. The dog lies on an old plaid "
                        "blanket while the owner's hand gently runs a soft brush along its back, a little "
-                       "loose fur coming off, the dog's eyes half closed.",
+                       "loose fur coming off, the dog's eyes half closed. "
+                       "Its ears relax back against its head.",
                  sound="soft brushing, birds, a relaxed sigh"),
             dict(time="20-25s", act="Sun patch nap",
                  scene="Living room, late afternoon, a warm patch of sunlight on the carpet by the window. "
@@ -823,22 +881,26 @@ VIDEOS = [
             dict(time="5-10s", act="Park walk",
                  scene="Park path, cool sunny morning, dew on the grass, a few wooden benches and tall "
                        "trees. The dog trots ahead on a red leash with its tail up, sniffing along the edges "
-                       "of the grass beside the path.",
+                       "of the grass beside the path. "
+                       "The leash bounces with each step.",
                  sound="birds, footsteps on the path, a jogger passing far away"),
             dict(time="10-15s", act="Midday nap",
                  scene="Living room, bright midday daylight through the window, a grey couch. The dog "
                        "sleeps on its back on the couch with its legs in the air, paws twitching a little "
-                       "as it dreams.",
+                       "as it dreams. "
+                       "Its lips flap slightly with each breath and one ear is flipped inside out.",
                  sound="soft snoring, owner whispering \"he's out\""),
             dict(time="15-20s", act="Fetch at dusk",
                  scene="Backyard at dusk, fading blue evening daylight, uneven grass, a wooden fence. The "
                        "owner's hand throws a worn green tennis ball and the dog runs after it across the "
-                       "dim grass, grabs it and trots back toward the camera.",
+                       "dim grass, grabs it and trots back toward the camera. "
+                       "The neighbor's trees are dark shapes behind the fence.",
                  sound="crickets, paws on grass, panting, owner says \"last one\""),
             dict(time="20-25s", act="Bedtime",
                  scene="Bedroom at night, only faint blue moonlight through the curtains, a dark blanket on "
                        "the owner's bed. The dog climbs onto the foot of the bed, circles once, curls up "
-                       "with a sigh and closes its eyes.",
+                       "with a sigh and closes its eyes. "
+                       "The owner's feet under the blanket move to make room.",
                  sound="mattress creaking, a long sigh, owner whispering \"night, buddy\""),
         ],
         caption="24 hours in the life of a German Shepherd.\n80% snacks, 20% chaos, 100% love.",
