@@ -432,7 +432,7 @@ VIDEOS = [
         slug="088_Jealous_of_the_New_Kitten",
         title="Jealous of the New Kitten",
         idea="A tiny grey kitten joins the family and the dog wants her share of attention: nudging the owner's "
-             "hand, a dramatic-free sigh on the rug, petting time for both, a first sniff and a nap nearby.",
+             "hand, a big sigh on the rug, petting time for both, a first sniff and a nap nearby.",
         clips=[
             dict(time="0-5s", act="Hand nudge",
                  scene="Living room, morning daylight, the owner sitting on a beige carpet seen from point of view. "
@@ -623,7 +623,7 @@ VIDEOS = [
             dict(time="15-20s", act="Window waiting",
                  scene="Living room front window, late afternoon daylight getting softer, sheer curtains. The orange "
                        "tabby cat with white paws sits on the windowsill staring out at the empty driveway, tail "
-                       "wrapped around her paws, ears turning at every passing car.",
+                       "wrapped around her paws, ears turning at every passing car. Her fluffy friend is still not home.",
                  sound="car passing outside, quiet room, a tiny chirp from the cat"),
             dict(time="20-25s", act="Evening reunion",
                  scene="Front hallway in the evening, ordinary ceiling light on. The dog walks in with fluffy freshly "
@@ -731,7 +731,7 @@ VIDEOS = [
             dict(time="20-25s", act="Rug nap",
                  scene="Grandma's living room, late afternoon light fading, a radiator under the window. The dog sleeps "
                        "on the patterned rug near the radiator and the fluffy grey long-haired cat lies a short way "
-                       "away facing her, eyes half closed.",
+                       "away facing her, eyes half closed, both breathing slowly and calmly.",
                  sound="radiator ticking, slow breathing, a teacup clinking far away"),
         ],
         caption="Grandma's cat was not sure at first. Then this happened.\nDoes your dog get along with your family's pets?",
