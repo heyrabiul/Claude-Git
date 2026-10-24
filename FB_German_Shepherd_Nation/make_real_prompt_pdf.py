@@ -1,7 +1,7 @@
 """Realistic (home-video style) 25-second German Shepherd video prompts -> one PDF per video.
 
-Usage: python3 make_real_prompt_pdf.py OUTPUT_DIR [FIRST LAST]
-Video data lives in prompt_data/videos_*.py (one VIDEOS list per file).
+Usage: python3 make_real_prompt_pdf.py OUTPUT_DIR [FIRST LAST] [--page nation|life]
+Video data lives in <page data dir>/videos_*.py (one VIDEOS list per file), see PAGES.
 """
 import importlib.util
 import os
@@ -13,7 +13,6 @@ from reportlab.lib.styles import ParagraphStyle
 from reportlab.platypus import (SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle,
                                 KeepTogether, PageBreak)
 
-PAGE = "German Shepherd Nation"
 
 INK = colors.HexColor("#222222")
 ACCENT = colors.HexColor("#9a5b1e")
@@ -22,7 +21,7 @@ LINE = colors.HexColor("#ddd5c8")
 GREY = colors.HexColor("#666666")
 
 # The same dog wording goes into every clip so the dog looks identical across clips.
-DOG = ("a real adult male German Shepherd with a black saddle, tan legs and tan face, slightly darker "
+DOG_NATION = ("a real adult male German Shepherd with a black saddle, tan legs and tan face, slightly darker "
        "muzzle, upright ears, wearing a worn brown leather collar with a small metal tag, natural "
        "slightly messy coat with a little loose fur on the shoulders")
 
@@ -37,8 +36,19 @@ AVOID = ("cinematic, slow motion, lens flare, golden glow, dramatic lighting, st
          "drone or gimbal movement, background music, text, subtitles, watermark, extra legs, extra "
          "tail, morphing, warped paws, plastic-looking skin or fur")
 
-HASHTAGS = ("#GermanShepherdNation #GermanShepherd #GSD #GermanShepherdDog #DogsOfFacebook "
-            "#DogLife #DogMom #DogDad #Reels")
+DOG_LIFE = ("a real adult female German Shepherd with a black saddle, rich red-tan legs, chest and face, "
+            "a dark mask around the muzzle, upright ears, a slightly slimmer build, wearing a faded red "
+            "nylon collar with a small round metal tag, natural slightly messy coat")
+
+TAGS = "#GermanShepherd #GSD #GermanShepherdDog #DogsOfFacebook #DogLife #DogMom #DogDad #Reels"
+
+# One entry per Facebook page: branding, default dog and where its video data lives.
+PAGES = {
+    "nation": dict(name="German Shepherd Nation", prefix="GSN", data="prompt_data", dog=DOG_NATION,
+                   hashtags="#GermanShepherdNation " + TAGS),
+    "life": dict(name="German Shepherd Life", prefix="GSL", data="prompt_data_life", dog=DOG_LIFE,
+                 hashtags="#GermanShepherdLife " + TAGS),
+}
 
 TIPS = [
     ("Use a real photo",
@@ -57,7 +67,17 @@ TIPS = [
      "Do not add filters, slow motion or fancy transitions - real home videos don't have them."),
 ]
 
-DATA_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "prompt_data")
+HERE = os.path.dirname(os.path.abspath(__file__))
+
+
+def use_page(key):
+    global PAGE, PREFIX, DOG, HASHTAGS, DATA_DIR
+    cfg = PAGES[key]
+    PAGE, PREFIX, DOG, HASHTAGS = cfg["name"], cfg["prefix"], cfg["dog"], cfg["hashtags"]
+    DATA_DIR = os.path.join(HERE, cfg["data"])
+
+
+use_page("nation")
 
 
 def load_videos():
@@ -123,7 +143,7 @@ def full_prompt(v):
 
 
 def build(v, out_dir):
-    path = os.path.join(out_dir, f"GSN_Real_{v['slug']}.pdf")
+    path = os.path.join(out_dir, f"{PREFIX}_Real_{v['slug']}.pdf")
     doc = SimpleDocTemplate(path, pagesize=A4, leftMargin=18 * mm, rightMargin=18 * mm,
                             topMargin=20 * mm, bottomMargin=16 * mm,
                             title=f"{PAGE} - {v['title']}", author=PAGE)
@@ -182,6 +202,12 @@ def build(v, out_dir):
 
 
 if __name__ == "__main__":
+    args = sys.argv[1:]
+    if "--page" in args:
+        i = args.index("--page")
+        use_page(args[i + 1])
+        del args[i:i + 2]
+    sys.argv[1:] = args
     out = sys.argv[1] if len(sys.argv) > 1 else "."
     os.makedirs(out, exist_ok=True)
     first = int(sys.argv[2]) if len(sys.argv) > 2 else 1
