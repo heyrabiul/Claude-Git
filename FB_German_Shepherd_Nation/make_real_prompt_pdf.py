@@ -1,6 +1,6 @@
 """Realistic (home-video style) 25-second German Shepherd video prompts -> one PDF per video.
 
-Usage: python3 make_real_prompt_pdf.py OUTPUT_DIR [FIRST LAST] [--page nation|life|club|daily|legends|family|adventures|puppies|friends]
+Usage: python3 make_real_prompt_pdf.py OUTPUT_DIR [FIRST LAST] [--page nation|life|club|daily|legends|family|adventures|puppies|friends|forever]
 Video data lives in <page data dir>/videos_*.py (one VIDEOS list per file), see PAGES.
 """
 import importlib.util
@@ -69,6 +69,10 @@ DOG_FRIENDS = ("a real adult female long-coat black-and-tan German Shepherd with
                "legs, chest and face, fluffy longer fur on the ears, neck, chest and tail, gentle eyes, "
                "upright ears, wearing a bright yellow collar with a small round tag")
 
+DOG_FOREVER = ("a real adult male short-coat grey sable German Shepherd with a wolf-grey coat of black-tipped "
+               "hairs, a darker back and dark face mask, lighter cream-grey legs and chest, upright ears, "
+               "warm brown eyes, wearing a dark red leather collar with a small brass tag")
+
 TAGS = "#GermanShepherd #GSD #GermanShepherdDog #DogsOfFacebook #DogLife #DogMom #DogDad #Reels"
 
 # One entry per Facebook page: branding, default dog and where its video data lives.
@@ -91,6 +95,8 @@ PAGES = {
                     dog=DOG_PUPPIES, hashtags="#GermanShepherdPuppiesHub #GermanShepherdPuppy " + TAGS),
     "friends": dict(name="German Shepherd Best Friends", prefix="GSBestFriends", data="prompt_data_friends",
                     dog=DOG_FRIENDS, hashtags="#GermanShepherdBestFriends #DogAndCat " + TAGS),
+    "forever": dict(name="German Shepherd Forever", prefix="GSForever", data="prompt_data_forever",
+                    dog=DOG_FOREVER, hashtags="#GermanShepherdForever #ForeverHome #RescueDog " + TAGS),
 }
 
 TIPS = [
