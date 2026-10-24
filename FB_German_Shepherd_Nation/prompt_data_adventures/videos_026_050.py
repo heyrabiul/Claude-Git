@@ -460,7 +460,7 @@ VIDEOS = [
             dict(time="20-25s", act="Back to van",
                  scene="The wide gravel coastal path leading back to a small lot, late afternoon light warming the "
                        "grass. The dog trots ahead on his leash toward the sage green camper van with no logos parked "
-                       "beside a wooden post fence.",
+                       "beside a wooden post fence, then glances back once at the sea.",
                  sound="crunching gravel, wind, distant waves"),
         ],
         caption="Salty wind, calm sea, best boy.\nWhat is your favorite coastline walk?",
@@ -479,7 +479,7 @@ VIDEOS = [
             dict(time="5-10s", act="Climbing ridge",
                  scene="Halfway up the dune along its soft sandy ridge, cool morning daylight. The dog plods upward on "
                        "a loose leash, paws sinking and sand sliding behind him, while the owner's boots struggle "
-                       "behind in the bottom of the frame.",
+                       "behind in the bottom of the frame. The dune crest is still far above them.",
                  sound="heavy breathing, sand sliding, owner laughing \"this is hard\""),
             dict(time="10-15s", act="Top of dune",
                  scene="The wide rounded top of the giant dune, cool morning light, more rolling tan dunes stretching "
@@ -513,7 +513,7 @@ VIDEOS = [
             dict(time="5-10s", act="Crunchy leaves",
                  scene="A thick carpet of fallen yellow aspen leaves on the forest floor, sunny afternoon light. The "
                        "dog shuffles through the leaves with his nose down, sniffing, leaves crunching and scattering "
-                       "around his legs, tail wagging high.",
+                       "around his legs, tail wagging high. White aspen trunks rise all around him in the sunshine.",
                  sound="loud leaf crunching, sniffing, owner laughs"),
             dict(time="10-15s", act="Leaf toss",
                  scene="Among the aspens in crisp sunny light. The owner's hand, in a green rain jacket sleeve, tosses "
@@ -523,7 +523,7 @@ VIDEOS = [
             dict(time="15-20s", act="Photo sit",
                  scene="Between two white aspen trunks covered in black marks, warm autumn afternoon light, yellow "
                        "leaves all around. The dog sits on the leafy ground facing the camera, ears up, a single "
-                       "yellow leaf caught in his fur.",
+                       "yellow leaf caught in his fur. He blinks slowly and his tail sweeps the leaves behind him.",
                  sound="quiet breeze, leaves falling, owner says \"stay, good boy\""),
             dict(time="20-25s", act="Into the van",
                  scene="A dirt forest road lined with yellow aspens, late afternoon light. The sage green camper van "
@@ -581,7 +581,7 @@ VIDEOS = [
             dict(time="5-10s", act="Ears up",
                  scene="Same meadow trail, bright mountain daylight. The dog suddenly stops, ears straight up and "
                        "head still, staring across the meadow toward a pile of grey boulders far away. His nose "
-                       "twitches and he stands perfectly still on his leash.",
+                       "twitches and he stands perfectly still on his leash, one front paw slightly lifted, the wildflowers moving around his legs.",
                  sound="a high whistle in the distance, breeze, owner whispers \"what is it?\""),
             dict(time="10-15s", act="Marmot far away",
                  scene="Zoomed in and a little shaky, bright sunny daylight. Far across the meadow, a plump brown "
@@ -596,7 +596,7 @@ VIDEOS = [
             dict(time="20-25s", act="Moving on",
                  scene="The wide meadow trail climbing gently toward the peaks, sunny daylight. The dog trots ahead on "
                        "his leash, glancing back once toward the far boulders, then keeps going with his tail up "
-                       "through the wildflowers.",
+                       "through the wildflowers, the owner's boots following close behind on the dirt path.",
                  sound="footsteps, a faint whistle far away, insects"),
         ],
         caption="He heard the marmot before I saw it.\nWatched from far away like a total gentleman.",
@@ -620,7 +620,7 @@ VIDEOS = [
             dict(time="10-15s", act="Landing",
                  scene="The front of the red canoe slides gently onto a small pebbly island beach, calm morning light. "
                        "The dog in his yellow life vest steps out onto the pebbles, does a quick shake and sniffs the "
-                       "ground, tail wagging.",
+                       "ground, tail wagging, while the owner's hand pulls the canoe a little higher onto the stones.",
                  sound="canoe scraping on pebbles, a shake, owner says \"we made it\""),
             dict(time="15-20s", act="Exploring pines",
                  scene="Under tall pine trees on the small island, dappled morning light on a carpet of brown needles. "
@@ -664,7 +664,7 @@ VIDEOS = [
             dict(time="20-25s", act="Proud sit",
                  scene="On the dirt trail beside the end of the hanging bridge, cloudy morning light. The dog sits on "
                        "his leash facing the camera with the long bridge stretching behind him through the trees, "
-                       "panting with his mouth open.",
+                       "panting with his mouth open. The owner's hand, in a green rain jacket sleeve, reaches in to rub his chest.",
                  sound="birds, wind in the trees, owner says \"look how far we came\""),
         ],
         caption="He was unsure for exactly one step.\nThen he walked across like he built it.",
@@ -753,7 +753,7 @@ VIDEOS = [
             dict(time="5-10s", act="Frozen creek bridge",
                  scene="A sturdy wooden footbridge with railings over a frozen, snow-covered creek, overcast winter "
                        "light. The dog trots across the snowy planks on his leash and stops on the far side to sniff "
-                       "the snow piled against a post.",
+                       "the snow piled against a post, then looks back at the camera with snow on his nose.",
                  sound="hollow paw thuds, crunching snow, a crow far away"),
             dict(time="10-15s", act="Frozen waterfall",
                  scene="A wide snowy flat viewing area at the bottom of a rock cliff, grey winter daylight. A tall "
@@ -763,7 +763,7 @@ VIDEOS = [
             dict(time="15-20s", act="Snow roll",
                  scene="Fresh deep snow beside the trail, overcast winter light. The dog flops down and rolls onto his "
                        "back, wiggling and kicking his legs in the air, snow covering his face, then pops up and "
-                       "shakes.",
+                       "shakes hard, snow flying off his coat while the owner's boots stand nearby on the packed trail.",
                  sound="snow crunching, happy grunts, owner laughs \"you goof\""),
             dict(time="20-25s", act="Snowball brush off",
                  scene="Beside the sage green camper van in a snowy parking area, grey winter afternoon light. The "
@@ -803,7 +803,7 @@ VIDEOS = [
             dict(time="20-25s", act="Back to daylight",
                  scene="Walking back out of the cave mouth onto the paved path, overcast morning daylight and green "
                        "trees outside. The dog trots out into the open air, does a full body shake, and wags at the "
-                       "camera.",
+                       "camera, then sniffs the damp grass beside the path while the owner's hand loosens the leash.",
                  sound="birds, a shake, footsteps, owner laughs"),
         ],
         caption="He got as far as the entrance and that was plenty.\nThe echo blew his mind.",
@@ -837,7 +837,7 @@ VIDEOS = [
             dict(time="20-25s", act="Drizzly walk back",
                  scene="The wide path winding down between the tea rows in a light drizzle, flat grey light. The dog "
                        "trots ahead on his leash toward a small roadside pull-off where the sage green camper van with "
-                       "no logos is parked.",
+                       "no logos is parked, its side door already open and a towel waiting on the seat.",
                  sound="light rain, footsteps, panting"),
         ],
         caption="Miles of green, a little rain and one happy dog.\nTea or coffee person?",
@@ -856,12 +856,12 @@ VIDEOS = [
             dict(time="5-10s", act="Grassy embankment",
                  scene="A wide grassy embankment path between two flooded rice paddies with bright green shoots, calm "
                        "morning daylight. The dog trots along the middle of the path on his leash, sniffing the grass "
-                       "edges, frogs plopping into the water ahead.",
+                       "edges, frogs plopping into the water ahead. The owner's boots follow close behind on the grass.",
                  sound="frog plops, trickling water, birds"),
             dict(time="10-15s", act="Watching ducks",
                  scene="On the embankment path, soft daylight. Far away in a lower paddy, a few ducks paddle slowly "
                        "through the green rice shoots. The dog stops, ears up, and watches them from far away, staying "
-                       "still on his leash.",
+                       "still on his leash, his tail slowly swaying behind him on the grassy path.",
                  sound="faint quacking, birds, owner whispers \"leave them, good boy\""),
             dict(time="15-20s", act="Shelter water break",
                  scene="A small bamboo shelter with a thatched roof beside the terraces, warm midday light outside and "
