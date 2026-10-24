@@ -1,6 +1,6 @@
 """Realistic (home-video style) 25-second German Shepherd video prompts -> one PDF per video.
 
-Usage: python3 make_real_prompt_pdf.py OUTPUT_DIR [FIRST LAST] [--page nation|life|club|daily|legends|family]
+Usage: python3 make_real_prompt_pdf.py OUTPUT_DIR [FIRST LAST] [--page nation|life|club|daily|legends|family|adventures]
 Video data lives in <page data dir>/videos_*.py (one VIDEOS list per file), see PAGES.
 """
 import importlib.util
@@ -57,6 +57,10 @@ DOG_FAMILY = ("a real adult female German Shepherd with a black saddle and pale 
               "face (black and silver coloring), dark ears, gentle brown eyes, medium build, wearing a purple "
               "nylon collar with a small heart-shaped tag, natural slightly fluffy coat")
 
+DOG_ADVENTURES = ("a real adult male white German Shepherd with a pure white thick medium-length coat, black "
+                  "nose, dark eyes, upright ears, strong athletic build, wearing a grey adventure harness over "
+                  "a tan leather collar, coat a little dusty from the trail")
+
 TAGS = "#GermanShepherd #GSD #GermanShepherdDog #DogsOfFacebook #DogLife #DogMom #DogDad #Reels"
 
 # One entry per Facebook page: branding, default dog and where its video data lives.
@@ -73,6 +77,8 @@ PAGES = {
                     dog=DOG_LEGENDS, hashtags="#GermanShepherdLegends " + TAGS),
     "family": dict(name="German Shepherd Family", prefix="GSFamily", data="prompt_data_family",
                    dog=DOG_FAMILY, hashtags="#GermanShepherdFamily " + TAGS),
+    "adventures": dict(name="German Shepherd Adventures", prefix="GSAdventures", data="prompt_data_adventures",
+                       dog=DOG_ADVENTURES, hashtags="#GermanShepherdAdventures " + TAGS),
 }
 
 TIPS = [
