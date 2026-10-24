@@ -174,7 +174,7 @@ VIDEOS = [
                        "with it.",
                  sound='toys rustling, a squeak, owner laughing "always that one"'),
             dict(time="5-10s", act="Greeting at the door",
-                 scene="Front hallway, afternoon daylight from a small window, shoes and a umbrella by the door. The "
+                 scene="Front hallway, afternoon daylight from a small window, shoes and an umbrella by the door. The "
                        "door opens and the dog comes trotting down the hall holding the worn plush lamb in his "
                        "mouth, tail wagging hard, and presses it against the owner's legs in jeans as she steps in.",
                  sound="door opening, keys, muffled squeaks, tail hitting the wall"),
@@ -761,7 +761,7 @@ VIDEOS = [
         clips=[
             dict(time="0-5s", act="Watching it fall",
                  scene="Living room early morning, soft white daylight from a window, first snowflakes falling over "
-                       "the backyard outside. The dog stands with his nose close to the window, head tilting as he "
+                       "the quiet fenced backyard outside. The dog stands with his nose close to the window, head tilting as he "
                        "tracks the flakes, tail slowly starting to wag.",
                  sound='quiet room, a soft whine, owner says "it is snowing, you know what that means"'),
             dict(time="5-10s", act="The big leap",
@@ -771,7 +771,7 @@ VIDEOS = [
                  sound="door opening, snow crunching, a happy snort"),
             dict(time="10-15s", act="Rolling in snow",
                  scene="Same snowy backyard, light snow still falling, soft grey daylight. The dog flops onto his back "
-                       "and wriggles side to side in the snow, legs kicking in the air, then flips over and shakes "
+                       "and wriggles side to side in the snow, legs kicking happily in the air, then flips over and shakes "
                        "the snow off his coat.",
                  sound="snow crunching, grunting, owner laughing"),
             dict(time="15-20s", act="Snow angel circles",
@@ -883,7 +883,7 @@ VIDEOS = [
             dict(time="15-20s", act="Warm breakfast",
                  scene="Kitchen, mid-morning winter daylight, beige tile floor, a steaming kettle on the stove. The "
                        "owner's hand sets down his steel bowl of kibble mixed with a little warm water. The dog eats "
-                       "eagerly, ears flopping slightly with each bite.",
+                       "eagerly, ears flopping slightly with each bite, tail wagging the whole time.",
                  sound="kettle whistling softly, crunching, bowl clinking"),
             dict(time="20-25s", act="First hike of the year",
                  scene="Forest trail in the afternoon, cold bright winter light, bare trees and frosted leaves on the "
