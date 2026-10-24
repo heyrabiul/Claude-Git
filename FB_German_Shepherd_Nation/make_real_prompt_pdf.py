@@ -1,6 +1,6 @@
 """Realistic (home-video style) 25-second German Shepherd video prompts -> one PDF per video.
 
-Usage: python3 make_real_prompt_pdf.py OUTPUT_DIR
+Usage: python3 make_real_prompt_pdf.py OUTPUT_DIR [FIRST LAST]
 Video data lives in prompt_data/videos_*.py (one VIDEOS list per file).
 """
 import importlib.util
@@ -184,7 +184,9 @@ def build(v, out_dir):
 if __name__ == "__main__":
     out = sys.argv[1] if len(sys.argv) > 1 else "."
     os.makedirs(out, exist_ok=True)
-    videos = load_videos()
+    first = int(sys.argv[2]) if len(sys.argv) > 2 else 1
+    last = int(sys.argv[3]) if len(sys.argv) > 3 else 10 ** 6
+    videos = [v for v in load_videos() if first <= int(v["slug"].split("_")[0]) <= last]
     for v in videos:
         build(v, out)
     print(f"wrote {len(videos)} PDFs to {out}")
