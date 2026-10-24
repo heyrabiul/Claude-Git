@@ -603,7 +603,7 @@ VIDEOS = [
                  scene="Hallway, late morning, daylight from a doorway, light wood floor and white "
                        "baseboards. Small fluffy fur tumbleweeds drift along the baseboard. The dog walks "
                        "past them and sits down beside an upright vacuum cleaner, watching it "
-                       "suspiciously.",
+                       "suspiciously while a tuft of fur sticks to its own tail.",
                  sound="claws clicking, owner says \"I vacuumed an hour ago\""),
             dict(time="20-25s", act="Furry clothes",
                  scene="Same hallway near the front door, daylight from the door window. The camera "
@@ -662,7 +662,8 @@ VIDEOS = [
             dict(time="5-10s", act="Takes the pillow",
                  scene="Same bedroom at night, warm bedside lamp light, white pillowcases. The dog rests "
                        "its head right on the owner's pillow, sinking into it, and looks at the camera "
-                       "with sleepy half-closed eyes, clearly not planning to move.",
+                       "with sleepy half-closed eyes, clearly not planning to move, its tail "
+                       "thumping once on the comforter.",
                  sound="a soft sigh, owner laughs \"that's my pillow\""),
             dict(time="10-15s", act="Ignores the owner",
                  scene="Same bed, warm lamp light, a round dog bed on the floor beside it. The owner's "
@@ -677,7 +678,8 @@ VIDEOS = [
             dict(time="20-25s", act="Tiny corner left",
                  scene="Same bedroom, lamp turned low, the room mostly dark. Camera points down from the "
                        "owner's spot at the very edge of the mattress. The dog is stretched diagonally "
-                       "across the whole bed under the comforter, snoring softly, paws twitching.",
+                       "across the whole bed under the comforter, snoring softly, paws twitching "
+                       "in a dream.",
                  sound="soft snoring, owner whispers \"goodnight, I guess\""),
         ],
         caption="He has a $90 orthopedic bed. He prefers mine.\nDoes your dog sleep in your bed?",
@@ -709,7 +711,8 @@ VIDEOS = [
             dict(time="15-20s", act="Carpet rubbing",
                  scene="Living room, afternoon daylight from windows, beige carpet and a brown couch. The "
                        "damp dog drops down and rubs its face and side along the carpet, pushing itself "
-                       "forward with its back legs, grunting happily with its tail wagging.",
+                       "forward with its back legs, grunting happily with its tail wagging and "
+                       "its fur sticking up.",
                  sound="carpet rubbing, happy grunts, owner says \"there it goes\""),
             dict(time="20-25s", act="Zoomie laps",
                  scene="Same living room, afternoon daylight, the brown couch and a wooden coffee table. "
@@ -745,7 +748,8 @@ VIDEOS = [
             dict(time="15-20s", act="Find the treat",
                  scene="Same living room, grey rainy light, three overturned plastic cups in a row on the "
                        "carpet. The dog sniffs each cup carefully, then knocks one over with its nose "
-                       "and quickly eats the small treat hidden underneath, tail wagging.",
+                       "and quickly eats the small treat hidden underneath, tail wagging as it "
+                       "moves on.",
                  sound="cups tipping, sniffing, crunching, owner says \"good find\""),
             dict(time="20-25s", act="Cozy rest",
                  scene="Dog bed by the rainy window, late morning, soft grey daylight. The dog lies "
@@ -815,7 +819,8 @@ VIDEOS = [
             dict(time="15-20s", act="Soaked through",
                  scene="Next to the sprinkler, hot sunny afternoon, the owner's bare feet on the wet "
                        "grass. The dog stands completely soaked, fur slicked flat and dripping, tongue "
-                       "out, then trots right up to the camera and shakes water everywhere.",
+                       "out, then trots right up to the camera and shakes cold water everywhere "
+                       "onto the owner.",
                  sound="water spray, ears flapping, owner squeals \"cold!\""),
             dict(time="20-25s", act="Wet grass flop",
                  scene="Same backyard, late afternoon sun, soggy green lawn with puddles in the low "
