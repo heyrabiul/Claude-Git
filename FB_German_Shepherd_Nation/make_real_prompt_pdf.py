@@ -1,8 +1,9 @@
 """Realistic (home-video style) 25-second German Shepherd video prompts -> one PDF per video.
 
 Usage: python3 make_real_prompt_pdf.py OUTPUT_DIR
-Add more entries to VIDEOS to generate more PDFs.
+Video data lives in prompt_data/videos_*.py (one VIDEOS list per file).
 """
+import importlib.util
 import os
 import sys
 from reportlab.lib.pagesizes import A4
@@ -56,43 +57,19 @@ TIPS = [
      "Do not add filters, slow motion or fancy transitions - real home videos don't have them."),
 ]
 
-VIDEOS = [
-    dict(
-        slug="01_Morning_Routine",
-        title="A Normal Morning With My German Shepherd",
-        idea="5 everyday activities in one morning: wake-up call, breakfast, bringing the leash, "
-             "backyard fetch, water and flop. Feels like a real owner filmed their dog's routine.",
-        clips=[
-            dict(time="0-5s", act="Wake-up call",
-                 scene="Bedroom, early morning, curtains half open, dim grey-blue daylight. Camera is the "
-                       "owner's point of view lying in bed. The dog rests its chin on the edge of the "
-                       "mattress and stares, then gives a soft huff and nudges the owner's hand with its nose.",
-                 sound="quiet room, the dog's huff, owner's sleepy laugh saying \"okay, okay\""),
-            dict(time="5-10s", act="Breakfast",
-                 scene="Small kitchen, morning window light, beige tile floor. The dog sits impatiently "
-                       "beside a steel bowl, front paws tapping, while the owner's hand pours dry kibble "
-                       "from a bag. The dog starts eating right away, a few kibbles spill on the floor.",
-                 sound="kibble rattling into the bowl, crunching, collar tag clinking on the bowl"),
-            dict(time="10-15s", act="Brings the leash",
-                 scene="Hallway by the front door, shoes on the floor. The dog trots in holding a red "
-                       "nylon leash in its mouth, drops it at the owner's feet, looks up at the camera "
-                       "with tail wagging and does a small excited hop.",
-                 sound="tags jingling, claws clicking on the floor, owner says \"you want to go out?\""),
-            dict(time="15-20s", act="Backyard fetch",
-                 scene="Ordinary backyard, overcast daylight, uneven grass with a few bare patches, "
-                       "wooden fence, garden hose on the ground. The owner's hand throws a worn green "
-                       "tennis ball, the dog sprints after it, grabs it and runs back, dropping the "
-                       "slobbery ball right in front of the camera, panting.",
-                 sound="birds, distant traffic, heavy panting, owner says \"good boy\""),
-            dict(time="20-25s", act="Water and flop",
-                 scene="Back in the kitchen. The dog drinks noisily from a water bowl, water dripping "
-                       "from its chin onto the tiles, then flops down on its side on the cool floor, "
-                       "tongue out, panting, and glances at the camera.",
-                 sound="loud lapping water, dripping, a big tired sigh"),
-        ],
-        caption="Every. Single. Morning.\nWho else has a four-legged alarm clock?",
-    ),
-]
+DATA_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "prompt_data")
+
+
+def load_videos():
+    videos = []
+    for name in sorted(os.listdir(DATA_DIR)):
+        if name.startswith("videos_") and name.endswith(".py"):
+            spec = importlib.util.spec_from_file_location(name[:-3], os.path.join(DATA_DIR, name))
+            mod = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(mod)
+            videos += mod.VIDEOS
+    return sorted(videos, key=lambda v: v["slug"])
+
 
 st = dict(
     title=ParagraphStyle("t", fontName="Helvetica-Bold", fontSize=19, leading=23, textColor=INK),
@@ -132,13 +109,14 @@ def box(flows, width, bg=PAPER):
     return t
 
 
-def clip_prompt(c):
-    return f"{CAMERA}. {DOG[0].upper() + DOG[1:]}. {c['scene']} Sound: {c['sound']}."
+def clip_prompt(v, c):
+    dog = v.get("dog", DOG)
+    return f"{CAMERA}. {dog[0].upper() + dog[1:]}. {c['scene']} Sound: {c['sound']}."
 
 
 def full_prompt(v):
-    parts = [f"A 25-second {CAMERA[0].lower() + CAMERA[1:]}. The dog is {DOG}. One normal day, "
-             f"showing {len(v['clips'])} short everyday moments joined with simple hard cuts."]
+    parts = [f"A 25-second {CAMERA[0].lower() + CAMERA[1:]}. The dog is {v.get('dog', DOG)}. "
+             f"It shows {len(v['clips'])} short everyday moments joined with simple hard cuts."]
     for c in v["clips"]:
         parts.append(f"{c['time']} ({c['act']}): {c['scene']} Sound: {c['sound']}.")
     return " ".join(parts)
@@ -181,7 +159,7 @@ def build(v, out_dir):
         s.append(KeepTogether([
             Spacer(1, 6),
             Paragraph(f"Clip {i}  |  {c['time']}  |  {c['act']}", st["clip"]), Spacer(1, 3),
-            box([Paragraph(clip_prompt(c), st["body"])], W),
+            box([Paragraph(clip_prompt(v, c), st["body"])], W),
         ]))
 
     s += [KeepTogether([
@@ -206,5 +184,7 @@ def build(v, out_dir):
 if __name__ == "__main__":
     out = sys.argv[1] if len(sys.argv) > 1 else "."
     os.makedirs(out, exist_ok=True)
-    for v in VIDEOS:
-        print("wrote", build(v, out))
+    videos = load_videos()
+    for v in videos:
+        build(v, out)
+    print(f"wrote {len(videos)} PDFs to {out}")
