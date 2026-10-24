@@ -54,9 +54,10 @@ TIPS = [
     ("Use a real photo",
      "Biggest realism boost: use Image-to-Video and upload the same real German Shepherd photo for "
      "every clip. Same photo = same dog in all 5 clips."),
-    ("Make 5 short clips",
-     "Generate each clip (5 seconds) separately with its own prompt, then join them in CapCut with "
-     "simple hard cuts. If your tool can make 25 seconds at once, use the full 25s prompt instead."),
+    ("Muse AI: one video",
+     "Paste the full 25-second prompt into Muse AI. It tells Muse AI to combine all 5 clips into ONE "
+     "25-second video. If the result comes out shorter, make each clip with its own prompt and join "
+     "them in order (CapCut) with simple hard cuts."),
     ("Pick the most natural",
      "Generate 2-3 versions of each clip and keep the one where the dog moves most naturally. "
      "Delete any clip with weird legs, tail or face."),
@@ -135,8 +136,10 @@ def clip_prompt(v, c):
 
 
 def full_prompt(v):
-    parts = [f"A 25-second {CAMERA[0].lower() + CAMERA[1:]}. The dog is {v.get('dog', DOG)}. "
-             f"It shows {len(v['clips'])} short everyday moments joined with simple hard cuts."]
+    n = len(v["clips"])
+    parts = [f"Make ONE single 25-second video by combining these {n} clips in order, "
+             f"{25 // n} seconds each, joined with simple hard cuts into one continuous video. "
+             f"{CAMERA}. The dog is {v.get('dog', DOG)}."]
     for c in v["clips"]:
         parts.append(f"{c['time']} ({c['act']}): {c['scene']} Sound: {c['sound']}.")
     return " ".join(parts)
@@ -150,7 +153,7 @@ def build(v, out_dir):
     W = doc.width
     s = [
         Paragraph(v["title"], st["title"]), Spacer(1, 3),
-        Paragraph(f"25 seconds  |  {len(v['clips'])} activities  |  Real phone-video look  |  9:16 Reel",
+        Paragraph(f"One 25-second video  |  {len(v['clips'])} clips combined  |  Real phone-video look  |  9:16 Reel",
                   st["meta"]),
         Paragraph("VIDEO IDEA", st["label"]),
         Paragraph(v["idea"], st["body"]),
@@ -164,15 +167,16 @@ def build(v, out_dir):
     ]))
     s += [Paragraph("TIMELINE", st["label"]), plan]
 
-    s += [Paragraph("FULL 25-SECOND PROMPT (only if your tool can make 25s in one go)", st["label"]),
+    s += [Paragraph("MUSE AI PROMPT - COMBINE ALL 5 CLIPS INTO ONE 25-SECOND VIDEO (copy and paste)", st["label"]),
           box([Paragraph(full_prompt(v), st["body"])], W),
           Paragraph("AVOID / NEGATIVE PROMPT (paste into the negative box, or add \"Avoid: ...\" at the end)",
                     st["label"]),
           box([Paragraph(AVOID, st["body"])], W, colors.white),
           PageBreak(),
-          Paragraph("CLIP-BY-CLIP PROMPTS (recommended)", st["label"]),
-          Paragraph("Make each clip separately, then join them in order. Every prompt already "
-                    "includes the same dog and camera wording.", st["small"]),
+          Paragraph("CLIP-BY-CLIP PROMPTS (backup)", st["label"]),
+          Paragraph("Use these only if Muse AI makes a video shorter than 25 seconds: make each clip "
+                    "separately, then join them in order. Every prompt already includes the same dog "
+                    "and camera wording.", st["small"]),
           Spacer(1, 4)]
 
     for i, c in enumerate(v["clips"], 1):
