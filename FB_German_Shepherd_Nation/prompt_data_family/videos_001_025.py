@@ -322,7 +322,7 @@ VIDEOS = [
             dict(time="20-25s", act="Wet footprints",
                  scene="Upstairs hallway, evening lamp light, light wooden floor. The daughter in pajamas "
                        "with damp braids walks toward her bedroom, leaving small damp footprints. The dog "
-                       "follows behind her, sniffing each footprint one by one.",
+                       "follows behind her, sniffing each footprint one by one. Her tail swings slowly as she goes, and she stops at the bedroom door to wait for the girl.",
                  sound="soft footsteps, claws clicking, mom saying \"she's checking your work\""),
         ],
         caption="Bath time has a supervisor and she takes it very seriously.\nAnyone else's dog obsessed with bubbles?",
@@ -351,7 +351,7 @@ VIDEOS = [
             dict(time="15-20s", act="Goodnight hug",
                  scene="Bedroom, warm lamp light at night. The daughter leans out of bed and wraps both arms "
                        "around the dog's neck. The dog stays still with her eyes half closed and her tail "
-                       "sweeping slowly across the rug.",
+                       "sweeping slowly across the rug. The grey stuffed bunny is squished between them on the edge of the bed.",
                  sound="tail swishing on the rug, the girl whispering \"goodnight, love you\""),
             dict(time="20-25s", act="Lamp off",
                  scene="Bedroom at night, the dad's hand clicks off the bedside lamp and a small nightlight "
@@ -375,12 +375,12 @@ VIDEOS = [
             dict(time="5-10s", act="Blanket roof",
                  scene="Living room, rainy grey daylight, two dining chairs set apart on the carpet. The son "
                        "and the daughter, a 7-year-old girl with two braids, throw a big red plaid blanket "
-                       "over the chairs. The dog sits watching, head tilted.",
+                       "over the chairs. The dog sits watching, head tilted. One corner keeps falling down and the boy props it up with a book.",
                  sound="blanket flapping, kids arguing about the door"),
             dict(time="10-15s", act="Moving in",
                  scene="Living room, grey rainy afternoon light, the finished blanket fort with cushions for "
                        "walls. Before the kids can crawl in, the dog walks straight through the opening, "
-                       "turns around and lies down inside, only her head poking out.",
+                       "turns around and lies down inside, only her head poking out. She looks up at the camera with her mouth open, panting happily.",
                  sound="both kids laughing, the girl shouting \"that's our fort!\""),
             dict(time="15-20s", act="Flashlight inside",
                  scene="Inside the blanket fort, dim red-tinted light through the fabric, a small flashlight "
@@ -414,7 +414,7 @@ VIDEOS = [
             dict(time="10-15s", act="Winning cheer",
                  scene="Dining table, evening home lighting. The son, an 11-year-old boy with short curly hair, "
                        "throws both arms up in the air cheering. The dog jumps up from under the table, tail "
-                       "wagging hard, and gives one excited bark.",
+                       "wagging hard, and gives one excited bark. The game board stays flat on the table and the small pieces stay put.",
                  sound="the boy shouting \"I won!\", one loud bark, everyone laughing"),
             dict(time="15-20s", act="Her turn",
                  scene="Dining room, evening warm lamp. The mom, a woman in her mid 30s with shoulder-length "
@@ -424,7 +424,7 @@ VIDEOS = [
             dict(time="20-25s", act="Packing up",
                  scene="Living room shelf in the evening, ordinary lamp light. The son slides the closed plain "
                        "game box onto a low wooden shelf next to other boxes. The dog sniffs the shelf edge, "
-                       "then follows him toward the couch.",
+                       "then follows him toward the couch. A folded blanket and a basket of toys sit on the floor below.",
                  sound="box sliding, footsteps, the boy saying \"rematch tomorrow\""),
         ],
         caption="Board game night: someone always cheats and someone always gets a biscuit.\nWhat's your family's game night favorite?",
@@ -482,7 +482,7 @@ VIDEOS = [
             dict(time="10-15s", act="Watering plants",
                  scene="Back porch, sunny late morning, terracotta pots with tomato plants and herbs. The son "
                        "tips a green plastic watering can over the pots. The dog sniffs the water dripping "
-                       "from the pots and licks a puddle on the concrete.",
+                       "from the pots and licks a puddle on the concrete. Little drops of water fall from her chin back onto the porch.",
                  sound="water trickling, birds, the boy laughing \"that's for the plants\""),
             dict(time="15-20s", act="Trash run",
                  scene="Side of the house by the driveway, overcast midday light, a dark green wheelie bin "
@@ -492,7 +492,7 @@ VIDEOS = [
             dict(time="20-25s", act="Making the bed",
                  scene="Little girl's bedroom, midday window light, a single bed. The daughter pulls the "
                        "purple comforter flat and smooths it. The moment she finishes, the dog hops onto the "
-                       "bed, turns once and lies down right in the middle.",
+                       "bed, turns once and lies down right in the middle. Behind them the neighbor's wooden fence and a parked bike are visible.",
                  sound="bed creaking, the girl groaning \"I just made it!\""),
         ],
         caption="She helps with every chore. By helps I mean supervises and undoes them.\nDoes your dog \"help\" too?",
@@ -516,7 +516,7 @@ VIDEOS = [
             dict(time="10-15s", act="Curls on the floor",
                  scene="Kitchen floor, afternoon window light, small brown curls scattered on the white "
                        "bedsheet. The dog steps closer and sniffs at a little pile of hair. The mom's hand "
-                       "comes into frame and gently guides her back by the collar.",
+                       "comes into frame and gently guides her back by the collar. She sits down again on the tile floor and keeps watching the clippers.",
                  sound="clippers buzzing, mom saying \"leave it, that's not food\""),
             dict(time="15-20s", act="Her turn",
                  scene="Kitchen, afternoon daylight, the haircut chair now empty. The dad crouches and runs "
@@ -526,7 +526,7 @@ VIDEOS = [
             dict(time="20-25s", act="Sweeping up",
                  scene="Kitchen, late afternoon light. The son, with a neat fresh short haircut, sweeps hair "
                        "into a dustpan with a broom. The dog lies on the rug by the back door watching him, "
-                       "her tail thumping slowly on the floor.",
+                       "her tail thumping slowly on the floor. The empty chair and folded bedsheet stand by the kitchen table.",
                  sound="broom sweeping, the boy saying \"how do I look?\""),
         ],
         caption="Dad's barbershop is open. Cheap prices, questionable results, one furry customer.\nHome haircuts: yes or no?",
@@ -555,12 +555,12 @@ VIDEOS = [
             dict(time="15-20s", act="Toe touches",
                  scene="Living room, morning window light. The daughter bends forward touching her toes on "
                        "the mat with her braids hanging down. The dog sniffs one of the braids and the girl "
-                       "giggles without standing up.",
+                       "giggles without standing up. A pair of small pink sneakers lies kicked off at the edge of the mat.",
                  sound="giggling, quiet workout music from a speaker"),
             dict(time="20-25s", act="Water break",
                  scene="Kitchen doorway, morning daylight, beige tiles. The mom and both kids sit on the floor "
                        "drinking from water bottles, red-faced. The dog drinks noisily from her steel water "
-                       "bowl beside them, water dripping off her chin.",
+                       "bowl beside them, water dripping off her chin. A rolled-up yoga mat leans against the wall behind them.",
                  sound="loud lapping, everyone panting, the boy saying \"she didn't even work out\""),
         ],
         caption="Tried a home workout. Got licked mid-plank. Workout over.\nDoes your dog join your workouts?",
@@ -590,7 +590,7 @@ VIDEOS = [
             dict(time="15-20s", act="Carrot reward",
                  scene="Grandma's kitchen counter, afternoon light, a pile of chopped carrots on a cutting "
                        "board for soup. The grandma picks up one carrot round and bends down. The dog sits "
-                       "right away and takes the carrot gently from her fingers.",
+                       "right away and takes the carrot gently from her fingers. Behind them a pot of water sits on the back burner, not yet boiling.",
                  sound="crunch, grandma saying \"one for my helper\""),
             dict(time="20-25s", act="Waiting by the door",
                  scene="Kitchen doorway, late afternoon light, a soup pot steaming on the stove in the "
@@ -614,22 +614,22 @@ VIDEOS = [
             dict(time="5-10s", act="Cap over eyes",
                  scene="Same living room, early afternoon daylight. The grandpa tips his flat cap down over "
                        "his eyes and folds his hands on his belly. The dog rests her chin on the edge of the "
-                       "raised footrest, next to his socks.",
+                       "raised footrest, next to his socks. A cup of tea cools on the side table next to a folded newspaper turned face down.",
                  sound="clock ticking, a long yawn"),
             dict(time="10-15s", act="Snoring together",
                  scene="Living room, afternoon window light. The grandpa is asleep in the recliner, snoring "
                        "softly with his cap over his face. Below, the dog's eyes slowly close and she lets out "
-                       "a deep sigh, her side rising and falling.",
+                       "a deep sigh, her side rising and falling. Sunlight from the window falls in a soft patch across the carpet where she lies.",
                  sound="soft snoring, a dog sigh, clock ticking"),
             dict(time="15-20s", act="Tiptoe past",
                  scene="Living room, afternoon daylight. The daughter, a 7-year-old girl with two braids, "
                        "tiptoes past the recliner with exaggerated steps. The dog lifts her head and thumps "
-                       "her tail twice on the carpet, but stays put.",
+                       "her tail twice on the carpet, but stays put. Her toes are pointed exaggeratedly and she covers her mouth to keep from giggling.",
                  sound="the girl whispering \"shhh\", tail thumping, snoring"),
             dict(time="20-25s", act="Wake-up scratch",
                  scene="Living room, late afternoon light. The grandpa pushes up his flat cap, stretches his "
                        "arms and reaches down to scratch behind the dog's ear. She stretches her front legs "
-                       "out long and rolls a little toward him.",
+                       "out long and rolls a little toward him. His cap slips sideways and he laughs quietly, still half asleep.",
                  sound="grandpa grunting \"that was a good one, wasn't it\""),
         ],
         caption="Grandpa and his nap buddy. Same time, same chair, every afternoon.\nWho's the best nap partner in your house?",
@@ -648,17 +648,17 @@ VIDEOS = [
             dict(time="5-10s", act="Recorder squeak",
                  scene="Living room, afternoon daylight. The daughter, a 7-year-old girl with two braids, "
                        "blows into a plastic recorder and hits a high squeaky note. The dog lifts her head, "
-                       "tilts it sharply and lets out a soft little howl.",
+                       "tilts it sharply and lets out a soft little howl. The girl looks at the dog with wide eyes and tries the note again, softer.",
                  sound="a squeaky recorder note, a soft howl, the girl laughing"),
             dict(time="10-15s", act="Dad's guitar",
                  scene="Living room couch, early evening lamp light. The dad, a man in his late 30s with a "
                        "short dark beard, strums an acoustic guitar slowly. The dog sits pressed against his "
-                       "leg with her eyes half closed.",
+                       "leg with her eyes half closed. A mug of coffee sits on the side table next to a folded music stand.",
                  sound="gentle guitar chords, dad humming"),
             dict(time="15-20s", act="Tambourine",
                  scene="Living room, evening lamp light. The mom, a woman in her mid 30s with shoulder-length "
                        "brown hair, shakes a tambourine. The dog's ears pop up and she trots over to sniff "
-                       "the jingling tambourine, tail wagging.",
+                       "the jingling tambourine, tail wagging. The mom holds it lower so the dog can sniff, then shakes it again softly.",
                  sound="tambourine jingling, tags jingling, mom laughing"),
             dict(time="20-25s", act="Family jam",
                  scene="Living room, evening warm lamps. Dad on guitar, the daughter on recorder and the mom "
@@ -682,12 +682,12 @@ VIDEOS = [
             dict(time="5-10s", act="Spinning",
                  scene="Living room, evening lamp light. The daughter, a 7-year-old girl with two braids and a "
                        "twirly skirt, spins in circles on the carpet. The dog trots in loose circles around "
-                       "her, tail high, sniffing at the spinning skirt.",
+                       "her, tail high, sniffing at the spinning skirt. Toys on the carpet get pushed aside by the swishing skirt.",
                  sound="music, the girl giggling, claws on the floor"),
             dict(time="10-15s", act="Play bow",
                  scene="Living room, evening light. The son does goofy arm-waving dance moves in front of the "
                        "couch. The dog drops into a play bow in front of him, rear end up and tail wagging, "
-                       "and gives an excited bark.",
+                       "and gives an excited bark. The boy bows back to her and they both freeze for a second.",
                  sound="music, a sharp happy bark, the boy laughing"),
             dict(time="15-20s", act="Zoomies",
                  scene="Living room, evening lamp light, a wooden coffee table in the middle of the room. The "
@@ -697,7 +697,7 @@ VIDEOS = [
             dict(time="20-25s", act="Flop on the rug",
                  scene="Living room, evening light. Both kids collapse onto the carpet, out of breath. The dog "
                        "lies down next to the daughter, panting, and licks her cheek while she squeals and "
-                       "covers her face.",
+                       "covers her face. The son lies on his back nearby laughing at the ceiling, cushions scattered around them.",
                  sound="music fading, heavy panting, the girl squealing \"ew!\""),
         ],
         caption="Random Tuesday dance party. She has the best moves, zoomies included.\nWhat's your dog's party trick?",
@@ -721,7 +721,7 @@ VIDEOS = [
             dict(time="10-15s", act="Missing piece hunt",
                  scene="Living room, evening lamp light. The daughter, a 7-year-old girl with two braids, lies "
                        "flat on the carpet looking under the couch. The dog lies down right beside her and "
-                       "sniffs under the couch too, tail wagging.",
+                       "sniffs under the couch too, tail wagging. Only their legs and the dog's wagging tail stick out from the couch.",
                  sound="the girl saying \"where is it?\", sniffing"),
             dict(time="15-20s", act="Found it",
                  scene="Living room, evening light. The dad, a man in his late 30s with a short dark beard, "
@@ -731,7 +731,7 @@ VIDEOS = [
             dict(time="20-25s", act="Last piece",
                  scene="Coffee table, evening warm lamp light, the finished mountain lake puzzle with one gap. "
                        "The daughter presses the last piece in. The dog lifts her head from the rug and "
-                       "thumps her tail as the family claps.",
+                       "thumps her tail as the family claps. The dog stays lying on the rug, ears up, watching the piece in the mom's hand.",
                  sound="clapping, the girl cheering \"done!\", tail thumping"),
         ],
         caption="1000 pieces, 3 hours, one piece found on dad's sock.\nAre you a puzzle family?",
@@ -755,7 +755,7 @@ VIDEOS = [
             dict(time="10-15s", act="Flashlight shadows",
                  scene="Inside the tent at night, dim light, a flashlight shining on the tent wall. The son "
                        "makes a hand shadow of a barking dog on the green fabric. The real dog watches the "
-                       "shadow, ears forward, head tilting.",
+                       "shadow, ears forward, head tilting. The flashlight beam wobbles a little as the boy tries to keep his hand steady.",
                  sound="kids giggling, the boy saying \"woof\", a quiet huff"),
             dict(time="15-20s", act="Camp snack",
                  scene="Tent doorway in the living room, evening lamp light, small string lights over the "
@@ -789,7 +789,7 @@ VIDEOS = [
             dict(time="10-15s", act="Sneeze",
                  scene="Living room, grey daylight, a tissue box on the coffee table. The daughter, a "
                        "7-year-old girl with two braids and a blanket around her shoulders, sneezes loudly. "
-                       "The dog flicks her ears back, blinks, then sniffs the girl's face.",
+                       "The dog flicks her ears back, blinks, then sniffs the girl's face. The girl laughs weakly and pats the dog's head with a tissue in her other hand.",
                  sound="a big sneeze, mom saying \"bless you\""),
             dict(time="15-20s", act="Soup tray",
                  scene="Living room, midday rainy light. The dad, a man in his late 30s with a short dark "
@@ -799,7 +799,7 @@ VIDEOS = [
             dict(time="20-25s", act="Nap together",
                  scene="Living room, quiet afternoon, rain still on the window, a lamp on. Both kids are "
                        "asleep under blankets at opposite ends of the couch. The dog has climbed up between "
-                       "them and lies curled in the middle, eyes closed.",
+                       "them and lies curled in the middle, eyes closed. Rain keeps running down the window behind the couch.",
                  sound="rain, soft breathing, a quiet dog snore"),
         ],
         caption="Two sick kids, one very dedicated nurse. She didn't leave the couch all day.\nDoes your dog know when you're sick?",
@@ -823,7 +823,7 @@ VIDEOS = [
             dict(time="10-15s", act="Tail wobble",
                  scene="Playroom, afternoon light, the tower now waist high. The dog stands up and wags her "
                        "tail right next to it, and the tower wobbles. The son grabs it with both hands and "
-                       "it stays standing.",
+                       "it stays standing. The dog sits back down, tail still, and looks up at the boy.",
                  sound="blocks rattling, both kids gasping \"noooo\""),
             dict(time="15-20s", act="Dad adds the top",
                  scene="Playroom, late afternoon window light. The dad, a man in his late 30s with a short "
@@ -833,7 +833,7 @@ VIDEOS = [
             dict(time="20-25s", act="Topple",
                  scene="Playroom, late afternoon light. The daughter gives the tower a little push and it "
                        "crashes down onto the carpet. The dog hops back, then trots over and sniffs through "
-                       "the scattered big blocks, tail wagging.",
+                       "the scattered big blocks, tail wagging. A few blocks roll under the window seat and the kids burst out laughing.",
                  sound="a loud crash of blocks, everyone cheering, one bark"),
         ],
         caption="Two hours to build, two seconds to knock down. Her tail almost beat us to it.\nWho knocks the tower down at your house?",
