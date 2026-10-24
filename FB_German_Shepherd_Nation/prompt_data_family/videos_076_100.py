@@ -330,7 +330,7 @@ VIDEOS = [
             dict(time="5-10s", act="The dog jumps up",
                  scene="Same bedroom, soft morning daylight. The dog trots through the doorway, sees "
                        "everyone on the bed, and hops up onto the end of the mattress. She walks across "
-                       "the duvet over everyone's legs, tail wagging, looking for a spot.",
+                       "the duvet over everyone's legs, tail wagging, looking for the perfect spot between the kids.",
                  sound="bed bouncing, tags jingling, kids squealing \"she's coming!\""),
             dict(time="10-15s", act="Blanket fort",
                  scene="Same bed, grey morning light. The mom, a woman in her mid 30s with "
@@ -563,7 +563,7 @@ VIDEOS = [
             dict(time="20-25s", act="Suitcase inspection",
                  scene="Family's front hallway back home, evening, ordinary ceiling light on, three "
                        "suitcases standing by the shoe mat with plain luggage straps. The dog sniffs each "
-                       "suitcase carefully from top to bottom, tail wagging slowly, nose working hard.",
+                       "suitcase carefully from top to bottom, tail wagging slowly, nose working hard, as if reading where the family has been all week.",
                  sound="sniffing, zipper tags clinking, son saying \"she's checking where we went\""),
         ],
         caption="One week away and you'd think it had been ten years.\nDoes your dog greet you like this after a trip?",
@@ -773,7 +773,7 @@ VIDEOS = [
             dict(time="10-15s", act="Lantern sandwiches",
                  scene="On a blanket in front of the tent, night, a battery camping lantern giving soft "
                        "white light. The dad and son eat sandwiches cross-legged. The dog lies beside "
-                       "them with her chin on her paws, watching politely without begging.",
+                       "them on the blanket with her chin on her paws, watching politely without begging, ears twitching at night sounds.",
                  sound="crickets, paper wrappers crinkling, dad saying \"just the guys\""),
             dict(time="15-20s", act="Guarding the doorway",
                  scene="Inside the small tent at night, the lantern turned low. The dad and son lie in "
@@ -783,7 +783,7 @@ VIDEOS = [
             dict(time="20-25s", act="Dewy morning",
                  scene="Backyard at sunrise, pale cool light, dew on the grass and the tent. The tent door "
                        "unzips halfway and the dog pushes her head out, blinking at the morning, then "
-                       "steps out, stretches long and shakes off.",
+                       "steps out onto the wet grass, stretches long with her front legs out and shakes off.",
                  sound="zipper, birds singing, dad yawning \"morning, girl\""),
         ],
         caption="Dad and son camping trip. Distance from the house: 30 feet. She came anyway.\nWould your dog stay in the tent all night?",
